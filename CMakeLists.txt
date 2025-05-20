@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.10.0)
 
+# set as debug
+set(CMAKE_BUILD_TYPE Debug)
+
 # Set the C++ standard
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -27,7 +30,9 @@ set(CoreSrc
     Core/Task.cpp
     Core/Task.h
     Core/TaskLists.h
-    Core/TaskLists.cpp)
+    Core/TaskLists.cpp
+    Core/TaskViews.h
+    Core/TaskViews.cpp)
 
 set(ToolsSrc
     Tools/class_helper.h
@@ -37,7 +42,24 @@ set(ToolsSrc
     Tools/uuid_generator.cpp)
 
 add_library(tasklib STATIC ${CoreSrc} ${ToolsSrc})
+target_include_directories(tasklib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
+
 add_executable(TaskManager main.cpp)
 target_link_libraries(TaskManager PRIVATE tasklib)
-target_include_directories(tasklib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 add_subdirectory(test)
+
+# Documentations issue
+find_package(Doxygen)
+if (DOXYGEN_FOUND)
+    message(STATUS "Doxygen found, generating documentation")
+    set(DOXYFILE_IN ${CMAKE_SOURCE_DIR}/Doxyfile)
+    add_custom_target(doc
+    COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_IN}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    COMMENT "Generating API documentation with Doxygen"
+)
+else()
+    message(WARNING "Doxygen not found, skipping documentation generation")
+endif()
+
+

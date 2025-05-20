@@ -1,0 +1,47 @@
+\doxysection{Shared\+Task\+Hash Struct Reference}
+\hypertarget{structSharedTaskHash}{}\label{structSharedTaskHash}\index{SharedTaskHash@{SharedTaskHash}}
+
+
+This is a tasklist manager class, in this case, we prefer to use this for a display/operations sessions.  
+
+
+
+
+{\ttfamily \#include $<$Task\+Lists.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structSharedTaskHash_ac3f3bdd154092360b42aafa2dad2151f}\label{structSharedTaskHash_ac3f3bdd154092360b42aafa2dad2151f} 
+std\+::size\+\_\+t {\bfseries operator()} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&t) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a tasklist manager class, in this case, we prefer to use this for a display/operations sessions. 
+
+query the task by given expressions, which is high level self defined
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & query functions, required to provide how to find a \doxylink{classTask}{Task} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ This, as expected, returns a maybe valid \doxylink{classTask}{Task} Handler lists that is fit the issue
+\end{DoxyReturn}
+this is expected to return the total size of the task, with non-\/privilaged sorted
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t return the tasklist without any prority filters
+\end{DoxyReturn}
+Get the all tasks object
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ yes, the case \+:) 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/Task\+Lists.\+h\end{DoxyCompactItemize}

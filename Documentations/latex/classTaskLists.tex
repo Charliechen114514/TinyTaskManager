@@ -1,0 +1,164 @@
+\doxysection{Task\+Lists Class Reference}
+\hypertarget{classTaskLists}{}\label{classTaskLists}\index{TaskLists@{TaskLists}}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTaskLists_a88c6e04434cb587956180a507333ac73}\label{classTaskLists_a88c6e04434cb587956180a507333ac73} 
+using {\bfseries Query\+Expr} = std\+::function$<$bool(const \mbox{\hyperlink{classTask}{Task}}\&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTaskLists_aa1f972f40127468cdc2d316ce194d292}\label{classTaskLists_aa1f972f40127468cdc2d316ce194d292} 
+{\bfseries DISABLE\+\_\+\+COPY} (\mbox{\hyperlink{classTaskLists}{Task\+Lists}})
+\item 
+\Hypertarget{classTaskLists_a1bc8c2c7542536cc69d2d10df0f9a496}\label{classTaskLists_a1bc8c2c7542536cc69d2d10df0f9a496} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (tasklist\+\_\+name)
+\item 
+void \mbox{\hyperlink{classTaskLists_aac10653964051721a1ea5a3336c8c819}{enqueue\+\_\+managing\+\_\+task}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ task\+\_\+en\+\_\+managed)
+\begin{DoxyCompactList}\small\item\em \+: enqueue the managing task, makes it enter bunch of Holdings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaskLists_af48a50c14fc1ca2d384d6dc03a3d42f6}{dequeue\+\_\+managing\+\_\+task}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ task\+\_\+en\+\_\+managed)
+\begin{DoxyCompactList}\small\item\em \+: dequeue the managing task, makes it leave bunch of Holdings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaskLists_aa8f2c2b832dd2ff6033a28907f09d761}{enqueue\+\_\+managing\+\_\+tasks}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ tasks)
+\begin{DoxyCompactList}\small\item\em enqueue the managing tasks, makes it enter bunch of Holdings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTaskLists_a74105b4286af90e3ec6d0b1b3fbc5792}{dequeue\+\_\+managing\+\_\+tasks}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ tasks)
+\begin{DoxyCompactList}\small\item\em dequeue the managing tasks, makes it leave bunch of Holdings \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}} (Query\+Expr query) const noexcept
+\begin{DoxyCompactList}\small\item\em query the task by given expressions, which is high level self defined \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \mbox{\hyperlink{classTaskLists_a9b2f0dd98ea0a52030055a57fbb73471}{query\+\_\+with\+\_\+name}} (const std\+::string \&task\+\_\+name) const noexcept
+\begin{DoxyCompactList}\small\item\em query the task by given names, which is simply wrapped \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classTaskLists_a36d987f84bd655a36b6638920eab3119}{total\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em this is expected to return the total size of the task, with non-\/privilaged sorted \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \mbox{\hyperlink{classTaskLists_a5c15689a8749d17d6bedc2b6be8c6073}{get\+\_\+all\+\_\+tasks}} () const
+\begin{DoxyCompactList}\small\item\em Get the all tasks object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTaskLists_af48a50c14fc1ca2d384d6dc03a3d42f6}\index{TaskLists@{TaskLists}!dequeue\_managing\_task@{dequeue\_managing\_task}}
+\index{dequeue\_managing\_task@{dequeue\_managing\_task}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{dequeue\_managing\_task()}{dequeue\_managing\_task()}}
+{\footnotesize\ttfamily \label{classTaskLists_af48a50c14fc1ca2d384d6dc03a3d42f6} 
+void Task\+Lists\+::dequeue\+\_\+managing\+\_\+task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$}]{task\+\_\+en\+\_\+managed}{}\end{DoxyParamCaption})}
+
+
+
+\+: dequeue the managing task, makes it leave bunch of Holdings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+en\+\_\+managed} & The waiting managing the task \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaskLists_a74105b4286af90e3ec6d0b1b3fbc5792}\index{TaskLists@{TaskLists}!dequeue\_managing\_tasks@{dequeue\_managing\_tasks}}
+\index{dequeue\_managing\_tasks@{dequeue\_managing\_tasks}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{dequeue\_managing\_tasks()}{dequeue\_managing\_tasks()}}
+{\footnotesize\ttfamily \label{classTaskLists_a74105b4286af90e3ec6d0b1b3fbc5792} 
+void Task\+Lists\+::dequeue\+\_\+managing\+\_\+tasks (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$}]{tasks}{}\end{DoxyParamCaption})}
+
+
+
+dequeue the managing tasks, makes it leave bunch of Holdings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tasks} & The waiting managing the task \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaskLists_aac10653964051721a1ea5a3336c8c819}\index{TaskLists@{TaskLists}!enqueue\_managing\_task@{enqueue\_managing\_task}}
+\index{enqueue\_managing\_task@{enqueue\_managing\_task}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{enqueue\_managing\_task()}{enqueue\_managing\_task()}}
+{\footnotesize\ttfamily \label{classTaskLists_aac10653964051721a1ea5a3336c8c819} 
+void Task\+Lists\+::enqueue\+\_\+managing\+\_\+task (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$}]{task\+\_\+en\+\_\+managed}{}\end{DoxyParamCaption})}
+
+
+
+\+: enqueue the managing task, makes it enter bunch of Holdings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+en\+\_\+managed} & The waiting managing the task \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaskLists_aa8f2c2b832dd2ff6033a28907f09d761}\index{TaskLists@{TaskLists}!enqueue\_managing\_tasks@{enqueue\_managing\_tasks}}
+\index{enqueue\_managing\_tasks@{enqueue\_managing\_tasks}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{enqueue\_managing\_tasks()}{enqueue\_managing\_tasks()}}
+{\footnotesize\ttfamily \label{classTaskLists_aa8f2c2b832dd2ff6033a28907f09d761} 
+void Task\+Lists\+::enqueue\+\_\+managing\+\_\+tasks (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$}]{tasks}{}\end{DoxyParamCaption})}
+
+
+
+enqueue the managing tasks, makes it enter bunch of Holdings 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tasks} & The waiting managing the task \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTaskLists_a5c15689a8749d17d6bedc2b6be8c6073}\index{TaskLists@{TaskLists}!get\_all\_tasks@{get\_all\_tasks}}
+\index{get\_all\_tasks@{get\_all\_tasks}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{get\_all\_tasks()}{get\_all\_tasks()}}
+{\footnotesize\ttfamily \label{classTaskLists_a5c15689a8749d17d6bedc2b6be8c6073} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ Task\+Lists\+::get\+\_\+all\+\_\+tasks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the all tasks object. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ yes, the case \+:) 
+\end{DoxyReturn}
+\Hypertarget{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}\index{TaskLists@{TaskLists}!query@{query}}
+\index{query@{query}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily \label{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ Task\+Lists\+::query (\begin{DoxyParamCaption}\item[{Task\+Lists\+::\+Query\+Expr}]{query}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+query the task by given expressions, which is high level self defined 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & query functions, required to provide how to find a \doxylink{classTask}{Task} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ This, as expected, returns a maybe valid \doxylink{classTask}{Task} Handler lists that is fit the issue 
+\end{DoxyReturn}
+\Hypertarget{classTaskLists_a9b2f0dd98ea0a52030055a57fbb73471}\index{TaskLists@{TaskLists}!query\_with\_name@{query\_with\_name}}
+\index{query\_with\_name@{query\_with\_name}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{query\_with\_name()}{query\_with\_name()}}
+{\footnotesize\ttfamily \label{classTaskLists_a9b2f0dd98ea0a52030055a57fbb73471} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ Task\+Lists\+::query\+\_\+with\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{task\+\_\+name}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+query the task by given names, which is simply wrapped 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+name} & query names, required to provide how to find a \doxylink{classTask}{Task} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ This, as expected, returns a maybe valid \doxylink{classTask}{Task} Handler lists that is fit the issue 
+\end{DoxyReturn}
+\Hypertarget{classTaskLists_a36d987f84bd655a36b6638920eab3119}\index{TaskLists@{TaskLists}!total\_size@{total\_size}}
+\index{total\_size@{total\_size}!TaskLists@{TaskLists}}
+\doxysubsubsection{\texorpdfstring{total\_size()}{total\_size()}}
+{\footnotesize\ttfamily \label{classTaskLists_a36d987f84bd655a36b6638920eab3119} 
+size\+\_\+t Task\+Lists\+::total\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+this is expected to return the total size of the task, with non-\/privilaged sorted 
+
+\begin{DoxyReturn}{Returns}
+size\+\_\+t return the tasklist without any prority filters 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/Task\+Lists.\+h\item 
+Core/Task\+Lists.\+cpp\end{DoxyCompactItemize}

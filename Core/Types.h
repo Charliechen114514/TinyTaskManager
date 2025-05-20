@@ -4,3 +4,21 @@
 using deadline_raw_t = std::chrono::time_point<
     std::chrono::system_clock,
     std::chrono::nanoseconds>;
+
+enum class TaskPriority {
+	/* this is the default */
+	LOW = 0,
+	MEDIUM = 1,
+	HIGH = 2,
+	/* this is the highest */
+	URGENT = 3
+};
+static constexpr ssize_t TaskPriorityMax = static_cast<int>(TaskPriority::URGENT) + 1;
+
+static constexpr std::array<std::string, TaskPriorityMax> TaskPriorityValues = {
+	"LOW", "MEDIUM", "HIGH", "URGENT"
+};
+
+static constexpr inline std::string taskPrioirtyString(const TaskPriority p) {
+	return TaskPriorityValues.at(static_cast<size_t>(p));
+}

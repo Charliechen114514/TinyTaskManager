@@ -1,0 +1,61 @@
+\doxysection{Task Class Reference}
+\hypertarget{classTask}{}\label{classTask}\index{Task@{Task}}
+
+
+\doxylink{classTask}{Task} is the class that represents a task, which contains the task name, description, deadline, and a unique identifier (UUID).  
+
+
+
+
+{\ttfamily \#include $<$Task.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTask_1_1TaskBuilder}{Task\+Builder}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classTask_1_1TaskBuilder}{Task\+Builder} is the class expected to build the \doxylink{classTask}{Task}, as a factory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTask_a64f2b1b188639737af72aa1a32db53df}\label{classTask_a64f2b1b188639737af72aa1a32db53df} 
+{\bfseries Task} (const \mbox{\hyperlink{classTask}{Task}} \&task)
+\item 
+\Hypertarget{classTask_a2c4f98d5c7a960fa766cc834f966efdc}\label{classTask_a2c4f98d5c7a960fa766cc834f966efdc} 
+const \mbox{\hyperlink{classTask}{Task}} \& {\bfseries operator=} (const \mbox{\hyperlink{classTask}{Task}} \&)=delete
+\item 
+\Hypertarget{classTask_abdf46e199a63a7596ee87ade57d13acc}\label{classTask_abdf46e199a63a7596ee87ade57d13acc} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (task\+\_\+name)
+\item 
+\Hypertarget{classTask_a2975965bb107562c0fd853a222fc76fa}\label{classTask_a2975965bb107562c0fd853a222fc76fa} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (discriptions)
+\item 
+\Hypertarget{classTask_a9409ad34b4b003f5a79e9034e6a5d79c}\label{classTask_a9409ad34b4b003f5a79e9034e6a5d79c} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (deadline)
+\item 
+\Hypertarget{classTask_ac34e9f83d79f2bc9fa191e58e8abd68e}\label{classTask_ac34e9f83d79f2bc9fa191e58e8abd68e} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (priority)
+\item 
+\Hypertarget{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d}\label{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d} 
+const Task\+UUID {\bfseries get\+\_\+uuid} () const noexcept
+\item 
+\Hypertarget{classTask_a9b0aea6073aeec0b11056f12ee36e3f8}\label{classTask_a9b0aea6073aeec0b11056f12ee36e3f8} 
+std\+::string {\bfseries to\+Std\+String} () const noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTask_a88a29778c78dfbfd8bdb4ed69abe7fa7}\label{classTask_a88a29778c78dfbfd8bdb4ed69abe7fa7} 
+class {\bfseries Task\+Builder}
+\item 
+\Hypertarget{classTask_a7124d342f3a3087293611ae673887e85}\label{classTask_a7124d342f3a3087293611ae673887e85} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classTask}{Task}} \&lhs, const \mbox{\hyperlink{classTask}{Task}} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classTask}{Task} is the class that represents a task, which contains the task name, description, deadline, and a unique identifier (UUID). 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/Task.\+h\item 
+Core/Task.\+cpp\end{DoxyCompactItemize}

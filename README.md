@@ -12,9 +12,10 @@
 ## 🌟 项目亮点
 
 * 真实可用的任务管理功能，支持任务创建、描述、截止时间等核心要素
+* 支持表格化的控制打印
 * 独特的 **UUID** 唯一标识机制，确保每个任务身份唯一，避免冲突
 * 内置任务列表管理，支持高效的任务入队和遍历
-* 利用 **C++20** 的现代特性，包括智能指针、`std::chrono` 时间处理、类内初始化等，代码风格现代简洁
+* 利用 **C++20** 的现代特性，包括智能指针、`std::chrono` 时间处理, ranges with view等
 * 轻量无依赖，易于集成与扩展，适合多种平台和环境
 * 以及笔者非常感谢GPT大跌帮助我偷懒这个ReadMe
 ---
@@ -22,27 +23,27 @@
 ## 🚀 快速开始
 
 ```cpp
-#include "Core/Task.h"
-#include "Core/TaskLists.h"
-#include <iostream>
-
-int main() {
 	TaskLists tasklists;
 
 	auto task = Task::TaskBuilder()
 	                .set_name("Learn Modern C++20")
 	                .set_description("My Formal Try in Modern C++")
 	                .set_ddl(std::chrono::system_clock::now() + std::chrono::hours(72))
+	                .set_property(TaskPriority::HIGH)
 	                .build_finish();
 
 	tasklists.enqueue_managing_task(task);
 
-	for (const auto& t : tasklists.get_all_tasks()) {
-		std::cout << "Format Print: \n"
-		          << task->toStdString() << "\n";
-	}
+	auto task2 = Task::TaskBuilder()
+	                 .set_name("Learn CMake")
+	                 .set_description("Attempt to make sense with CMake")
+	                 .set_ddl(std::chrono::system_clock::now() + std::chrono::hours(72))
+	                 .set_property(TaskPriority::MEDIUM)
+	                 .build_finish();
+
+	tasklists.enqueue_managing_task(task2);
+	std::cout << TasksListView::format_tasklists_view(tasklists.get_all_tasks());
 	return 0;
-}
 ```
 
 ---
@@ -53,6 +54,30 @@ int main() {
 * 需要支持 C++20 的编译器（推荐 GCC 15+, 因为我只写了这个测试）
 * 无额外第三方依赖，纯净且高效
 
+对于应用程序的构建本身，十分的简单:
+下面的shell命令将会生成应用程序测试本体和测试程序
+```shell
+	mkdir build && cd build
+	cmake ..
+	cmake --build . --target=all
+```
+运行在本机上的构建是否可靠，您可以运行ctest
+```shell
+	mkdir build && cd build
+	cmake ..
+	cmake --build . --target=all
+	cd test
+	ctest
+```
+
+项目支持Doxygen自动化生成开发文档，您可以非常轻松的按照下面的步骤生成Doxygen自动化的文档以供二次开发参考
+
+```shell
+	mkdir build && cd build
+	cmake ..
+	cmake --build . --target=doc
+```
+
 ---
 
 ## 🛠️ 功能模块（目前）
@@ -61,6 +86,7 @@ int main() {
 | --------- | ----------------------- | ------- |
 | Task      | 任务对象，封装名称、描述和截止时间       | 📝      |
 | TaskLists | 任务容器，管理所有任务的集合          | 📋      |
+| TaskView | 视图生成器，生成视图字符串用以展示          | 👀      |
 | UUID支持    | 唯一标识生成，保证任务唯一性          | 🔑      |
 | 时间处理      | 使用 `std::chrono` 完成时间管理 | ⏰       |
 
@@ -69,8 +95,6 @@ int main() {
 ## 🎯 未来规划
 
 * 集成更多任务优先级和状态管理
-* 增加基于时间的提醒和通知功能
-* 支持多线程异步任务处理
-* 提供网络同步和多设备协同功能
+* 支持更加丰富的过滤功能
 
 ---

@@ -39,14 +39,28 @@ Task::TaskBuilder& Task::TaskBuilder::
 	return *this;
 }
 
+Task::TaskBuilder& Task::TaskBuilder::
+    set_property(const TaskPriority p) noexcept {
+	this->_tmp->set_priority(p);
+	return *this;
+}
+
 Task::Task()
     : uuid(UUIDTools::gen_uuid()) {
 }
 
+Task::Task(const Task& task)
+    : uuid(UUIDTools::gen_uuid()) {
+	this->set_task_name(task.task_name);
+	this->set_discriptions(task.discriptions);
+	this->set_deadline(task.deadline);
+}
+
 std::string Task::toStdString() const noexcept {
 	/* at each line, we display the readable strings */
-	return std::format("Task Name: {}\nDescription: {}\nDDL: {}",
+	return std::format("Task Name: {}\nDescription: {}\nDDL: {}\nPriority: {}",
 	                   this->get_task_name(),
 	                   this->get_discriptions(),
-	                   ChronoTools::fromDdlTimeToReadableString(this->get_deadline()));
+	                   ChronoTools::fromDdlTimeToReadableString(this->get_deadline()),
+	                   taskPrioirtyString(this->get_priority()));
 }

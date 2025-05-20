@@ -1,0 +1,60 @@
+\doxysection{Task.\+h}
+\hypertarget{Task_8h_source}{}\label{Task_8h_source}\index{Core/Task.h@{Core/Task.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Tools/class\_helper.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Types.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTask}{Task}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }Task\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ Task();}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ task\_name\ \{\};}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ discriptions\ \{\};}
+\DoxyCodeLine{00019\ \ \ \ \ deadline\_raw\_t\ deadline\ \{\};}
+\DoxyCodeLine{00020\ \ \ \ \ TaskPriority\ priority\ \{\};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*\ Task\ ID\ */}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{using\ }TaskUUID\ =\ std::string;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ TaskUUID\ uuid;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ Task(\textcolor{keyword}{const}\ Task\&\ task);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ \ \ \ Oh,\ I\ disabled\ this\ because\ uuid\ must\ be\ unique}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ Task\&\ operator=(\textcolor{keyword}{const}\ Task\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ PROPERTY\_GET\_SET(task\_name);}
+\DoxyCodeLine{00033\ \ \ \ \ PROPERTY\_GET\_SET(discriptions);}
+\DoxyCodeLine{00034\ \ \ \ \ PROPERTY\_GET\_SET(deadline);}
+\DoxyCodeLine{00035\ \ \ \ \ PROPERTY\_GET\_SET(priority);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ TaskUUID\ get\_uuid()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ uuid;\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ toStdString()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{/*\ this\ is\ the\ function\ that\ helps\ to\ check\ if\ the\ task\ is}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ *\ equal\ */}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Task\&\ lhs,\ \textcolor{keyword}{const}\ Task\&\ rhs)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs.get\_uuid()\ ==\ rhs.get\_uuid();}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTask_1_1TaskBuilder}{TaskBuilder}};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{class\ }TaskBuilder\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ TaskBuilder()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ DISABLE\_COPY(TaskBuilder);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ when\ building\ is\ finished,\ call\ this\ */}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>\ build\_finish();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ At\ any\ level,\ only\ this\ is\ expected\ */}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_ddl(deadline\_raw\_t\ ddl)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_description(\textcolor{keyword}{const}\ std::string\&\ desp)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_name(\textcolor{keyword}{const}\ std::string\&\ desp)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_property(\textcolor{keyword}{const}\ TaskPriority\ p)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>\ \_tmp\ =\ std::shared\_ptr<Task>(\textcolor{keyword}{new}\ Task());}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

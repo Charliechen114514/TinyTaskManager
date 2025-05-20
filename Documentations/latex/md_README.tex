@@ -1,0 +1,85 @@
+\chapter{Task\+Manager 🚀📋}
+\hypertarget{md_README}{}\label{md_README}\index{TaskManager 🚀📋@{TaskManager 🚀📋}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+
+
+      
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Task\+Manager\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}是一个\+WIP的超级简单的可用任务管理工具，这个项目是笔者练习\+C++20的项目🧑‍💻✨\hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{🌟 项目亮点}{🌟 项目亮点}}\label{md_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item 真实可用的任务管理功能，支持任务创建、描述、截止时间等核心要素
+\item 独特的 {\bfseries{UUID}} 唯一标识机制，确保每个任务身份唯一，避免冲突
+\item 内置任务列表管理，支持高效的任务入队和遍历
+\item 利用 {\bfseries{C++20}} 的现代特性，包括智能指针、{\ttfamily std\+::chrono} 时间处理、类内初始化等，代码风格现代简洁
+\item 轻量无依赖，易于集成与扩展，适合多种平台和环境 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysection{\texorpdfstring{\texorpdfstring{$\ast$}{*} 以及笔者非常感谢\+GPT大跌帮助我偷懒这个\+Read\+Me}{\texorpdfstring{$\ast$}{*} 以及笔者非常感谢\+GPT大跌帮助我偷懒这个\+Read\+Me}}\label{md_README_autotoc_md2}
+\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{🚀 快速开始}{🚀 快速开始}}\label{md_README_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Core/Task.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Core/TaskLists.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTaskLists}{TaskLists}}\ tasklists;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ task\ =\ \mbox{\hyperlink{classTask_1_1TaskBuilder}{Task::TaskBuilder}}()}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .set\_name(\textcolor{stringliteral}{"{}Learn\ Modern\ C++20"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .set\_description(\textcolor{stringliteral}{"{}My\ Formal\ Try\ in\ Modern\ C++"{}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .set\_ddl(std::chrono::system\_clock::now()\ +\ std::chrono::hours(72))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .build\_finish();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ tasklists.\mbox{\hyperlink{classTaskLists_aac10653964051721a1ea5a3336c8c819}{enqueue\_managing\_task}}(task);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ t\ :\ tasklists.\mbox{\hyperlink{classTaskLists_a5c15689a8749d17d6bedc2b6be8c6073}{get\_all\_tasks}}())\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Format\ Print:\ \(\backslash\)n"{}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ task-\/>toStdString()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md5}{}\doxysection{\texorpdfstring{📦 依赖与构建}{📦 依赖与构建}}\label{md_README_autotoc_md5}
+
+\begin{DoxyItemize}
+\item 使用 {\bfseries{CMake}} 进行项目构建
+\item 需要支持 C++20 的编译器（推荐 GCC 15+, 因为我只写了这个测试）
+\item 无额外第三方依赖，纯净且高效
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md7}{}\doxysection{\texorpdfstring{🛠️ 功能模块（目前）}{🛠️ 功能模块（目前）}}\label{md_README_autotoc_md7}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 模块   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 功能描述   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Emoji标识    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 模块   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 功能描述   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Emoji标识    }\\\cline{1-3}
+\endhead
+\doxylink{classTask}{Task}   &任务对象，封装名称、描述和截止时间   &📝    \\\cline{1-3}
+\doxylink{classTaskLists}{Task\+Lists}   &任务容器，管理所有任务的集合   &📋    \\\cline{1-3}
+UUID支持   &唯一标识生成，保证任务唯一性   &🔑    \\\cline{1-3}
+时间处理   &使用 {\ttfamily std\+::chrono} 完成时间管理   &⏰   \\\cline{1-3}
+\end{longtabu}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md9}{}\doxysection{\texorpdfstring{🎯 未来规划}{🎯 未来规划}}\label{md_README_autotoc_md9}
+
+\begin{DoxyItemize}
+\item 集成更多任务优先级和状态管理
+\item 增加基于时间的提醒和通知功能
+\item 支持多线程异步任务处理
+\item 提供网络同步和多设备协同功能
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ 

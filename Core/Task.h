@@ -17,14 +17,22 @@ private:
 	std::string task_name {};
 	std::string discriptions {};
 	deadline_raw_t deadline {};
+	TaskPriority priority {};
 	/* Task ID */
 	using TaskUUID = std::string;
 	const TaskUUID uuid;
 
 public:
+	Task(const Task& task);
+	/*
+	    Oh, I disabled this because uuid must be unique
+	 */
+	const Task& operator=(const Task&) = delete;
+
 	PROPERTY_GET_SET(task_name);
 	PROPERTY_GET_SET(discriptions);
 	PROPERTY_GET_SET(deadline);
+	PROPERTY_GET_SET(priority);
 	const TaskUUID get_uuid() const noexcept { return uuid; }
 	std::string toStdString() const noexcept;
 	/* this is the function that helps to check if the task is
@@ -49,6 +57,7 @@ public:
 		TaskBuilder& set_ddl(deadline_raw_t ddl) noexcept;
 		TaskBuilder& set_description(const std::string& desp) noexcept;
 		TaskBuilder& set_name(const std::string& desp) noexcept;
+		TaskBuilder& set_property(const TaskPriority p) noexcept;
 
 	private:
 		std::shared_ptr<Task> _tmp = std::shared_ptr<Task>(new Task());

@@ -1,0 +1,106 @@
+\doxysection{Tasks\+List\+View Class Reference}
+\hypertarget{classTasksListView}{}\label{classTasksListView}\index{TasksListView@{TasksListView}}
+
+
+Task\+Views Only make a simple jobs on how to display a \doxylink{classTaskLists}{Task\+Lists} with given Views, required only.  
+
+
+
+
+{\ttfamily \#include $<$Task\+Views.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTasksListView_a3dbdd7bb4de13e963071817f2ee29a95}\label{classTasksListView_a3dbdd7bb4de13e963071817f2ee29a95} 
+enum {\bfseries COL\+\_\+\+INDEX} \{ {\bfseries NAME}
+, {\bfseries DESP}
+, {\bfseries DDL}
+, {\bfseries PRIORITY}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTasksListView_acdc3d05a872bf879998dc9dc8eb7caa6}\label{classTasksListView_acdc3d05a872bf879998dc9dc8eb7caa6} 
+{\bfseries DISABLE\+\_\+\+COPY} (\mbox{\hyperlink{classTasksListView}{Tasks\+List\+View}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classTasksListView_a37ed9af864a9cf96c8e1540cd7ee8c25}{format\+\_\+tasklists\+\_\+view}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&l)
+\begin{DoxyCompactList}\small\item\em format\+\_\+tasklists\+\_\+view makes a default actions \end{DoxyCompactList}\item 
+static std\+::string \mbox{\hyperlink{classTasksListView_ab09d76705145d10e1583576ecbbb2d36}{format\+\_\+tasklists\+\_\+view}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&l, std\+::function$<$ std\+::string(const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&l)$>$ f)
+\begin{DoxyCompactList}\small\item\em format\+\_\+tasklists\+\_\+view makes a default actions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr std\+::array$<$ std\+::string, 4 $>$ \mbox{\hyperlink{classTasksListView_a2de552e5c8b2bcf3200ca4558d150494}{headers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Task\+Views Only make a simple jobs on how to display a \doxylink{classTaskLists}{Task\+Lists} with given Views, required only. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTasksListView_a37ed9af864a9cf96c8e1540cd7ee8c25}\index{TasksListView@{TasksListView}!format\_tasklists\_view@{format\_tasklists\_view}}
+\index{format\_tasklists\_view@{format\_tasklists\_view}!TasksListView@{TasksListView}}
+\doxysubsubsection{\texorpdfstring{format\_tasklists\_view()}{format\_tasklists\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classTasksListView_a37ed9af864a9cf96c8e1540cd7ee8c25} 
+std\+::string Tasks\+List\+View\+::format\+\_\+tasklists\+\_\+view (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&}]{l}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+format\+\_\+tasklists\+\_\+view makes a default actions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & l indicates the sorted sequence of tasks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string\+: the format string waiting for direct display 
+\end{DoxyReturn}
+\Hypertarget{classTasksListView_ab09d76705145d10e1583576ecbbb2d36}\index{TasksListView@{TasksListView}!format\_tasklists\_view@{format\_tasklists\_view}}
+\index{format\_tasklists\_view@{format\_tasklists\_view}!TasksListView@{TasksListView}}
+\doxysubsubsection{\texorpdfstring{format\_tasklists\_view()}{format\_tasklists\_view()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classTasksListView_ab09d76705145d10e1583576ecbbb2d36} 
+std\+::string Tasks\+List\+View\+::format\+\_\+tasklists\+\_\+view (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&}]{l}{, }\item[{std\+::function$<$ std\+::string(const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&l)$>$}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+format\+\_\+tasklists\+\_\+view makes a default actions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & l indicates the sorted sequence of tasks \\
+\hline
+{\em f} & for developers, of you wanna define your own printer just provide functions you like \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTasksListView_a2de552e5c8b2bcf3200ca4558d150494}\index{TasksListView@{TasksListView}!headers@{headers}}
+\index{headers@{headers}!TasksListView@{TasksListView}}
+\doxysubsubsection{\texorpdfstring{headers}{headers}}
+{\footnotesize\ttfamily \label{classTasksListView_a2de552e5c8b2bcf3200ca4558d150494} 
+std\+::array$<$std\+::string, 4$>$ Tasks\+List\+View\+::headers\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Name"{}},\ \textcolor{stringliteral}{"{}Description"{}},\ \textcolor{stringliteral}{"{}Deadline"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Priority"{}}}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/Task\+Views.\+h\item 
+Core/Task\+Views.\+cpp\end{DoxyCompactItemize}

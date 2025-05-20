@@ -1,0 +1,22 @@
+\doxysection{class\+\_\+helper.\+h}
+\hypertarget{class__helper_8h_source}{}\label{class__helper_8h_source}\index{Tools/class\_helper.h@{Tools/class\_helper.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DISABLE\_COPY(ClassType)\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ ClassType(const\ ClassType\&)\ =\ delete;\ \(\backslash\)}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ const\ ClassType\&\ operator=(const\ ClassType\&)\ =\ delete;}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \_\_PROPERTY\_GET\_SET(type,\ property)\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ type\ get\_\#\#property()\ const\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ property;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ inline\ void\ set\_\#\#property(const\ type\&\ \_value)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ this-\/>property\ =\ \_value;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ PROPERTY\_GET\_SET(property)\ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \_\_PROPERTY\_GET\_SET(typeof(property),\ property)}}
+
+\end{DoxyCode}
