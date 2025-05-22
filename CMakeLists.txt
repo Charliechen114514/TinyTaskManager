@@ -48,10 +48,12 @@ add_executable(TaskManager main.cpp)
 target_link_libraries(TaskManager PRIVATE tasklib)
 add_subdirectory(test)
 
+add_subdirectory(examples)
+
 # Documentations issue
 find_package(Doxygen)
 if (DOXYGEN_FOUND)
-    message(STATUS "Doxygen found, generating documentation")
+    message(STATUS "Doxygen found, generating documentation is acceptable")
     set(DOXYFILE_IN ${CMAKE_SOURCE_DIR}/Doxyfile)
     add_custom_target(doc
     COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_IN}
