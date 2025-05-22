@@ -118,14 +118,21 @@ public:
 	 *
 	 * @param task_en_managed: The waiting managing the task
 	 */
-	void enqueue_managing_task(std::shared_ptr<Task> task_en_managed);
+	void enqueue_managing_task(const std::shared_ptr<Task> task_en_managed);
+
 	/**
 	 * @brief: dequeue the managing task, makes it leave bunch of Holdings
 	 *
 	 * @param task_en_managed: The waiting managing the task
 	 */
-	void dequeue_managing_task(std::shared_ptr<Task> task_en_managed);
+	void dequeue_managing_task(const std::shared_ptr<Task> task_en_managed);
 
+	/**
+	 * @brief: enqueue the managing task, makes it enter bunch of Holdings
+	 *
+	 * @param packs The waiting managing the task
+	 */
+	void enqueue_managing_tasks(const std::vector<Task::TaskPack>& packs);
 	/**
 	 * @brief enqueue the managing tasks, makes it enter bunch of Holdings
 	 *

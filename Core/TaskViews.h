@@ -1,5 +1,6 @@
 #pragma once
-#include "TaskLists.h"
+#include "Task.h"
+#include <functional>
 /**
  * @brief TaskViews Only make a
     simple jobs on how to display a TaskLists with given

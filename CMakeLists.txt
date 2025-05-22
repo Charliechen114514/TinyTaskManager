@@ -32,7 +32,9 @@ set(CoreSrc
     Core/TaskLists.h
     Core/TaskLists.cpp
     Core/TaskViews.h
-    Core/TaskViews.cpp)
+    Core/TaskViews.cpp
+    Core/TaskFilters.cpp
+    Core/TaskFilters.h)
 
 set(ToolsSrc
     Tools/class_helper.h

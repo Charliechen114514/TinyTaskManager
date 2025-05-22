@@ -1,16 +1,29 @@
 #include "TaskLists.h"
 
-void TaskLists::enqueue_managing_task(std::shared_ptr<Task> task_en_managed) {
+void TaskLists::enqueue_managing_task(const std::shared_ptr<Task> task_en_managed) {
 	tasklists.insert(task_en_managed);
 }
 
-void TaskLists::dequeue_managing_task(std::shared_ptr<Task> task_en_managed) {
+void TaskLists::dequeue_managing_task(const std::shared_ptr<Task> task_en_managed) {
 	tasklists.erase(task_en_managed);
 }
 
 void TaskLists::enqueue_managing_tasks(std::vector<std::shared_ptr<Task>> tasks) {
 	for (const auto& t : tasks) {
 		tasklists.insert(t);
+	}
+}
+
+void TaskLists::enqueue_managing_tasks(const std::vector<Task::TaskPack>& packs) {
+
+	for (const auto& each_create_session : packs) {
+		auto task = Task::TaskBuilder()
+		                .set_name(each_create_session.task_name)
+		                .set_description(each_create_session.discriptions)
+		                .set_ddl(each_create_session.deadline)
+		                .set_property(each_create_session.priority)
+		                .build_finish();
+		tasklists.insert(task);
 	}
 }
 

@@ -62,4 +62,16 @@ public:
 	private:
 		std::shared_ptr<Task> _tmp = std::shared_ptr<Task>(new Task());
 	};
+
+	/**
+	 * @brief 	TaskPack provides a easy interfaces for one session build,
+	 *			This is using for the bunch level create for TaskLists
+	 *
+	 */
+	struct TaskPack {
+		std::string task_name {};
+		std::string discriptions {};
+		deadline_raw_t deadline {};
+		TaskPriority priority {};
+	};
 };
