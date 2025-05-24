@@ -1,4 +1,18 @@
 #pragma once
+/**
+ * @file format_time.h
+ * @author Charliechen114514 (chengh1922@mails.jlu.edu.cn)
+ * @brief This file provides the time format tools, which is including
+ *        1. convert the time into a readable string,
+ *        2. convert the UTC Time to local Time,
+ *
+ * @version 0.1
+ * @date 2025-05-22
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
+
 #include "Core/Types.h"
 #include <string>
 namespace ChronoTools {

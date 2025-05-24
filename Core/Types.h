@@ -13,7 +13,7 @@ enum class TaskPriority {
 	/* this is the highest */
 	URGENT = 3
 };
-static constexpr ssize_t TaskPriorityMax = static_cast<int>(TaskPriority::URGENT) + 1;
+static constexpr int TaskPriorityMax = static_cast<int>(TaskPriority::URGENT) + 1;
 
 static constexpr std::array<std::string, TaskPriorityMax> TaskPriorityValues = {
 	"LOW", "MEDIUM", "HIGH", "URGENT"

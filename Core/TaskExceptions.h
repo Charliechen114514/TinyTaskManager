@@ -1,3 +1,14 @@
+/**
+ * @file TaskExceptions.h
+ * @author Charliechen114514 (chengh1922@mails.jlu.edu.cn)
+ * @brief Task Exceptions abstracts
+ * @version 0.1
+ * @date 2025-05-24
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
+
 #pragma once
 #include <stdexcept>
 /**

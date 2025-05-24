@@ -1,3 +1,14 @@
+/**
+ * @file Task.h
+ * @author Charliechen114514 (chengh1922@mails.jlu.edu.cn)
+ * @brief Task Core Defines
+ * @version 0.1
+ * @date 2025-05-22
+ *
+ * @copyright Copyright (c) 2025
+ *
+ */
+
 #pragma once
 #include "Tools/class_helper.h"
 #include "Types.h"

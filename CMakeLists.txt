@@ -43,7 +43,12 @@ set(ToolsSrc
     Tools/uuid_generator.h
     Tools/uuid_generator.cpp)
 
-add_library(tasklib STATIC ${CoreSrc} ${ToolsSrc})
+set(IOSrc
+    IO/IOBaseDriver.h
+    IO/interative_io/IOFrontEnd.h)
+
+
+add_library(tasklib STATIC ${CoreSrc} ${ToolsSrc} ${IOSrc})
 target_include_directories(tasklib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 add_executable(TaskManager main.cpp)
