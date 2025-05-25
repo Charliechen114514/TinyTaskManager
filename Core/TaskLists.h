@@ -122,7 +122,7 @@ public:
 	 *
 	 * @return size_t return the tasklist without any prority filters
 	 */
-	inline size_t total_size() { return tasklists.size(); }
+	inline size_t total_size() const noexcept { return tasklists.size(); }
 
 	/**
 	 * @brief Get the all tasks object
