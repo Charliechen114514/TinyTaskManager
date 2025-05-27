@@ -1,0 +1,47 @@
+\doxysection{Core/\+Task\+Filters.h File Reference}
+\hypertarget{TaskFilters_8h}{}\label{TaskFilters_8h}\index{Core/TaskFilters.h@{Core/TaskFilters.h}}
+
+
+Files implement the task filters, which is used to filter the tasklists show, that means.  
+
+
+{\ttfamily \#include "{}Task.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAbstractTaskFilters}{Abstract\+Task\+Filters}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structAbstractTaskFilters}{Abstract\+Task\+Filters} defines. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structTaskFilterDrive}{Task\+Filter\+Drive}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structTaskFilterDrive}{Task\+Filter\+Drive} collects the filters and make drive. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structNameContainsFilter}{Name\+Contains\+Filter}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structNameContainsFilter}{Name\+Contains\+Filter} provides the common name filters. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPriorityFilters}{Priority\+Filters}}
+\item 
+struct \mbox{\hyperlink{structLeavingTimeFilters}{Leaving\+Time\+Filters}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Files implement the task filters, which is used to filter the tasklists show, that means. 
+
+\begin{DoxyAuthor}{Author}
+Charliechen114514 (\href{mailto:chengh1922@mails.jlu.edu.cn}{\texttt{ chengh1922@mails.\+jlu.\+edu.\+cn}})
+\begin{DoxyEnumerate}
+\item one should query from the physical tasklists
+\item from the tasklists, we get the raw tasks
+\item we filter the tasks by the filters
+\item we show the filtered tasks by sending it to Task\+Lists\+View 
+\end{DoxyEnumerate}
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/22 
+\end{DoxyDate}
+\begin{DoxyNote}{Note}
+I Know the std\+::ranges and std\+::view sessions, but I decided to make an own by myself
+\end{DoxyNote}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}

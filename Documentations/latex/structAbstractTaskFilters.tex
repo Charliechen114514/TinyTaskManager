@@ -1,0 +1,55 @@
+\doxysection{Abstract\+Task\+Filters Struct Reference}
+\hypertarget{structAbstractTaskFilters}{}\label{structAbstractTaskFilters}\index{AbstractTaskFilters@{AbstractTaskFilters}}
+
+
+\doxylink{structAbstractTaskFilters}{Abstract\+Task\+Filters} defines.  
+
+
+
+
+{\ttfamily \#include $<$Task\+Filters.\+h$>$}
+
+Inheritance diagram for Abstract\+Task\+Filters\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structAbstractTaskFilters}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0}{is\+\_\+current\+\_\+satified}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&task\+\_\+handle) const =0
+\begin{DoxyCompactList}\small\item\em one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structAbstractTaskFilters}{Abstract\+Task\+Filters} defines. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0}\index{AbstractTaskFilters@{AbstractTaskFilters}!is\_current\_satified@{is\_current\_satified}}
+\index{is\_current\_satified@{is\_current\_satified}!AbstractTaskFilters@{AbstractTaskFilters}}
+\doxysubsubsection{\texorpdfstring{is\_current\_satified()}{is\_current\_satified()}}
+{\footnotesize\ttfamily \label{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0} 
+virtual bool Abstract\+Task\+Filters\+::is\+\_\+current\+\_\+satified (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&}]{task\+\_\+handle}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the task\+\_\+handle can pass the filters 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20}{Leaving\+Time\+Filters}}, \mbox{\hyperlink{structNameContainsFilter_a75037c2436ba2899fe3b0fb145433794}{Name\+Contains\+Filter}}, and \mbox{\hyperlink{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f}{Priority\+Filters}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\mbox{\hyperlink{TaskFilters_8h}{Task\+Filters.\+h}}\end{DoxyCompactItemize}

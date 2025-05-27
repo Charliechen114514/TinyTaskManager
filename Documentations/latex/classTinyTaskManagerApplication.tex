@@ -1,0 +1,95 @@
+\doxysection{Tiny\+Task\+Manager\+Application Class Reference}
+\hypertarget{classTinyTaskManagerApplication}{}\label{classTinyTaskManagerApplication}\index{TinyTaskManagerApplication@{TinyTaskManagerApplication}}
+
+
+Application Level class abstractions, make it simple in main.  
+
+
+
+
+{\ttfamily \#include $<$application.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classTinyTaskManagerApplication_a5bb8d60af7aee9a1506d0390f34d9996}\label{classTinyTaskManagerApplication_a5bb8d60af7aee9a1506d0390f34d9996} 
+{\bfseries DISABLE\+\_\+\+COPY\+\_\+\+MOVE} (\mbox{\hyperlink{classTinyTaskManagerApplication}{Tiny\+Task\+Manager\+Application}})
+\item 
+\Hypertarget{classTinyTaskManagerApplication_a78b9cd3a921c3dce3301e9b4796c8373}\label{classTinyTaskManagerApplication_a78b9cd3a921c3dce3301e9b4796c8373} 
+void {\bfseries app\+\_\+loop} ()
+\begin{DoxyCompactList}\small\item\em Application loop, this is the main loop of the application. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structUiMenu}{Ui\+Menu}} \& \mbox{\hyperlink{classTinyTaskManagerApplication_aba9bc673b0b2d004de797ea1a63541ab}{menu\+\_\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the menu instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCommandParser}{Command\+Parser}} \& \mbox{\hyperlink{classTinyTaskManagerApplication_a13efef42a78b7a134376e3a8e9a5c7e1}{parser\+\_\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the parser instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structStandardShellIO}{Standard\+Shell\+IO}} \& \mbox{\hyperlink{classTinyTaskManagerApplication_a10f9e8cfdd45aa8110d31b9fa3920dd1}{shell\+\_\+io\+\_\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the shell IO instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classTinyTaskManagerApplication}{Tiny\+Task\+Manager\+Application}} \& \mbox{\hyperlink{classTinyTaskManagerApplication_a0e7e732d98ea459bd69fe60b42208dfc}{application\+\_\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the application instance, this is a singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Application Level class abstractions, make it simple in main. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTinyTaskManagerApplication_a0e7e732d98ea459bd69fe60b42208dfc}\index{TinyTaskManagerApplication@{TinyTaskManagerApplication}!application\_instance@{application\_instance}}
+\index{application\_instance@{application\_instance}!TinyTaskManagerApplication@{TinyTaskManagerApplication}}
+\doxysubsubsection{\texorpdfstring{application\_instance()}{application\_instance()}}
+{\footnotesize\ttfamily \label{classTinyTaskManagerApplication_a0e7e732d98ea459bd69fe60b42208dfc} 
+static \mbox{\hyperlink{classTinyTaskManagerApplication}{Tiny\+Task\+Manager\+Application}} \& Tiny\+Task\+Manager\+Application\+::application\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Get the application instance, this is a singleton. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{classTinyTaskManagerApplication}{Tiny\+Task\+Manager\+Application}\& 
+\end{DoxyReturn}
+\Hypertarget{classTinyTaskManagerApplication_aba9bc673b0b2d004de797ea1a63541ab}\index{TinyTaskManagerApplication@{TinyTaskManagerApplication}!menu\_instance@{menu\_instance}}
+\index{menu\_instance@{menu\_instance}!TinyTaskManagerApplication@{TinyTaskManagerApplication}}
+\doxysubsubsection{\texorpdfstring{menu\_instance()}{menu\_instance()}}
+{\footnotesize\ttfamily \label{classTinyTaskManagerApplication_aba9bc673b0b2d004de797ea1a63541ab} 
+\mbox{\hyperlink{structUiMenu}{Ui\+Menu}} \& Tiny\+Task\+Manager\+Application\+::menu\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the menu instance. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structUiMenu}{Ui\+Menu}\& 
+\end{DoxyReturn}
+\Hypertarget{classTinyTaskManagerApplication_a13efef42a78b7a134376e3a8e9a5c7e1}\index{TinyTaskManagerApplication@{TinyTaskManagerApplication}!parser\_instance@{parser\_instance}}
+\index{parser\_instance@{parser\_instance}!TinyTaskManagerApplication@{TinyTaskManagerApplication}}
+\doxysubsubsection{\texorpdfstring{parser\_instance()}{parser\_instance()}}
+{\footnotesize\ttfamily \label{classTinyTaskManagerApplication_a13efef42a78b7a134376e3a8e9a5c7e1} 
+\mbox{\hyperlink{structCommandParser}{Command\+Parser}} \& Tiny\+Task\+Manager\+Application\+::parser\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the parser instance. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structCommandParser}{Command\+Parser}\& 
+\end{DoxyReturn}
+\Hypertarget{classTinyTaskManagerApplication_a10f9e8cfdd45aa8110d31b9fa3920dd1}\index{TinyTaskManagerApplication@{TinyTaskManagerApplication}!shell\_io\_instance@{shell\_io\_instance}}
+\index{shell\_io\_instance@{shell\_io\_instance}!TinyTaskManagerApplication@{TinyTaskManagerApplication}}
+\doxysubsubsection{\texorpdfstring{shell\_io\_instance()}{shell\_io\_instance()}}
+{\footnotesize\ttfamily \label{classTinyTaskManagerApplication_a10f9e8cfdd45aa8110d31b9fa3920dd1} 
+\mbox{\hyperlink{structStandardShellIO}{Standard\+Shell\+IO}} \& Tiny\+Task\+Manager\+Application\+::shell\+\_\+io\+\_\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the shell IO instance. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{structStandardShellIO}{Standard\+Shell\+IO}\& 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Application/\mbox{\hyperlink{application_8h}{application.\+h}}\item 
+Application/application.\+cpp\end{DoxyCompactItemize}

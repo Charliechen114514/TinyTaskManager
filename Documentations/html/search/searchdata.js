@@ -1,24 +1,36 @@
 var indexSectionsWithContent =
 {
-  0: "bdefgqst以依功快未项🌟🎯📦🚀🛠",
-  1: "bst",
-  2: "defgqt",
-  3: "t🚀"
+  0: "abcdefgiklmnpqrstuw以依功快未项🌟🎯📦🚀🛠",
+  1: "abcilnpstu",
+  2: "abfimptu",
+  3: "adefgilmpqrstw",
+  4: "ack",
+  5: "cm",
+  6: "t🚀",
+  7: "i"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "pages"
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "typedefs",
+  6: "pages",
+  7: "concepts"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Functions",
-  3: "Pages"
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Typedefs",
+  6: "Pages",
+  7: "Concepts"
 };
 

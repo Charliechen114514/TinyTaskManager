@@ -9,6 +9,12 @@
 	ClassType(const ClassType&) = delete; \
 	const ClassType& operator=(const ClassType&) = delete;
 
+#define DISABLE_COPY_MOVE(ClassType)                       \
+	ClassType(const ClassType&) = delete;                  \
+	const ClassType& operator=(const ClassType&) = delete; \
+	ClassType(ClassType&&) = delete;                       \
+	const ClassType& operator=(ClassType&&) = delete;
+
 /**
  * @brief For Developers who wanna get a convienent
  *        Getter and Setter, this is the macro that can low level

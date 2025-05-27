@@ -1,0 +1,53 @@
+\doxysection{Leaving\+Time\+Filters Struct Reference}
+\hypertarget{structLeavingTimeFilters}{}\label{structLeavingTimeFilters}\index{LeavingTimeFilters@{LeavingTimeFilters}}
+Inheritance diagram for Leaving\+Time\+Filters\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structLeavingTimeFilters}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structLeavingTimeFilters_aae84eee3955897cbf33b925c79f612f1}\label{structLeavingTimeFilters_aae84eee3955897cbf33b925c79f612f1} 
+{\bfseries Leaving\+Time\+Filters} (const std\+::chrono\+::seconds leaving\+\_\+time)
+\item 
+virtual bool \mbox{\hyperlink{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20}{is\+\_\+current\+\_\+satified}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&task\+\_\+handle) const override
+\begin{DoxyCompactList}\small\item\em one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structLeavingTimeFilters_a616637d3350cda1cfb6029f4fb5f4752}\label{structLeavingTimeFilters_a616637d3350cda1cfb6029f4fb5f4752} 
+const std\+::chrono\+::seconds {\bfseries leaving\+\_\+time}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20}\index{LeavingTimeFilters@{LeavingTimeFilters}!is\_current\_satified@{is\_current\_satified}}
+\index{is\_current\_satified@{is\_current\_satified}!LeavingTimeFilters@{LeavingTimeFilters}}
+\doxysubsubsection{\texorpdfstring{is\_current\_satified()}{is\_current\_satified()}}
+{\footnotesize\ttfamily \label{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20} 
+bool Leaving\+Time\+Filters\+::is\+\_\+current\+\_\+satified (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&}]{task\+\_\+handle}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the task\+\_\+handle can pass the filters 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0}{Abstract\+Task\+Filters}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/\mbox{\hyperlink{TaskFilters_8h}{Task\+Filters.\+h}}\item 
+Core/Task\+Filters.\+cpp\end{DoxyCompactItemize}

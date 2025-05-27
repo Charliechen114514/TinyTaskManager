@@ -1,0 +1,76 @@
+\doxysection{Tools/format\+\_\+time.h File Reference}
+\hypertarget{format__time_8h}{}\label{format__time_8h}\index{Tools/format\_time.h@{Tools/format\_time.h}}
+
+
+This file provides the time format tools, which is including.  
+
+
+{\ttfamily \#include "{}Core/\+Types.\+h"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{format__time_8h_a7b877dbca019e78deea4a37166a1f386}{Chrono\+Tools\+::from\+Ddl\+Time\+To\+Readable\+String}} (const deadline\+\_\+raw\+\_\+t \&raw\+\_\+time)
+\begin{DoxyCompactList}\small\item\em This is a function that helps to format the time into a readable string, which is used in the \doxylink{classTask}{Task} class. \end{DoxyCompactList}\item 
+deadline\+\_\+raw\+\_\+t \mbox{\hyperlink{format__time_8h_acd257b35d916f3512d8d00793b39907c}{Chrono\+Tools\+::localtime\+\_\+ddl}} (const deadline\+\_\+raw\+\_\+t \&raw\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Localtime\+\_\+ddl is a function that helps to convert from UTC, as the system time zone, to the local time zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides the time format tools, which is including. 
+
+\begin{DoxyAuthor}{Author}
+Charliechen114514 (\href{mailto:chengh1922@mails.jlu.edu.cn}{\texttt{ chengh1922@mails.\+jlu.\+edu.\+cn}})
+\begin{DoxyEnumerate}
+\item convert the time into a readable string,
+\item convert the UTC Time to local Time,
+\end{DoxyEnumerate}
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/05-\/22
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{format__time_8h_a7b877dbca019e78deea4a37166a1f386}\index{format\_time.h@{format\_time.h}!fromDdlTimeToReadableString@{fromDdlTimeToReadableString}}
+\index{fromDdlTimeToReadableString@{fromDdlTimeToReadableString}!format\_time.h@{format\_time.h}}
+\doxysubsubsection{\texorpdfstring{fromDdlTimeToReadableString()}{fromDdlTimeToReadableString()}}
+{\footnotesize\ttfamily \label{format__time_8h_a7b877dbca019e78deea4a37166a1f386} 
+std\+::string Chrono\+Tools\+::from\+Ddl\+Time\+To\+Readable\+String (\begin{DoxyParamCaption}\item[{const deadline\+\_\+raw\+\_\+t \&}]{raw\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+This is a function that helps to format the time into a readable string, which is used in the \doxylink{classTask}{Task} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & the time to be formatted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string the formatted string 
+\end{DoxyReturn}
+\Hypertarget{format__time_8h_acd257b35d916f3512d8d00793b39907c}\index{format\_time.h@{format\_time.h}!localtime\_ddl@{localtime\_ddl}}
+\index{localtime\_ddl@{localtime\_ddl}!format\_time.h@{format\_time.h}}
+\doxysubsubsection{\texorpdfstring{localtime\_ddl()}{localtime\_ddl()}}
+{\footnotesize\ttfamily \label{format__time_8h_acd257b35d916f3512d8d00793b39907c} 
+deadline\+\_\+raw\+\_\+t Chrono\+Tools\+::localtime\+\_\+ddl (\begin{DoxyParamCaption}\item[{const deadline\+\_\+raw\+\_\+t \&}]{raw\+\_\+time}{}\end{DoxyParamCaption})}
+
+
+
+Localtime\+\_\+ddl is a function that helps to convert from UTC, as the system time zone, to the local time zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+time} & at any time from system\+\_\+clock\+::now(). or the base operations result on the system clock calculations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+deadline\+\_\+raw\+\_\+t 
+\end{DoxyReturn}

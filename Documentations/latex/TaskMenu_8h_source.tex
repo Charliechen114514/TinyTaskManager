@@ -1,0 +1,27 @@
+\doxysection{Task\+Menu.\+h}
+\hypertarget{TaskMenu_8h_source}{}\label{TaskMenu_8h_source}\index{Ui/TaskMenu.h@{Ui/TaskMenu.h}}
+\mbox{\hyperlink{TaskMenu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{parse__command_8h}{Core/parser\_machine/parse\_command.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structUiMenu}{UiMenu}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structUiMenu_a227f6b0b0a246329b3ceef78c1b6a769}{command\_pair\_t}}\ =\ std::pair<std::string,\ CommandParser::hookFunction>;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4}{menu\_item\_t}}\ =\ std::pair<command\_pair\_t,\ std::string>;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structUiMenu_abf7c9a004e3e4c333408a75e9df569d8}{install\_to\_parser}}(\mbox{\hyperlink{structCommandParser}{CommandParser}}\&\ parser)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ each\_pair\ :\ lists)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ parser.install\_hook(each\_pair.first.first,\ each\_pair.first.second);}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structUiMenu_afd5937fbd9ad783d02971e0f9e1ababe}{install\_command\_pair}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4}{menu\_item\_t}}\&\ p)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ lists.push\_back(p);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ std::string\ \mbox{\hyperlink{structUiMenu_a326eb90ec242af5a9082a76e6ae4b1bc}{menu\_for\_display}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ std::vector<menu\_item\_t>\ lists;}
+\DoxyCodeLine{00060\ \};}
+
+\end{DoxyCode}

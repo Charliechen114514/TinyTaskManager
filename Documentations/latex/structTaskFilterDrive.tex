@@ -1,0 +1,80 @@
+\doxysection{Task\+Filter\+Drive Struct Reference}
+\hypertarget{structTaskFilterDrive}{}\label{structTaskFilterDrive}\index{TaskFilterDrive@{TaskFilterDrive}}
+
+
+\doxylink{structTaskFilterDrive}{Task\+Filter\+Drive} collects the filters and make drive.  
+
+
+
+
+{\ttfamily \#include $<$Task\+Filters.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTaskFilterDrive}{Task\+Filter\+Drive}} \& \mbox{\hyperlink{structTaskFilterDrive_a3276df2e2b9999eae4a512f5605dd6e7}{install\+\_\+filters}} (const \mbox{\hyperlink{structAbstractTaskFilters}{Abstract\+Task\+Filters}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em install\+\_\+filters install a filters into the drivers \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTaskFilterDrive}{Task\+Filter\+Drive}} \& \mbox{\hyperlink{structTaskFilterDrive_ab8fc5f28328961c8bb1ec8dcd8f85e5e}{remove\+\_\+filters}} (const \mbox{\hyperlink{structAbstractTaskFilters}{Abstract\+Task\+Filters}} \texorpdfstring{$\ast$}{*}f)
+\begin{DoxyCompactList}\small\item\em remove\+\_\+filters remove the filters from the drivers \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \mbox{\hyperlink{structTaskFilterDrive_a6527ff9ad665cdb531207401322b9ccf}{filter\+\_\+tasks}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&original)
+\begin{DoxyCompactList}\small\item\em filter\+\_\+tasks filter the tasks by the filters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structTaskFilterDrive}{Task\+Filter\+Drive} collects the filters and make drive. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structTaskFilterDrive_a6527ff9ad665cdb531207401322b9ccf}\index{TaskFilterDrive@{TaskFilterDrive}!filter\_tasks@{filter\_tasks}}
+\index{filter\_tasks@{filter\_tasks}!TaskFilterDrive@{TaskFilterDrive}}
+\doxysubsubsection{\texorpdfstring{filter\_tasks()}{filter\_tasks()}}
+{\footnotesize\ttfamily \label{structTaskFilterDrive_a6527ff9ad665cdb531207401322b9ccf} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ Task\+Filter\+Drive\+::filter\+\_\+tasks (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&}]{original}{}\end{DoxyParamCaption})}
+
+
+
+filter\+\_\+tasks filter the tasks by the filters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tasks} & the tasks to be filtered, this will filters the variables you pass \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ the filtered tasks 
+\end{DoxyReturn}
+\Hypertarget{structTaskFilterDrive_a3276df2e2b9999eae4a512f5605dd6e7}\index{TaskFilterDrive@{TaskFilterDrive}!install\_filters@{install\_filters}}
+\index{install\_filters@{install\_filters}!TaskFilterDrive@{TaskFilterDrive}}
+\doxysubsubsection{\texorpdfstring{install\_filters()}{install\_filters()}}
+{\footnotesize\ttfamily \label{structTaskFilterDrive_a3276df2e2b9999eae4a512f5605dd6e7} 
+\mbox{\hyperlink{structTaskFilterDrive}{Task\+Filter\+Drive}} \& Task\+Filter\+Drive\+::install\+\_\+filters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAbstractTaskFilters}{Abstract\+Task\+Filters}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+install\+\_\+filters install a filters into the drivers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & filters append \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structTaskFilterDrive_ab8fc5f28328961c8bb1ec8dcd8f85e5e}\index{TaskFilterDrive@{TaskFilterDrive}!remove\_filters@{remove\_filters}}
+\index{remove\_filters@{remove\_filters}!TaskFilterDrive@{TaskFilterDrive}}
+\doxysubsubsection{\texorpdfstring{remove\_filters()}{remove\_filters()}}
+{\footnotesize\ttfamily \label{structTaskFilterDrive_ab8fc5f28328961c8bb1ec8dcd8f85e5e} 
+\mbox{\hyperlink{structTaskFilterDrive}{Task\+Filter\+Drive}} \& Task\+Filter\+Drive\+::remove\+\_\+filters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structAbstractTaskFilters}{Abstract\+Task\+Filters}} \texorpdfstring{$\ast$}{*}}]{f}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove\+\_\+filters remove the filters from the drivers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & filters remove \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/\mbox{\hyperlink{TaskFilters_8h}{Task\+Filters.\+h}}\item 
+Core/Task\+Filters.\+cpp\end{DoxyCompactItemize}

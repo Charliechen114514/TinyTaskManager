@@ -1,0 +1,96 @@
+\doxysection{Command\+Parser Struct Reference}
+\hypertarget{structCommandParser}{}\label{structCommandParser}\index{CommandParser@{CommandParser}}
+
+
+\doxylink{structCommandParser}{Command\+Parser} parse the command from IO buffer.  
+
+
+
+
+{\ttfamily \#include $<$parse\+\_\+command.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structCommandParser_ad6946ceb5839a145524424042b3bdd42}\label{structCommandParser_ad6946ceb5839a145524424042b3bdd42} 
+using {\bfseries hook\+Function} = std\+::function$<$void(const \mbox{\hyperlink{structCommand}{Command}})$>$
+\item 
+\Hypertarget{structCommandParser_a478798e7e73305c16fa3393ba46fa90e}\label{structCommandParser_a478798e7e73305c16fa3393ba46fa90e} 
+using {\bfseries error\+Handle\+Function} = std\+::function$<$void(const \mbox{\hyperlink{structparse__exceptions}{parse\+\_\+exceptions}}\texorpdfstring{$\ast$}{*}, const std\+::string)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structCommandParser_ae493805e338f43222a674bfa43277078}\label{structCommandParser_ae493805e338f43222a674bfa43277078} 
+void {\bfseries install\+\_\+hook} (const std\+::string \&first\+\_\+target, const hook\+Function func)
+\item 
+\Hypertarget{structCommandParser_aa412bbbfd653385fd4e5b3cc617cd5a0}\label{structCommandParser_aa412bbbfd653385fd4e5b3cc617cd5a0} 
+{\footnotesize template$<$\mbox{\hyperlink{conceptis__parse__exception}{is\+\_\+parse\+\_\+exception}} Exception\+Type$>$ }\\void {\bfseries install\+\_\+error\+\_\+hook} (error\+Handle\+Function handler)
+\item 
+\mbox{\hyperlink{structCommand}{Command}} \mbox{\hyperlink{structCommandParser_a95af4a93247a099756bbb1b2f72bd16c}{get\+\_\+command\+\_\+from\+\_\+rawbuffer}} (const std\+::string \&raw\+\_\+buffers)
+\begin{DoxyCompactList}\small\item\em Get the command from rawbuffer object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structCommand}{Command}} \mbox{\hyperlink{structCommandParser_a7a0975c88a958950523967616053f241}{parse\+\_\+buffer\+\_\+only}} (const std\+::string \&raw\+\_\+buffers)
+\begin{DoxyCompactList}\small\item\em parse buffer really parse and throw the stuff to the installed hooks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structCommandParser_a57a0a39228752cefcf436946d4d2146b}{parse\+\_\+buffer\+\_\+with\+\_\+error\+Hooks}} (const std\+::string \&buffer)
+\begin{DoxyCompactList}\small\item\em parse\+\_\+buffer\+\_\+with\+\_\+error\+Hooks makes parse with given hooks once \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structCommandParser}{Command\+Parser} parse the command from IO buffer. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structCommandParser_a95af4a93247a099756bbb1b2f72bd16c}\index{CommandParser@{CommandParser}!get\_command\_from\_rawbuffer@{get\_command\_from\_rawbuffer}}
+\index{get\_command\_from\_rawbuffer@{get\_command\_from\_rawbuffer}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{get\_command\_from\_rawbuffer()}{get\_command\_from\_rawbuffer()}}
+{\footnotesize\ttfamily \label{structCommandParser_a95af4a93247a099756bbb1b2f72bd16c} 
+\mbox{\hyperlink{structCommand}{Command}} Command\+Parser\+::get\+\_\+command\+\_\+from\+\_\+rawbuffer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+buffers}{}\end{DoxyParamCaption})}
+
+
+
+Get the command from rawbuffer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffers} & the buffer fetch from IO or else \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structCommand}{Command} as the result, this will be always meaningful for the caller, as we must contains a valid command 
+\end{DoxyReturn}
+\Hypertarget{structCommandParser_a7a0975c88a958950523967616053f241}\index{CommandParser@{CommandParser}!parse\_buffer\_only@{parse\_buffer\_only}}
+\index{parse\_buffer\_only@{parse\_buffer\_only}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parse\_buffer\_only()}{parse\_buffer\_only()}}
+{\footnotesize\ttfamily \label{structCommandParser_a7a0975c88a958950523967616053f241} 
+\mbox{\hyperlink{structCommand}{Command}} Command\+Parser\+::parse\+\_\+buffer\+\_\+only (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+buffers}{}\end{DoxyParamCaption})}
+
+
+
+parse buffer really parse and throw the stuff to the installed hooks 
+
+\begin{DoxyNote}{Note}
+this is exception drive, so you must make hooks of the exception catch 
+\end{DoxyNote}
+\Hypertarget{structCommandParser_a57a0a39228752cefcf436946d4d2146b}\index{CommandParser@{CommandParser}!parse\_buffer\_with\_errorHooks@{parse\_buffer\_with\_errorHooks}}
+\index{parse\_buffer\_with\_errorHooks@{parse\_buffer\_with\_errorHooks}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parse\_buffer\_with\_errorHooks()}{parse\_buffer\_with\_errorHooks()}}
+{\footnotesize\ttfamily \label{structCommandParser_a57a0a39228752cefcf436946d4d2146b} 
+void Command\+Parser\+::parse\+\_\+buffer\+\_\+with\+\_\+error\+Hooks (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{buffer}{}\end{DoxyParamCaption})}
+
+
+
+parse\+\_\+buffer\+\_\+with\+\_\+error\+Hooks makes parse with given hooks once 
+
+\begin{DoxyNote}{Note}
+if, non hooks are given, we shell call the default exceptions, else, we shell
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & the buffer waiting parse \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/parser\+\_\+machine/\mbox{\hyperlink{parse__command_8h}{parse\+\_\+command.\+h}}\item 
+Core/parser\+\_\+machine/parse\+\_\+command.\+cpp\end{DoxyCompactItemize}

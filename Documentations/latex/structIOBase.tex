@@ -1,0 +1,61 @@
+\doxysection{IOBase Struct Reference}
+\hypertarget{structIOBase}{}\label{structIOBase}\index{IOBase@{IOBase}}
+Inheritance diagram for IOBase\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structIOBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structIOBase_a55cf60339992a7a81367357cc4a77c70}{from\+\_\+io\+\_\+raw\+\_\+buffer}} (std\+::string \&raw\+\_\+buffer)=0
+\begin{DoxyCompactList}\small\item\em from\+\_\+io\+\_\+raw\+\_\+buffer get the buffer from IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to fetch message from IO, buffer is provided by reference \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structIOBase_a35fb5839303dd16c1bcdab33bb921bfd}{write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io}} (const std\+::string \&raw\+\_\+buffer)=0
+\begin{DoxyCompactList}\small\item\em write raw\+\_\+buffer\+\_\+to\+\_\+io write the buffer to IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to write message to IO, buffer is provided by reference \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structIOBase_a55cf60339992a7a81367357cc4a77c70}\index{IOBase@{IOBase}!from\_io\_raw\_buffer@{from\_io\_raw\_buffer}}
+\index{from\_io\_raw\_buffer@{from\_io\_raw\_buffer}!IOBase@{IOBase}}
+\doxysubsubsection{\texorpdfstring{from\_io\_raw\_buffer()}{from\_io\_raw\_buffer()}}
+{\footnotesize\ttfamily \label{structIOBase_a55cf60339992a7a81367357cc4a77c70} 
+virtual void IOBase\+::from\+\_\+io\+\_\+raw\+\_\+buffer (\begin{DoxyParamCaption}\item[{std\+::string \&}]{raw\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [pure virtual]}}
+
+
+
+from\+\_\+io\+\_\+raw\+\_\+buffer get the buffer from IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to fetch message from IO, buffer is provided by reference 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffer} & the buffer contains the result, why raw\+\_\+buffer is std\+::string is that the string is expandable and let user decide how to operate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{structStandardShellIO_add00d884095c3761bbecf33f0e81b824}{Standard\+Shell\+IO}}.
+
+\Hypertarget{structIOBase_a35fb5839303dd16c1bcdab33bb921bfd}\index{IOBase@{IOBase}!write\_raw\_buffer\_to\_io@{write\_raw\_buffer\_to\_io}}
+\index{write\_raw\_buffer\_to\_io@{write\_raw\_buffer\_to\_io}!IOBase@{IOBase}}
+\doxysubsubsection{\texorpdfstring{write\_raw\_buffer\_to\_io()}{write\_raw\_buffer\_to\_io()}}
+{\footnotesize\ttfamily \label{structIOBase_a35fb5839303dd16c1bcdab33bb921bfd} 
+virtual void IOBase\+::write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [pure virtual]}}
+
+
+
+write raw\+\_\+buffer\+\_\+to\+\_\+io write the buffer to IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to write message to IO, buffer is provided by reference 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffer} & the buffer contains the message to be written, why raw\+\_\+buffer is std\+::string is that the string is expandable and let user decide how to operate \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{structStandardShellIO_ac3047bf397a18c8cb68100c7baf8a409}{Standard\+Shell\+IO}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+IO/\mbox{\hyperlink{IOBaseDriver_8h}{IOBase\+Driver.\+h}}\end{DoxyCompactItemize}

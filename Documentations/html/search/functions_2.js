@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['format_5ftasklists_5fview_0',['format_tasklists_view',['../classTasksListView.html#a37ed9af864a9cf96c8e1540cd7ee8c25',1,'TasksListView::format_tasklists_view(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l)'],['../classTasksListView.html#ab09d76705145d10e1583576ecbbb2d36',1,'TasksListView::format_tasklists_view(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l, std::function&lt; std::string(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l)&gt; f)']]]
+  ['enqueue_5fmanaging_5ftask_0',['enqueue_managing_task',['../classTaskLists.html#a6cee74703de18a49a451c399532a60e1',1,'TaskLists']]],
+  ['enqueue_5fmanaging_5ftasks_1',['enqueue_managing_tasks',['../classTaskLists.html#a30f63e4c3df3c9818bd2fd767f14106d',1,'TaskLists::enqueue_managing_tasks(const std::vector&lt; Task::TaskPack &gt; &amp;packs)'],['../classTaskLists.html#aa8f2c2b832dd2ff6033a28907f09d761',1,'TaskLists::enqueue_managing_tasks(std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; tasks)']]]
 ];

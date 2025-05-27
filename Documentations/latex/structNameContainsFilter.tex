@@ -1,0 +1,65 @@
+\doxysection{Name\+Contains\+Filter Struct Reference}
+\hypertarget{structNameContainsFilter}{}\label{structNameContainsFilter}\index{NameContainsFilter@{NameContainsFilter}}
+
+
+\doxylink{structNameContainsFilter}{Name\+Contains\+Filter} provides the common name filters.  
+
+
+
+
+{\ttfamily \#include $<$Task\+Filters.\+h$>$}
+
+Inheritance diagram for Name\+Contains\+Filter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structNameContainsFilter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structNameContainsFilter_aeef2e842b66471223bafced6378e3895}\label{structNameContainsFilter_aeef2e842b66471223bafced6378e3895} 
+{\bfseries Name\+Contains\+Filter} (const std\+::string \&k)
+\item 
+virtual bool \mbox{\hyperlink{structNameContainsFilter_a75037c2436ba2899fe3b0fb145433794}{is\+\_\+current\+\_\+satified}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&task\+\_\+handle) const override
+\begin{DoxyCompactList}\small\item\em one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structNameContainsFilter_ab0ec66e6f92b4f16665b79189c898ed9}\label{structNameContainsFilter_ab0ec66e6f92b4f16665b79189c898ed9} 
+const std\+::string {\bfseries keywords}
+\begin{DoxyCompactList}\small\item\em keywords for the filters, if the tasks name contains the keywords, then we filters pass \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structNameContainsFilter}{Name\+Contains\+Filter} provides the common name filters. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structNameContainsFilter_a75037c2436ba2899fe3b0fb145433794}\index{NameContainsFilter@{NameContainsFilter}!is\_current\_satified@{is\_current\_satified}}
+\index{is\_current\_satified@{is\_current\_satified}!NameContainsFilter@{NameContainsFilter}}
+\doxysubsubsection{\texorpdfstring{is\_current\_satified()}{is\_current\_satified()}}
+{\footnotesize\ttfamily \label{structNameContainsFilter_a75037c2436ba2899fe3b0fb145433794} 
+bool Name\+Contains\+Filter\+::is\+\_\+current\+\_\+satified (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&}]{task\+\_\+handle}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the task\+\_\+handle can pass the filters 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0}{Abstract\+Task\+Filters}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/\mbox{\hyperlink{TaskFilters_8h}{Task\+Filters.\+h}}\item 
+Core/Task\+Filters.\+cpp\end{DoxyCompactItemize}

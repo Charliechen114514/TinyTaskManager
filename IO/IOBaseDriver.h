@@ -20,5 +20,13 @@ struct IOBase {
 	 *                   is that the string is expandable and let user decide how to operate
 	 */
 	virtual void inline from_io_raw_buffer(std::string& raw_buffer) = 0;
+	/**
+	 * @brief write raw_buffer_to_io write the buffer to IO, no matter what the
+	 *        IO actually is, thus, concreate IO Driver need to implement the
+	 *        how to write message to IO, buffer is provided by reference
+	 *
+	 * @param raw_buffer the buffer contains the message to be written, why raw_buffer is std::string
+	 *                   is that the string is expandable and let user decide how to operate
+	 */
 	virtual void inline write_raw_buffer_to_io(const std::string& raw_buffer) = 0;
 };

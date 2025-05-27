@@ -1,0 +1,43 @@
+\doxysection{parse\+\_\+command.\+h}
+\hypertarget{parse__command_8h_source}{}\label{parse__command_8h_source}\index{Core/parser\_machine/parse\_command.h@{Core/parser\_machine/parse\_command.h}}
+\mbox{\hyperlink{parse__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}command.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}parse\_exceptions.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00020\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptis__parse__exception}{is\_parse\_exception}}\ =\ std::is\_base\_of\_v<parse\_exceptions,\ T>;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCommandParser}{CommandParser}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{using\ }hookFunction\ =\ std::function<void(\textcolor{keyword}{const}\ \mbox{\hyperlink{structCommand}{Command}})>;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{using\ }errorHandleFunction\ =\ std::function<void(\textcolor{keyword}{const}\ \mbox{\hyperlink{structparse__exceptions}{parse\_exceptions}}*,\ \textcolor{keyword}{const}\ std::string)>;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ install\_hook(\textcolor{keyword}{const}\ std::string\&\ first\_target,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ hookFunction\ func)\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ hooks[first\_target]\ =\ func;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{template}\ <is\_parse\_exception\ ExceptionType>}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*\ only\ the\ parse\ error\ is\ accept\ to\ hook\ here\ */}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ install\_error\_hook(errorHandleFunction\ handler)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ exception\_handler[\textcolor{keyword}{typeid}(ExceptionType)]\ =\ handler;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{structCommand}{Command}}\ \mbox{\hyperlink{structCommandParser_a95af4a93247a099756bbb1b2f72bd16c}{get\_command\_from\_rawbuffer}}(\textcolor{keyword}{const}\ std::string\&\ raw\_buffers);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{structCommand}{Command}}\ \mbox{\hyperlink{structCommandParser_a7a0975c88a958950523967616053f241}{parse\_buffer\_only}}(\textcolor{keyword}{const}\ std::string\&\ raw\_buffers);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structCommandParser_a57a0a39228752cefcf436946d4d2146b}{parse\_buffer\_with\_errorHooks}}(\textcolor{keyword}{const}\ std::string\&\ buffer);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ std::unordered\_map<std::string,\ hookFunction>\ hooks;}
+\DoxyCodeLine{00069\ \ \ \ \ std::unordered\_map<std::type\_index,\ errorHandleFunction>\ exception\_handler;}
+\DoxyCodeLine{00070\ \};}
+
+\end{DoxyCode}

@@ -109,11 +109,6 @@ $(function(){initNavTree('structSharedTaskHash.html',''); initResizable(true); }
   <div class="headertitle"><div class="title">SharedTaskHash Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is a tasklist manager class, in this case, we prefer to use this for a display/operations sessions.  
- <a href="#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="TaskLists_8h_source.html">TaskLists.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -121,21 +116,7 @@ Public Member Functions</h2></td></tr>
 std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (const std::shared_ptr&lt; <a class="el" href="classTask.html">Task</a> &gt; &amp;t) const</td></tr>
 <tr class="separator:ac3f3bdd154092360b42aafa2dad2151f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is a tasklist manager class, in this case, we prefer to use this for a display/operations sessions. </p>
-<p>query the task by given expressions, which is high level self defined</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">query</td><td>query functions, required to provide how to find a <a class="el" href="classTask.html" title="Task is the class that represents a task, which contains the task name, description,...">Task</a> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::shared_ptr&lt;Task&gt;&gt; This, as expected, returns a maybe valid <a class="el" href="classTask.html" title="Task is the class that represents a task, which contains the task name, description,...">Task</a> Handler lists that is fit the issue</dd></dl>
-<p>this is expected to return the total size of the task, with non-privilaged sorted</p>
-<dl class="section return"><dt>Returns</dt><dd>size_t return the tasklist without any prority filters</dd></dl>
-<p>Get the all tasks object</p>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::shared_ptr&lt;Task&gt;&gt; yes, the case :) </dd></dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>Core/<a class="el" href="TaskLists_8h_source.html">TaskLists.h</a></li>
 </ul>
 </div><!-- contents -->

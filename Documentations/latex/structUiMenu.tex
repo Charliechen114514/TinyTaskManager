@@ -1,0 +1,84 @@
+\doxysection{Ui\+Menu Struct Reference}
+\hypertarget{structUiMenu}{}\label{structUiMenu}\index{UiMenu@{UiMenu}}
+
+
+Ui Menu decides which commands should be displayed and provide avaible commands to the parse machines.  
+
+
+
+
+{\ttfamily \#include $<$Task\+Menu.\+h$>$}
+
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structUiMenu_a227f6b0b0a246329b3ceef78c1b6a769}\label{structUiMenu_a227f6b0b0a246329b3ceef78c1b6a769} 
+using {\bfseries command\+\_\+pair\+\_\+t} = std\+::pair$<$std\+::string, Command\+Parser\+::hook\+Function$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{structUiMenu_a227f6b0b0a246329b3ceef78c1b6a769}{command\+\_\+pair\+\_\+t} really means the cmd name for matching and hook to do \end{DoxyCompactList}\item 
+\Hypertarget{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4}\label{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4} 
+using {\bfseries menu\+\_\+item\+\_\+t} = std\+::pair$<$\mbox{\hyperlink{structUiMenu_a227f6b0b0a246329b3ceef78c1b6a769}{command\+\_\+pair\+\_\+t}}, std\+::string$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4}{menu\+\_\+item\+\_\+t} is the menu for display \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structUiMenu_abf7c9a004e3e4c333408a75e9df569d8}{install\+\_\+to\+\_\+parser}} (\mbox{\hyperlink{structCommandParser}{Command\+Parser}} \&parser)
+\begin{DoxyCompactList}\small\item\em install\+\_\+to\+\_\+parser install all the available command to the menu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structUiMenu_afd5937fbd9ad783d02971e0f9e1ababe}{install\+\_\+command\+\_\+pair}} (const \mbox{\hyperlink{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4}{menu\+\_\+item\+\_\+t}} \&p)
+\begin{DoxyCompactList}\small\item\em install\+\_\+command\+\_\+pair install a command pair to the menu \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structUiMenu_a326eb90ec242af5a9082a76e6ae4b1bc}{menu\+\_\+for\+\_\+display}} () const
+\begin{DoxyCompactList}\small\item\em get the menu for display \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ui Menu decides which commands should be displayed and provide avaible commands to the parse machines. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structUiMenu_afd5937fbd9ad783d02971e0f9e1ababe}\index{UiMenu@{UiMenu}!install\_command\_pair@{install\_command\_pair}}
+\index{install\_command\_pair@{install\_command\_pair}!UiMenu@{UiMenu}}
+\doxysubsubsection{\texorpdfstring{install\_command\_pair()}{install\_command\_pair()}}
+{\footnotesize\ttfamily \label{structUiMenu_afd5937fbd9ad783d02971e0f9e1ababe} 
+void Ui\+Menu\+::install\+\_\+command\+\_\+pair (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structUiMenu_a07109795f2eb4a144f6738ccd972d7b4}{menu\+\_\+item\+\_\+t}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+install\+\_\+command\+\_\+pair install a command pair to the menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the command pair to be installed, the first is the command name, the second is the function to be called \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structUiMenu_abf7c9a004e3e4c333408a75e9df569d8}\index{UiMenu@{UiMenu}!install\_to\_parser@{install\_to\_parser}}
+\index{install\_to\_parser@{install\_to\_parser}!UiMenu@{UiMenu}}
+\doxysubsubsection{\texorpdfstring{install\_to\_parser()}{install\_to\_parser()}}
+{\footnotesize\ttfamily \label{structUiMenu_abf7c9a004e3e4c333408a75e9df569d8} 
+void Ui\+Menu\+::install\+\_\+to\+\_\+parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCommandParser}{Command\+Parser}} \&}]{parser}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+install\+\_\+to\+\_\+parser install all the available command to the menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser} & parser for the ready install \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structUiMenu_a326eb90ec242af5a9082a76e6ae4b1bc}\index{UiMenu@{UiMenu}!menu\_for\_display@{menu\_for\_display}}
+\index{menu\_for\_display@{menu\_for\_display}!UiMenu@{UiMenu}}
+\doxysubsubsection{\texorpdfstring{menu\_for\_display()}{menu\_for\_display()}}
+{\footnotesize\ttfamily \label{structUiMenu_a326eb90ec242af5a9082a76e6ae4b1bc} 
+std\+::string Ui\+Menu\+::menu\+\_\+for\+\_\+display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+get the menu for display 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ui/\mbox{\hyperlink{TaskMenu_8h}{Task\+Menu.\+h}}\item 
+Ui/Task\+Menu.\+cpp\end{DoxyCompactItemize}

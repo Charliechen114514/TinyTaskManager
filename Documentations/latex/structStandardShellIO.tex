@@ -1,0 +1,61 @@
+\doxysection{Standard\+Shell\+IO Struct Reference}
+\hypertarget{structStandardShellIO}{}\label{structStandardShellIO}\index{StandardShellIO@{StandardShellIO}}
+Inheritance diagram for Standard\+Shell\+IO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structStandardShellIO}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structStandardShellIO_add00d884095c3761bbecf33f0e81b824}{from\+\_\+io\+\_\+raw\+\_\+buffer}} (std\+::string \&raw\+\_\+buffer) override
+\begin{DoxyCompactList}\small\item\em from\+\_\+io\+\_\+raw\+\_\+buffer get the buffer from IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to fetch message from IO, buffer is provided by reference \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structStandardShellIO_ac3047bf397a18c8cb68100c7baf8a409}{write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io}} (const std\+::string \&raw\+\_\+buffer) override
+\begin{DoxyCompactList}\small\item\em write raw\+\_\+buffer\+\_\+to\+\_\+io write the buffer to IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to write message to IO, buffer is provided by reference \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structStandardShellIO_add00d884095c3761bbecf33f0e81b824}\index{StandardShellIO@{StandardShellIO}!from\_io\_raw\_buffer@{from\_io\_raw\_buffer}}
+\index{from\_io\_raw\_buffer@{from\_io\_raw\_buffer}!StandardShellIO@{StandardShellIO}}
+\doxysubsubsection{\texorpdfstring{from\_io\_raw\_buffer()}{from\_io\_raw\_buffer()}}
+{\footnotesize\ttfamily \label{structStandardShellIO_add00d884095c3761bbecf33f0e81b824} 
+void Standard\+Shell\+IO\+::from\+\_\+io\+\_\+raw\+\_\+buffer (\begin{DoxyParamCaption}\item[{std\+::string \&}]{raw\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+from\+\_\+io\+\_\+raw\+\_\+buffer get the buffer from IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to fetch message from IO, buffer is provided by reference 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffer} & the buffer contains the result, why raw\+\_\+buffer is std\+::string is that the string is expandable and let user decide how to operate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{structIOBase_a55cf60339992a7a81367357cc4a77c70}{IOBase}}.
+
+\Hypertarget{structStandardShellIO_ac3047bf397a18c8cb68100c7baf8a409}\index{StandardShellIO@{StandardShellIO}!write\_raw\_buffer\_to\_io@{write\_raw\_buffer\_to\_io}}
+\index{write\_raw\_buffer\_to\_io@{write\_raw\_buffer\_to\_io}!StandardShellIO@{StandardShellIO}}
+\doxysubsubsection{\texorpdfstring{write\_raw\_buffer\_to\_io()}{write\_raw\_buffer\_to\_io()}}
+{\footnotesize\ttfamily \label{structStandardShellIO_ac3047bf397a18c8cb68100c7baf8a409} 
+void Standard\+Shell\+IO\+::write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+write raw\+\_\+buffer\+\_\+to\+\_\+io write the buffer to IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to write message to IO, buffer is provided by reference 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffer} & the buffer contains the message to be written, why raw\+\_\+buffer is std\+::string is that the string is expandable and let user decide how to operate \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{structIOBase_a35fb5839303dd16c1bcdab33bb921bfd}{IOBase}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+IO/interative\+\_\+io/IOFront\+End.\+h\end{DoxyCompactItemize}

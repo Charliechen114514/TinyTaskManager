@@ -1,0 +1,81 @@
+\doxysection{Task\+Filters.\+h}
+\hypertarget{TaskFilters_8h_source}{}\label{TaskFilters_8h_source}\index{Core/TaskFilters.h@{Core/TaskFilters.h}}
+\mbox{\hyperlink{TaskFilters_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Task_8h}{Task.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }AbstractTaskFilters\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ AbstractTaskFilters()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~AbstractTaskFilters()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTaskFilterDrive}{TaskFilterDrive}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ \ \ std::vector<const\ AbstractTaskFilters*>\ filters\ \{\};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structTaskFilterDrive}{TaskFilterDrive}}\&\ \mbox{\hyperlink{structTaskFilterDrive_a3276df2e2b9999eae4a512f5605dd6e7}{install\_filters}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structAbstractTaskFilters}{AbstractTaskFilters}}*\ f)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ filters.push\_back(f);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structTaskFilterDrive}{TaskFilterDrive}}\&\ \mbox{\hyperlink{structTaskFilterDrive_ab8fc5f28328961c8bb1ec8dcd8f85e5e}{remove\_filters}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structAbstractTaskFilters}{AbstractTaskFilters}}*\ f)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ result\ =\ std::remove(filters.begin(),\ filters.end(),\ f);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ then\ things\ exsited\ */}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (result\ !=\ filters.end())\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ filters.erase(result,\ filters.end());}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ std::vector<std::shared\_ptr<Task>>\ \mbox{\hyperlink{structTaskFilterDrive_a6527ff9ad665cdb531207401322b9ccf}{filter\_tasks}}(\textcolor{keyword}{const}\ std::vector<std::shared\_ptr<Task>>\&\ original);}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{struct\ }NameContainsFilter\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{structNameContainsFilter_ab0ec66e6f92b4f16665b79189c898ed9}{keywords}};}
+\DoxyCodeLine{00095\ \ \ \ \ NameContainsFilter()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{/*\ Build\ Time\ Specify\ the\ keywords\ */}}
+\DoxyCodeLine{00098\ \ \ \ \ NameContainsFilter(\textcolor{keyword}{const}\ std::string\&\ k)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{structNameContainsFilter_ab0ec66e6f92b4f16665b79189c898ed9}{keywords}}(k)\ \{\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structNameContainsFilter_a75037c2436ba2899fe3b0fb145433794}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{struct\ }PriorityFilters\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{enum\ class}\ FilterWay\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ ACCEPT\_HIGH,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ ACCEPT\_LOW,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ ACCEPT\_SAME,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ ACCEPT\_SAME\_HIGH,}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ ACCEPT\_SAME\_LOW}
+\DoxyCodeLine{00111\ \ \ \ \ \};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ TaskPriority\ baseline\_priority;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ FilterWay\ way;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ PriorityFilters()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ PriorityFilters(\textcolor{keyword}{const}\ TaskPriority\ base,\ \textcolor{keyword}{const}\ FilterWay\ way)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ :\ baseline\_priority(base)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ ,\ way(way)\ \{\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{struct\ }LeavingTimeFilters\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{/*\ this\ is\ the\ time\ we\ leave\ */}}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ std::chrono::seconds\ leaving\_time;}
+\DoxyCodeLine{00127\ \ \ \ \ LeavingTimeFilters()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ LeavingTimeFilters(\textcolor{keyword}{const}\ std::chrono::seconds\ leaving\_time)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ :\ leaving\_time(leaving\_time)\ \{\ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00133\ \};}
+
+\end{DoxyCode}

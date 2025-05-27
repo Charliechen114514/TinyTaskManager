@@ -8,15 +8,21 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ ClassType(const\ ClassType\&)\ =\ delete;\ \(\backslash\)}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\ \ \ \ const\ ClassType\&\ operator=(const\ ClassType\&)\ =\ delete;}}
 \DoxyCodeLine{00011\ }
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ \_\_PROPERTY\_GET\_SET(type,\ property)\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ type\ get\_\#\#property()\ const\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ property;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ inline\ void\ set\_\#\#property(const\ type\&\ \_value)\ \{\ \(\backslash\)}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ this-\/>property\ =\ \_value;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
-\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \ \ \ \}}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ PROPERTY\_GET\_SET(property)\ \(\backslash\)}}
-\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \_\_PROPERTY\_GET\_SET(typeof(property),\ property)}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ DISABLE\_COPY\_MOVE(ClassType)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ ClassType(const\ ClassType\&)\ =\ delete;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ const\ ClassType\&\ operator=(const\ ClassType\&)\ =\ delete;\ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ ClassType(ClassType\&\&)\ =\ delete;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ const\ ClassType\&\ operator=(ClassType\&\&)\ =\ delete;}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ \_\_PROPERTY\_GET\_SET(type,\ property)\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ type\ get\_\#\#property()\ const\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ return\ property;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ inline\ void\ set\_\#\#property(const\ type\&\ \_value)\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ this-\/>property\ =\ \_value;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\ \ \ \ \}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ PROPERTY\_GET\_SET(property)\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\ \ \ \ \_\_PROPERTY\_GET\_SET(typeof(property),\ property)}}
 
 \end{DoxyCode}

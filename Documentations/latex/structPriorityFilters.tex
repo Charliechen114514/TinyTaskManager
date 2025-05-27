@@ -1,0 +1,69 @@
+\doxysection{Priority\+Filters Struct Reference}
+\hypertarget{structPriorityFilters}{}\label{structPriorityFilters}\index{PriorityFilters@{PriorityFilters}}
+Inheritance diagram for Priority\+Filters\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structPriorityFilters}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structPriorityFilters_a51bb26daffcbfbdaac2365265f92c38e}\label{structPriorityFilters_a51bb26daffcbfbdaac2365265f92c38e} 
+enum class {\bfseries Filter\+Way} \{ \newline
+{\bfseries ACCEPT\+\_\+\+HIGH}
+, {\bfseries ACCEPT\+\_\+\+LOW}
+, {\bfseries ACCEPT\+\_\+\+SAME}
+, {\bfseries ACCEPT\+\_\+\+SAME\+\_\+\+HIGH}
+, \newline
+{\bfseries ACCEPT\+\_\+\+SAME\+\_\+\+LOW}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structPriorityFilters_ab9e179045a0f7a40567ccb872eb317b3}\label{structPriorityFilters_ab9e179045a0f7a40567ccb872eb317b3} 
+{\bfseries Priority\+Filters} (const Task\+Priority base, const Filter\+Way way)
+\item 
+virtual bool \mbox{\hyperlink{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f}{is\+\_\+current\+\_\+satified}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&task\+\_\+handle) const override
+\begin{DoxyCompactList}\small\item\em one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structPriorityFilters_aaec81b35ecdd800d06db65c1fd3e4351}\label{structPriorityFilters_aaec81b35ecdd800d06db65c1fd3e4351} 
+const Task\+Priority {\bfseries baseline\+\_\+priority}
+\item 
+\Hypertarget{structPriorityFilters_a184ea26675f0a099eeb4f14c68056016}\label{structPriorityFilters_a184ea26675f0a099eeb4f14c68056016} 
+const Filter\+Way {\bfseries way}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f}\index{PriorityFilters@{PriorityFilters}!is\_current\_satified@{is\_current\_satified}}
+\index{is\_current\_satified@{is\_current\_satified}!PriorityFilters@{PriorityFilters}}
+\doxysubsubsection{\texorpdfstring{is\_current\_satified()}{is\_current\_satified()}}
+{\footnotesize\ttfamily \label{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f} 
+bool Priority\+Filters\+::is\+\_\+current\+\_\+satified (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ \&}]{task\+\_\+handle}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+one must implement the interfaces, if the current tasks really satisfied, then one should return true else return false 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task\+\_\+handle} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the task\+\_\+handle can pass the filters 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structAbstractTaskFilters_a8089067f1a3fa4ec35b0760f110027c0}{Abstract\+Task\+Filters}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/\mbox{\hyperlink{TaskFilters_8h}{Task\+Filters.\+h}}\item 
+Core/Task\+Filters.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\doxysection{parse\+\_\+exceptions.\+h}
+\hypertarget{parse__exceptions_8h_source}{}\label{parse__exceptions_8h_source}\index{Core/parser\_machine/parse\_exceptions.h@{Core/parser\_machine/parse\_exceptions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }parse\_exceptions\ :\ \textcolor{keyword}{public}\ std::exception\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ parse\_exceptions(\textcolor{keyword}{const}\ std::string\&\ installed\_msg)}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ :\ message(installed\_msg)\ \{\ \}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ what()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ message.c\_str();}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ message;}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }non\_command\_found\ :\ \textcolor{keyword}{public}\ parse\_exceptions\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ non\_command\_found()}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ parse\_exceptions(\textcolor{stringliteral}{"{}You\ submit\ no\ command!\(\backslash\)n"{}})\ \{\ \};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{struct\ }non\_match\_command\ :\ \textcolor{keyword}{public}\ parse\_exceptions\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ non\_match\_command()}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ :\ parse\_exceptions(\textcolor{stringliteral}{"{}Can\ not\ find\ target\ command\ for\ processing!\(\backslash\)n"{}})\ \{\ \};}
+\DoxyCodeLine{00040\ \};}
+
+\end{DoxyCode}

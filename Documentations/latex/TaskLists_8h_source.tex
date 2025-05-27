@@ -1,140 +1,75 @@
 \doxysection{Task\+Lists.\+h}
 \hypertarget{TaskLists_8h_source}{}\label{TaskLists_8h_source}\index{Core/TaskLists.h@{Core/TaskLists.h}}
-
+\mbox{\hyperlink{TaskLists_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{comment}{//\ \#pragma\ once}}
-\DoxyCodeLine{00002\ \textcolor{comment}{//\ \#include\ "{}Task.h"{}}}
-\DoxyCodeLine{00003\ \textcolor{comment}{//\ \#include\ "{}Tools/class\_helper.h"{}}}
-\DoxyCodeLine{00004\ \textcolor{comment}{//\ \#include\ <functional>}}
-\DoxyCodeLine{00005\ \textcolor{comment}{//\ \#include\ <memory>}}
-\DoxyCodeLine{00006\ \textcolor{comment}{//\ \#include\ <string>}}
-\DoxyCodeLine{00007\ \textcolor{comment}{//\ \#include\ <unordered\_set>}}
-\DoxyCodeLine{00008\ \textcolor{comment}{//\ \#include\ <vector>}}
-\DoxyCodeLine{00009\ \textcolor{comment}{//\ /**}}
-\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ *\ @brief\ This\ is\ a\ tasklist\ manager\ class,\ in\ this\ case,\ we\ prefer}}
-\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ *\ to\ use\ this\ for\ a\ display/operations\ sessions}}
-\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ *}}
-\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ */}}
-\DoxyCodeLine{00014\ \textcolor{comment}{//\ class\ TaskLists\ \{}}
-\DoxyCodeLine{00015\ \textcolor{comment}{//\ private:}}
-\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ std::string\ tasklist\_name;}}
-\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ std::unordered\_set<std::shared\_ptr<Task>>\ tasklists;}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{comment}{//\ public:}}
-\DoxyCodeLine{00020\ \textcolor{comment}{//\ \ TaskLists()\ =\ default;}}
-\DoxyCodeLine{00021\ \textcolor{comment}{//\ \ DISABLE\_COPY(TaskLists);}}
-\DoxyCodeLine{00022\ \textcolor{comment}{//\ \ PROPERTY\_GET\_SET(tasklist\_name);}}
-\DoxyCodeLine{00023\ \textcolor{comment}{//\ \ using\ QueryExpr\ =\ std::function<bool(const\ Task\&)>;}}
-\DoxyCodeLine{00024\ \textcolor{comment}{//\ \ /*\ enqueue\ and\ dequeue\ the\ managing\ task\ */}}
-\DoxyCodeLine{00025\ \textcolor{comment}{//\ \ /*\ also,\ we\ need\ to\ add\ uniquely\ to\ prevent\ the\ dump\ add\ */}}
-\DoxyCodeLine{00026\ \textcolor{comment}{//\ \ void\ enqueue\_managing\_task(std::shared\_ptr<Task>\ task\_en\_managed);}}
-\DoxyCodeLine{00027\ \textcolor{comment}{//\ \ void\ dequeue\_managing\_task(std::shared\_ptr<Task>\ task\_en\_managed);}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Task_8h}{Task.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Tools/class\_helper.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ \ Following\ only\ simply\ provide\ an\ issue\ of\ make\ task\ hashable\ \ \ \ */}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSharedTaskHash}{SharedTaskHash}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ std::size\_t\ operator()(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ t)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<std::string>()(t-\/>get\_uuid());}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \};}
 \DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{comment}{//\ \ /*\ removes\ the\ issue\ */}}
-\DoxyCodeLine{00030\ \textcolor{comment}{//\ \ void\ enqueue\_managing\_tasks(std::vector<std::shared\_ptr<Task>>\ tasks);}}
-\DoxyCodeLine{00031\ \textcolor{comment}{//\ \ void\ dequeue\_managing\_tasks(std::vector<std::shared\_ptr<Task>>\ tasks);}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{comment}{//\ \ /**}}
-\DoxyCodeLine{00034\ \textcolor{comment}{//\ \ \ *\ @brief\ \ \ query\ the\ task\ by\ given\ expressions,\ which\ is\ high\ level}}
-\DoxyCodeLine{00035\ \textcolor{comment}{//\ \ \ *\ \ \ \ \ \ \ \ \ \ self\ defined}}
-\DoxyCodeLine{00036\ \textcolor{comment}{//\ \ \ *}}
-\DoxyCodeLine{00037\ \textcolor{comment}{//\ \ \ *\ @param\ query:\ \ \ \ query\ functions,\ required\ to\ provide\ how\ to\ find}}
-\DoxyCodeLine{00038\ \textcolor{comment}{//\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a\ Task}}
-\DoxyCodeLine{00039\ \textcolor{comment}{//\ \ \ *\ @return\ std::vector<std::shared\_ptr<Task>>}}
-\DoxyCodeLine{00040\ \textcolor{comment}{//\ \ \ *\ \ \ \ \ \ This,\ as\ expected,\ returns\ a\ maybe\ valid\ Task\ Handler\ lists}}
-\DoxyCodeLine{00041\ \textcolor{comment}{//\ \ \ *\ \ \ \ \ \ that\ is\ fit\ the\ issue}}
-\DoxyCodeLine{00042\ \textcolor{comment}{//\ \ \ */}}
-\DoxyCodeLine{00043\ \textcolor{comment}{//\ \ std::vector<std::shared\_ptr<Task>>}}
-\DoxyCodeLine{00044\ \textcolor{comment}{//\ \ query(QueryExpr\ query)\ const\ noexcept;\ /*\ query,\ as\ expected,\ should\ never\ trigger\ any\ exceptions\ */}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ inline\ std::vector<std::shared\_ptr<Task>>}}
-\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ query\_with\_name(const\ std::string\&\ task\_name)\ const\ noexcept\ \{}}
-\DoxyCodeLine{00048\ \textcolor{comment}{//\ \ \ \ \ \ return\ query(}}
-\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ [\&task\_name](const\ Task\&\ iterater)\ -\/>\ bool\ \{}}
-\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ iterater.get\_task\_name()\ ==\ task\_name;}}
-\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \});}}
-\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \}}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{comment}{//\ \ /**}}
-\DoxyCodeLine{00055\ \textcolor{comment}{//\ \ \ *\ @brief\ \ \ this\ is\ expected\ to\ return\ the\ total\ size\ of\ the\ task,}}
-\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ *\ \ \ \ \ \ \ \ \ \ with\ non-\/privilaged\ sorted}}
-\DoxyCodeLine{00057\ \textcolor{comment}{//\ \ \ *}}
-\DoxyCodeLine{00058\ \textcolor{comment}{//\ \ \ *\ @return\ size\_t\ return\ the\ tasklist\ without\ any\ prority\ filters}}
-\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ \ */}}
-\DoxyCodeLine{00060\ \textcolor{comment}{//\ \ inline\ size\_t\ total\_size()\ \{\ return\ tasklists.size();\ \}}}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{comment}{//\ \ /**}}
-\DoxyCodeLine{00063\ \textcolor{comment}{//\ \ \ *\ @brief\ Get\ the\ all\ tasks\ object}}
-\DoxyCodeLine{00064\ \textcolor{comment}{//\ \ \ *}}
-\DoxyCodeLine{00065\ \textcolor{comment}{//\ \ \ *\ @return\ std::vector<std::shared\_ptr<Task>>\ yes,\ the\ case\ :)}}
-\DoxyCodeLine{00066\ \textcolor{comment}{//\ \ \ */}}
-\DoxyCodeLine{00067\ \textcolor{comment}{//\ \ std::vector<std::shared\_ptr<Task>>\ get\_all\_tasks()\ const;}}
-\DoxyCodeLine{00068\ \textcolor{comment}{//\ \};}}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSharedTaskEqual}{SharedTaskEqual}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ a,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ b)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ force\ using\ the\ equal\ we\ defined\ */}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *a\ ==\ *b;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }TaskLists\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ std::string\ tasklist\_name;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ \ \ \ *\ well\ i\ use\ this,\ simply\ because\ this\ can\ prevent\ duplicating\ add}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{using\ }TaskListRawType\ =\ std::unordered\_set<}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSharedTaskHash}{SharedTaskHash}},}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSharedTaskEqual}{SharedTaskEqual}}>;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{/*\ \string^\ Above\ makes\ too\ ill\ :(\ */}}
+\DoxyCodeLine{00049\ \ \ \ \ TaskListRawType\ tasklists;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ TaskLists()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00053\ \ \ \ \ DISABLE\_COPY(TaskLists);}
+\DoxyCodeLine{00054\ \ \ \ \ PROPERTY\_GET\_SET(tasklist\_name);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{using\ }QueryExpr\ =\ std::function<bool(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTask}{Task}}\&)>;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_a6cee74703de18a49a451c399532a60e1}{enqueue\_managing\_task}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\ task\_en\_managed);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_a539cbc0d14292aea9b7540b1d79936d3}{dequeue\_managing\_task}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\ task\_en\_managed);}
 \DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}Task.h"{}}}
-\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}Tools/class\_helper.h"{}}}
-\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ <functional>}}
-\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
-\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \textcolor{comment}{/*\ \ Following\ only\ simply\ provide\ an\ issue\ of\ make\ task\ hashable\ \ \ \ */}}
-\DoxyCodeLine{00081\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSharedTaskHash}{SharedTaskHash}}\ \{}
-\DoxyCodeLine{00082\ \ \ \ \ std::size\_t\ operator()(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ t)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::hash<std::string>()(t-\/>get\_uuid());}
-\DoxyCodeLine{00084\ \ \ \ \ \}}
-\DoxyCodeLine{00085\ \};}
-\DoxyCodeLine{00086\ }
-\DoxyCodeLine{00087\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSharedTaskEqual}{SharedTaskEqual}}\ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator()(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ a,}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ b)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ force\ using\ the\ equal\ we\ defined\ */}}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *a\ ==\ *b;}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
-\DoxyCodeLine{00093\ \};}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \textcolor{keyword}{class\ }TaskLists\ \{}
-\DoxyCodeLine{00096\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00097\ \ \ \ \ std::string\ tasklist\_name;}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ \ *\ well\ i\ use\ this,\ simply\ because\ this\ can\ prevent\ duplicating\ add}}
-\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ */}}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{using\ }TaskListRawType\ =\ std::unordered\_set<}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>,}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSharedTaskHash}{SharedTaskHash}},}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSharedTaskEqual}{SharedTaskEqual}}>;}
-\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{/*\ \string^\ Above\ makes\ too\ ill\ :(\ */}}
-\DoxyCodeLine{00107\ \ \ \ \ TaskListRawType\ tasklists;}
-\DoxyCodeLine{00108\ }
-\DoxyCodeLine{00109\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00110\ \ \ \ \ TaskLists()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00111\ \ \ \ \ DISABLE\_COPY(TaskLists);}
-\DoxyCodeLine{00112\ \ \ \ \ PROPERTY\_GET\_SET(tasklist\_name);}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{using\ }QueryExpr\ =\ std::function<bool(\textcolor{keyword}{const}\ \mbox{\hyperlink{classTask}{Task}}\&)>;}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_aac10653964051721a1ea5a3336c8c819}{enqueue\_managing\_task}}(std::shared\_ptr<Task>\ task\_en\_managed);}
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_af48a50c14fc1ca2d384d6dc03a3d42f6}{dequeue\_managing\_task}}(std::shared\_ptr<Task>\ task\_en\_managed);}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_aa8f2c2b832dd2ff6033a28907f09d761}{enqueue\_managing\_tasks}}(std::vector<std::shared\_ptr<Task>>\ tasks);}
-\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_a74105b4286af90e3ec6d0b1b3fbc5792}{dequeue\_managing\_tasks}}(std::vector<std::shared\_ptr<Task>>\ tasks);}
-\DoxyCodeLine{00141\ }
-\DoxyCodeLine{00152\ \ \ \ \ std::vector<std::shared\_ptr<Task>>\ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}}(QueryExpr\ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}})\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<std::shared\_ptr<Task>>}
-\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{classTaskLists_a9b2f0dd98ea0a52030055a57fbb73471}{query\_with\_name}}(\textcolor{keyword}{const}\ std::string\&\ task\_name)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
-\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}}([\&task\_name](\textcolor{keyword}{const}\ \mbox{\hyperlink{classTask}{Task}}\&\ t)\ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t.get\_task\_name()\ ==\ task\_name;}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00168\ \ \ \ \ \}}
-\DoxyCodeLine{00169\ }
-\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classTaskLists_a36d987f84bd655a36b6638920eab3119}{total\_size}}()\ \{\ \textcolor{keywordflow}{return}\ tasklists.size();\ \}}
-\DoxyCodeLine{00177\ }
-\DoxyCodeLine{00183\ \ \ \ \ std::vector<std::shared\_ptr<Task>>\ \mbox{\hyperlink{classTaskLists_a5c15689a8749d17d6bedc2b6be8c6073}{get\_all\_tasks}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00184\ \};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_a30f63e4c3df3c9818bd2fd767f14106d}{enqueue\_managing\_tasks}}(\textcolor{keyword}{const}\ std::vector<Task::TaskPack>\&\ packs);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_a30f63e4c3df3c9818bd2fd767f14106d}{enqueue\_managing\_tasks}}(std::vector<std::shared\_ptr<Task>>\ tasks);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTaskLists_a74105b4286af90e3ec6d0b1b3fbc5792}{dequeue\_managing\_tasks}}(std::vector<std::shared\_ptr<Task>>\ tasks);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00101\ \ \ \ \ std::vector<std::shared\_ptr<Task>>\ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}}(QueryExpr\ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}})\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{inline}\ std::vector<std::shared\_ptr<Task>>}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classTaskLists_a9b2f0dd98ea0a52030055a57fbb73471}{query\_with\_name}}(\textcolor{keyword}{const}\ std::string\&\ task\_name)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTaskLists_adc32d127e2da24d5ae4b7b115cd199c7}{query}}([\&task\_name](\textcolor{keyword}{const}\ \mbox{\hyperlink{classTask}{Task}}\&\ t)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ t.get\_task\_name()\ ==\ task\_name;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classTaskLists_a600fea36af6ce3cd2b351386b76d1aff}{total\_size}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ tasklists.size();\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00132\ \ \ \ \ std::vector<std::shared\_ptr<Task>>\ \mbox{\hyperlink{classTaskLists_a5c15689a8749d17d6bedc2b6be8c6073}{get\_all\_tasks}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ \};}
 
 \end{DoxyCode}

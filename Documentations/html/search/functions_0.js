@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dequeue_5fmanaging_5ftask_0',['dequeue_managing_task',['../classTaskLists.html#af48a50c14fc1ca2d384d6dc03a3d42f6',1,'TaskLists']]],
-  ['dequeue_5fmanaging_5ftasks_1',['dequeue_managing_tasks',['../classTaskLists.html#a74105b4286af90e3ec6d0b1b3fbc5792',1,'TaskLists']]]
+  ['app_5floop_0',['app_loop',['../classTinyTaskManagerApplication.html#a78b9cd3a921c3dce3301e9b4796c8373',1,'TinyTaskManagerApplication']]],
+  ['application_5finstance_1',['application_instance',['../classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc',1,'TinyTaskManagerApplication']]]
 ];

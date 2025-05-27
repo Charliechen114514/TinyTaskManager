@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sharedtaskequal_0',['SharedTaskEqual',['../structSharedTaskEqual.html',1,'']]],
-  ['sharedtaskhash_1',['SharedTaskHash',['../structSharedTaskHash.html',1,'']]]
+  ['buildexception_0',['BuildException',['../classBuildException.html',1,'']]],
+  ['buildtasknameempty_1',['BuildTaskNameEmpty',['../classBuildTaskNameEmpty.html',1,'']]]
 ];

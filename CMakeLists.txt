@@ -47,11 +47,31 @@ set(IOSrc
     IO/IOBaseDriver.h
     IO/interative_io/IOFrontEnd.h)
 
+set(ParseSrc
+    Core/parser_machine/parse_command.cpp
+    Core/parser_machine/parse_command.h
+    Core/parser_machine/parse_exceptions.h
+    Core/parser_machine/command.cpp
+    Core/parser_machine/command.h)
 
-add_library(tasklib STATIC ${CoreSrc} ${ToolsSrc} ${IOSrc})
+
+set(UiMenu
+    Ui/TaskMenu.cpp
+    Ui/TaskMenu.h)
+
+set(ApplicationSrc
+    Application/application.cpp
+    Application/application.h
+    Application/menu_hooks.h
+    Application/menu_hooks.cpp
+    Application/menu_install.cpp
+    Application/menu_install.h)
+
+
+add_library(tasklib STATIC ${CoreSrc} ${ToolsSrc} ${IOSrc} ${ParseSrc} ${UiMenu})
 target_include_directories(tasklib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-add_executable(TaskManager main.cpp)
+add_executable(TaskManager main.cpp ${ApplicationSrc})
 target_link_libraries(TaskManager PRIVATE tasklib)
 add_subdirectory(test)
 

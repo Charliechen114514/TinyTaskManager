@@ -1,0 +1,21 @@
+\doxysection{menu\+\_\+hooks.\+h}
+\hypertarget{menu__hooks_8h_source}{}\label{menu__hooks_8h_source}\index{Application/menu\_hooks.h@{Application/menu\_hooks.h}}
+\mbox{\hyperlink{menu__hooks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Core/parser\_machine/command.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Core/parser\_machine/parse\_exceptions.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }MenuActions\ \{}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ show\_help(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ process\_add(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ process\_delete(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ process\_exit(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ process\_list(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ error\ hooks\ */}}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ handle\_non\_match(\textcolor{keyword}{const}\ parse\_exceptions*\ command,\ \textcolor{keyword}{const}\ std::string\ c);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

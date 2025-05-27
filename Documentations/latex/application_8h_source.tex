@@ -1,0 +1,42 @@
+\doxysection{application.\+h}
+\hypertarget{application_8h_source}{}\label{application_8h_source}\index{Application/application.h@{Application/application.h}}
+\mbox{\hyperlink{application_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <Tools/class\_helper.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structUiMenu}{UiMenu}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structCommandParser}{CommandParser}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structStandardShellIO}{StandardShellIO}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }TinyTaskManagerApplication\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ DISABLE\_COPY\_MOVE(TinyTaskManagerApplication);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTinyTaskManagerApplication_a78b9cd3a921c3dce3301e9b4796c8373}{app\_loop}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{structUiMenu}{UiMenu}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_aba9bc673b0b2d004de797ea1a63541ab}{menu\_instance}}()\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *menu;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structCommandParser}{CommandParser}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a13efef42a78b7a134376e3a8e9a5c7e1}{parser\_instance}}()\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *parser;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{structStandardShellIO}{StandardShellIO}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a10f9e8cfdd45aa8110d31b9fa3920dd1}{shell\_io\_instance}}()\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *shell\_io;}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ TinyTaskManagerApplication\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a0e7e732d98ea459bd69fe60b42208dfc}{application\_instance}}()\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TinyTaskManagerApplication\ app;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ app;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classTinyTaskManagerApplication}{TinyTaskManagerApplication}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ app\_init();}
+\DoxyCodeLine{00078\ \ \ \ \ std::shared\_ptr<UiMenu>\ menu;\ }
+\DoxyCodeLine{00079\ \ \ \ \ std::shared\_ptr<CommandParser>\ parser;\ }
+\DoxyCodeLine{00080\ \ \ \ \ std::shared\_ptr<StandardShellIO>\ shell\_io;\ }
+\DoxyCodeLine{00081\ \};}
+
+\end{DoxyCode}
