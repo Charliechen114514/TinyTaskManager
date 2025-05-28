@@ -29,7 +29,7 @@ Task::TaskBuilder& Task::TaskBuilder::
 }
 Task::TaskBuilder& Task::TaskBuilder::
     set_description(const std::string& desp) noexcept {
-	this->_tmp->set_discriptions(desp);
+	this->_tmp->set_description(desp);
 	return *this;
 }
 
@@ -52,7 +52,7 @@ Task::Task()
 Task::Task(const Task& task)
     : uuid(UUIDTools::gen_uuid()) {
 	this->set_task_name(task.task_name);
-	this->set_discriptions(task.discriptions);
+	this->set_description(task.description);
 	this->set_deadline(task.deadline);
 }
 
@@ -60,7 +60,7 @@ std::string Task::toStdString() const noexcept {
 	/* at each line, we display the readable strings */
 	return std::format("Task Name: {}\nDescription: {}\nDDL: {}\nPriority: {}",
 	                   this->get_task_name(),
-	                   this->get_discriptions(),
+	                   this->get_description(),
 	                   ChronoTools::fromDdlTimeToReadableString(this->get_deadline()),
 	                   taskPrioirtyString(this->get_priority()));
 }

@@ -59,6 +59,11 @@ set(UiMenu
     Ui/TaskMenu.cpp
     Ui/TaskMenu.h)
 
+set(SerialSrc 
+    third_party/json.hpp
+    Core/serilazations/task_serial.cpp
+    Core/serilazations/task_serial.h)
+
 set(ApplicationSrc
     Application/application.cpp
     Application/application.h
@@ -68,7 +73,10 @@ set(ApplicationSrc
     Application/menu_install.h)
 
 
-add_library(tasklib STATIC ${CoreSrc} ${ToolsSrc} ${IOSrc} ${ParseSrc} ${UiMenu})
+
+
+add_library(tasklib STATIC  ${CoreSrc} ${ToolsSrc} ${SerialSrc}
+                            ${IOSrc} ${ParseSrc} ${UiMenu})
 target_include_directories(tasklib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
 add_executable(TaskManager main.cpp ${ApplicationSrc})

@@ -18,7 +18,7 @@ void inline __filled_col_widths(
 void inline filled_col_width(
     std::vector<size_t>& col_widths, const Task* which) {
 	__filled_col_widths(col_widths, which->get_task_name(), TasksListView::COL_INDEX::NAME);
-	__filled_col_widths(col_widths, which->get_discriptions(), TasksListView::COL_INDEX::DESP);
+	__filled_col_widths(col_widths, which->get_description(), TasksListView::COL_INDEX::DESP);
 	__filled_col_widths(
 	    col_widths,
 	    ChronoTools::fromDdlTimeToReadableString(which->get_deadline()),
@@ -35,7 +35,7 @@ std::string TasksListView::format_tasklists_view(const std::vector<std::shared_p
 	std::ostringstream oss;
 	auto col_widths = headers
 	    | std::views::transform([](auto& h) { return h.size(); })
-	    | std::ranges::to<std::vector>(); 
+	    | std::ranges::to<std::vector>();
 
 	auto append_sep = [&]() {
 		oss << '+';
@@ -75,7 +75,7 @@ std::string TasksListView::format_tasklists_view(const std::vector<std::shared_p
 	for (auto& tp : tasks) {
 		auto packages = {
 			tp->get_task_name(),
-			tp->get_discriptions(),
+			tp->get_description(),
 			ChronoTools::fromDdlTimeToReadableString(tp->get_deadline()),
 			taskPrioirtyString(tp->get_priority()),
 		};

@@ -26,7 +26,7 @@ class Task {
 private:
 	Task();
 	std::string task_name {};
-	std::string discriptions {};
+	std::string description {};
 	deadline_raw_t deadline {};
 	TaskPriority priority {};
 	/* Task ID */
@@ -41,7 +41,7 @@ public:
 	const Task& operator=(const Task&) = delete;
 
 	PROPERTY_GET_SET(task_name);
-	PROPERTY_GET_SET(discriptions);
+	PROPERTY_GET_SET(description);
 	PROPERTY_GET_SET(deadline);
 	PROPERTY_GET_SET(priority);
 	const TaskUUID get_uuid() const noexcept { return uuid; }
@@ -81,7 +81,7 @@ public:
 	 */
 	struct TaskPack {
 		std::string task_name {};
-		std::string discriptions {};
+		std::string description {};
 		deadline_raw_t deadline {};
 		TaskPriority priority {};
 	};

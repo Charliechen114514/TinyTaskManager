@@ -22,3 +22,17 @@ static constexpr std::array<std::string, TaskPriorityMax> TaskPriorityValues = {
 static constexpr inline std::string taskPrioirtyString(const TaskPriority p) {
 	return TaskPriorityValues.at(static_cast<size_t>(p));
 }
+
+#define IS_MATCH(PRIO) \
+	(str == TaskPriorityValues[static_cast<size_t>(PRIO)])
+
+static constexpr inline TaskPriority fromTaskPriorityString(const std::string& str) {
+	if (IS_MATCH(TaskPriority::LOW))
+		return TaskPriority::LOW;
+	if (IS_MATCH(TaskPriority::MEDIUM))
+		return TaskPriority::MEDIUM;
+	if (IS_MATCH(TaskPriority::HIGH))
+		return TaskPriority::HIGH;
+	if (IS_MATCH(TaskPriority::URGENT))
+		return TaskPriority::URGENT;
+}

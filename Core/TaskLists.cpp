@@ -19,7 +19,7 @@ void TaskLists::enqueue_managing_tasks(const std::vector<Task::TaskPack>& packs)
 	for (const auto& each_create_session : packs) {
 		auto task = Task::TaskBuilder()
 		                .set_name(each_create_session.task_name)
-		                .set_description(each_create_session.discriptions)
+		                .set_description(each_create_session.description)
 		                .set_ddl(each_create_session.deadline)
 		                .set_property(each_create_session.priority)
 		                .build_finish();
