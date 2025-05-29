@@ -17,11 +17,17 @@ std::vector<UiMenu::menu_item_t> commands = {
 	    std::make_pair("add", MenuActions::process_add),
 	    "install new tasks"),
 	std::make_pair(
-	    std::make_pair("remove", MenuActions::process_delete),
+	    std::make_pair("delete", MenuActions::process_delete),
 	    "delete the target task"),
 	std::make_pair(
 	    std::make_pair("exit", MenuActions::process_exit),
-	    "exit the program")
+	    "exit the program"),
+	std::make_pair(
+	    std::make_pair("load", MenuActions::process_load),
+	    "load from the remote file"),
+	std::make_pair(
+	    std::make_pair("store", MenuActions::process_store),
+	    "store the current list to the remote")
 };
 }
 
@@ -34,4 +40,6 @@ void install_menu(UiMenu& menu) {
 void install_menu_hooks(UiMenu& menu, CommandParser& parser) {
 	menu.install_to_parser(parser);
 	parser.install_error_hook<non_match_command>(MenuActions::handle_non_match);
+	parser.install_error_hook<argument_count_mismatch>(MenuActions::handle_arg_count_error);
+	parser.install_error_hook<argument_invalid>(MenuActions::handle_arg_count_error);
 }

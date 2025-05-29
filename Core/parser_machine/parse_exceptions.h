@@ -38,3 +38,13 @@ struct non_match_command : public parse_exceptions {
 	non_match_command()
 	    : parse_exceptions("Can not find target command for processing!\n") { };
 };
+
+struct argument_count_mismatch : public parse_exceptions {
+	argument_count_mismatch()
+	    : parse_exceptions("Mismatching the argument size!\n") { };
+};
+
+struct argument_invalid : public parse_exceptions {
+	argument_invalid()
+	    : parse_exceptions("Argument invalid!\n") { };
+};

@@ -18,7 +18,14 @@ void process_delete(const Command& t);
 void process_exit(const Command& t);
 void process_list(const Command& t);
 
+void process_load(const Command& t);
+void process_store(const Command& t);
+
 /* error hooks */
 void handle_non_match(const parse_exceptions* command, const std::string c);
+
+void handle_arg_count_error(const parse_exceptions* command, const std::string c);
+
+void handle_arg_invalid_error(const parse_exceptions* command, const std::string c);
 
 };

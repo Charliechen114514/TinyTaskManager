@@ -35,4 +35,5 @@ static constexpr inline TaskPriority fromTaskPriorityString(const std::string& s
 		return TaskPriority::HIGH;
 	if (IS_MATCH(TaskPriority::URGENT))
 		return TaskPriority::URGENT;
+	return TaskPriority::LOW;
 }

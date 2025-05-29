@@ -70,7 +70,10 @@ set(ApplicationSrc
     Application/menu_hooks.h
     Application/menu_hooks.cpp
     Application/menu_install.cpp
-    Application/menu_install.h)
+    Application/menu_install.h
+    Application/task_selector.h
+    Application/task_selector.cpp
+    Application/help_helper.h)
 
 
 
