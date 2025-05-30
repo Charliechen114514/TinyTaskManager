@@ -76,6 +76,10 @@ public:
 		return app;
 	}
 
+	inline void mark_as_quit() { set_as_quit = true; }
+
+	void display_shell_format(bool req_new_line_before = false);
+
 private:
 	/**
 	 * @brief Construct a new Tiny Task Manager Application object
@@ -100,5 +104,6 @@ private:
 	std::shared_ptr<CommandParser> parser; ///< parser instance, this is the command parser of the application
 	std::shared_ptr<StandardShellIO> shell_io; ///< shell IO instance, this is the IO interface of the application
 	std::shared_ptr<TaskLists> operating_list; ///< operating_lists current know
-	std::shared_ptr<TaskListsSelector> selector;
+	std::shared_ptr<TaskListsSelector> selector; ///< the task selector
+	bool set_as_quit { false }; ///< quit flags
 };

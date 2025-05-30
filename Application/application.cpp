@@ -8,6 +8,12 @@ TinyTaskManagerApplication::TinyTaskManagerApplication() {
 	app_init();
 }
 
+void TinyTaskManagerApplication::display_shell_format(bool req_new_line_before) {
+	if (req_new_line_before)
+		shell_io->write_raw_buffer_to_io("\n");
+	shell_io->write_raw_buffer_to_io(CONSOLE_STYLE);
+}
+
 void TinyTaskManagerApplication::load_tasks() {
 	auto packs = selector->init_load();
 	operating_list->enqueue_managing_tasks(packs);
@@ -29,8 +35,8 @@ void TinyTaskManagerApplication::app_init() {
 void TinyTaskManagerApplication::app_loop() {
 	std::string user_buffer;
 	std::cout << menu->menu_for_display();
-	while (1) {
-		shell_io->write_raw_buffer_to_io(CONSOLE_STYLE);
+	while (!set_as_quit) {
+		display_shell_format();
 		/* sync call */
 		shell_io->from_io_raw_buffer(user_buffer);
 

@@ -45,7 +45,8 @@ set(ToolsSrc
 
 set(IOSrc
     IO/IOBaseDriver.h
-    IO/interative_io/IOFrontEnd.h)
+    IO/interative_io/IOFrontEnd.h
+    IO/file_io/fileio.h)
 
 set(ParseSrc
     Core/parser_machine/parse_command.cpp
@@ -64,19 +65,11 @@ set(SerialSrc
     Core/serilazations/task_serial.cpp
     Core/serilazations/task_serial.h)
 
-set(ApplicationSrc
-    Application/application.cpp
-    Application/application.h
-    Application/menu_hooks.h
-    Application/menu_hooks.cpp
-    Application/menu_install.cpp
-    Application/menu_install.h
-    Application/task_selector.h
-    Application/task_selector.cpp
-    Application/help_helper.h)
 
-
-
+file(GLOB_RECURSE ApplicationSrc 
+    "${CMAKE_CURRENT_SOURCE_DIR}/Application/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Application/*.h"
+)
 
 add_library(tasklib STATIC  ${CoreSrc} ${ToolsSrc} ${SerialSrc}
                             ${IOSrc} ${ParseSrc} ${UiMenu})

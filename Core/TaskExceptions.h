@@ -55,10 +55,10 @@ class LoadException : public LoadStoreException {
 	const std::string errorString;
 
 public:
-	LoadException(const std::filesystem::path& p)
+	LoadException(const std::filesystem::path& p, const std::string& details)
 	    : LoadStoreException()
 	    , _p(p)
-	    , errorString("Can not load file from path: " + _p.root_path().string() + "") { }
+	    , errorString("Can not load file from path: " + _p.string() + ", for the reason: " + details) { }
 	virtual const char* what() const noexcept override {
 		return errorString.c_str();
 	}
@@ -69,10 +69,10 @@ class StoreException : public LoadStoreException {
 	const std::string errorString;
 
 public:
-	StoreException(const std::filesystem::path& p)
+	StoreException(const std::filesystem::path& p, const std::string& details)
 	    : LoadStoreException()
 	    , _p(p)
-	    , errorString("Can not load file from path: " + _p.root_path().string() + "") { }
+	    , errorString("Can not load file from path: " + _p.string() + ", for the reason: " + details) { }
 	virtual const char* what() const noexcept override {
 		return errorString.c_str();
 	}

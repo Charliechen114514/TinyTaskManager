@@ -1,29 +1,11 @@
-#include "menu_hooks.h"
 #include "Application/application.h"
-#include "Application/help_helper.h"
+#include "Application/menu_hooks.h"
 #include "Core/TaskLists.h"
 #include "Core/TaskViews.h"
 #include "Core/Types.h"
 #include "IO/interative_io/IOFrontEnd.h"
 #include "Tools/format_time.h"
-#include "Ui/TaskMenu.h"
 #include <print>
-void MenuActions::show_help(const Command& t) {
-	/* this will show the App help page */
-	if (t.args.empty())
-		std::print("{}", TinyTaskManagerApplication::application_instance().menu_instance().menu_for_display());
-	else if (t.args.size() != 1) {
-		throw argument_count_mismatch();
-	} else {
-		auto& ref = helper_dict();
-		auto it = ref.find(t.args[0]);
-		if (it == ref.end()) {
-			throw argument_invalid();
-		} else {
-			std::println("{}", it->second);
-		}
-	}
-}
 
 void MenuActions::process_add(const Command& t) {
 	std::string io_buffer;
@@ -94,36 +76,4 @@ void MenuActions::process_add(const Command& t) {
 
 	/* build finish */
 	std::print("build finish! see the following as the result!\n{}", TasksListView::format_tasklists_view({ task_final }));
-}
-void MenuActions::process_delete(const Command& t) {
-	std::println("Hello delete!");
-}
-void MenuActions::process_exit(const Command& t) {
-	std::exit(0);
-}
-void MenuActions::process_list(const Command& t) {
-	auto tasks = TinyTaskManagerApplication::application_instance().taskLists_instance().get_all_tasks();
-	std::print("{}", TasksListView::format_tasklists_view(tasks));
-}
-
-void MenuActions::process_load(const Command& t) {
-	std::println("Hello load!");
-}
-void MenuActions::process_store(const Command& t) {
-	std::println("Hello store");
-}
-
-void MenuActions::handle_non_match(const parse_exceptions* command, const std::string c) {
-	std::cerr << "Error occurs: " << command->what() << "while trying to parse the command with following: "
-	          << c << "\n";
-}
-
-void MenuActions::handle_arg_count_error(const parse_exceptions* command, const std::string c) {
-	std::cerr << "Error occurs: " << command->what() << "while trying to parse the command with following: "
-	          << c << "\n";
-}
-
-void MenuActions::handle_arg_invalid_error(const parse_exceptions* command, const std::string c) {
-	std::cerr << "Error occurs: " << command->what() << "while trying to parse the command with following: "
-	          << c << "\n";
 }
