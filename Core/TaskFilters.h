@@ -101,6 +101,11 @@ struct NameContainsFilter : public AbstractTaskFilters {
 	virtual bool is_current_satified(const std::shared_ptr<Task>& task_handle) const override;
 };
 
+/**
+ * @brief 	Priority Filters checks here, these will decide which
+ *			tasks can pass the filters
+ *
+ */
 struct PriorityFilters : public AbstractTaskFilters {
 	enum class FilterWay {
 		ACCEPT_HIGH,

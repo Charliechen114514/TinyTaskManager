@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['menu_5ffor_5fdisplay_0',['menu_for_display',['../structUiMenu.html#a326eb90ec242af5a9082a76e6ae4b1bc',1,'UiMenu']]],
-  ['menu_5fhooks_2eh_1',['menu_hooks.h',['../menu__hooks_8h.html',1,'']]],
-  ['menu_5finstall_2eh_2',['menu_install.h',['../menu__install_8h.html',1,'']]],
-  ['menu_5finstance_3',['menu_instance',['../classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab',1,'TinyTaskManagerApplication']]],
-  ['menu_5fitem_5ft_4',['menu_item_t',['../structUiMenu.html#a07109795f2eb4a144f6738ccd972d7b4',1,'UiMenu']]]
+  ['leavingtimefilters_0',['LeavingTimeFilters',['../structLeavingTimeFilters.html',1,'']]],
+  ['load_5ffrom_1',['load_from',['../structSerializations_1_1AbstractTasksSerializor.html#a8f0eea1b73237671eef194efcd68aec8',1,'Serializations::AbstractTasksSerializor::load_from()'],['../structSerializations_1_1JsonTasksSerializor.html#a50f471561710d469fd2eefa20c46bdb8',1,'Serializations::JsonTasksSerializor::load_from()']]],
+  ['loadexception_2',['LoadException',['../classLoadException.html',1,'']]],
+  ['loadstoreexception_3',['LoadStoreException',['../classLoadStoreException.html',1,'']]],
+  ['localtime_5fddl_4',['localtime_ddl',['../format__time_8h.html#acd257b35d916f3512d8d00793b39907c',1,'ChronoTools']]]
 ];

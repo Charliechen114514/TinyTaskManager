@@ -27,7 +27,10 @@ std::vector<UiMenu::menu_item_t> commands = {
 	    "load from the remote file"),
 	std::make_pair(
 	    std::make_pair("store", MenuActions::process_store),
-	    "store the current list to the remote")
+	    "store the current list to the remote"),
+	std::make_pair(
+	    std::make_pair("filter", MenuActions::process_filters),
+	    "filter with target search expressions")
 };
 }
 

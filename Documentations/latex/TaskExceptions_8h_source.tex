@@ -23,5 +23,55 @@
 \DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Task\ Name\ should\ never\ be\ empty"{}};}
 \DoxyCodeLine{00040\ \ \ \ \ \}}
 \DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }LoadStoreException\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ LoadStoreException()}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ :\ std::runtime\_error(\textcolor{stringliteral}{"{}LoadStore\ file\ exceptions"{}})\ \{\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ what()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}LoadStore\ file\ Exception\ for\ some\ cases..."{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }LoadException\ :\ \textcolor{keyword}{public}\ LoadStoreException\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ \_p;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ errorString;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ LoadException(\textcolor{keyword}{const}\ std::filesystem::path\&\ p,\ \textcolor{keyword}{const}\ std::string\&\ details)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ :\ LoadStoreException()}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ ,\ \_p(p)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ ,\ errorString(\textcolor{stringliteral}{"{}Can\ not\ load\ file\ from\ path:\ "{}}\ +\ \_p.string()\ +\ \textcolor{stringliteral}{"{},\ for\ the\ reason:\ "{}}\ +\ details)\ \{\ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ what()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ errorString.c\_str();}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }StoreException\ :\ \textcolor{keyword}{public}\ LoadStoreException\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ std::filesystem::path\ \_p;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ errorString;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00084\ \ \ \ \ StoreException(\textcolor{keyword}{const}\ std::filesystem::path\&\ p,\ \textcolor{keyword}{const}\ std::string\&\ details)}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ :\ LoadStoreException()}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ ,\ \_p(p)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ ,\ errorString(\textcolor{stringliteral}{"{}Can\ not\ load\ file\ from\ path:\ "{}}\ +\ \_p.string()\ +\ \textcolor{stringliteral}{"{},\ for\ the\ reason:\ "{}}\ +\ details)\ \{\ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ what()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ errorString.c\_str();}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{class\ }InvalidKeyException\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ error\_string;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00097\ \ \ \ \ InvalidKeyException(\textcolor{keyword}{const}\ std::string\&\ error\_key)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ :\ std::runtime\_error(\textcolor{stringliteral}{"{}LoadStore\ file\ exceptions"{}})}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ ,\ error\_string(error\_key\ +\ \textcolor{stringliteral}{"{}is\ invalid!"{}})\ \{\ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ what()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ error\_string.c\_str();}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \};}
 
 \end{DoxyCode}

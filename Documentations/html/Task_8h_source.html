@@ -120,7 +120,7 @@ $(function(){initNavTree('Task_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Task();</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::string task_name {};</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::string discriptions {};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::string description {};</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    deadline_raw_t deadline {};</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    TaskPriority priority {};</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">/* Task ID */</span></div>
@@ -135,49 +135,54 @@ $(function(){initNavTree('Task_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> Task&amp; operator=(<span class="keyword">const</span> Task&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    PROPERTY_GET_SET(task_name);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    PROPERTY_GET_SET(discriptions);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    PROPERTY_GET_SET(description);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    PROPERTY_GET_SET(deadline);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    PROPERTY_GET_SET(priority);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">const</span> TaskUUID get_uuid() <span class="keyword">const</span> <span class="keyword">noexcept</span> { <span class="keywordflow">return</span> uuid; }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string toStdString() <span class="keyword">const</span> <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">/* this is the function that helps to check if the task is</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">     * equal */</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">friend</span> <span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> Task&amp; lhs, <span class="keyword">const</span> Task&amp; rhs) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> lhs.get_uuid() == rhs.get_uuid();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classTask_1_1TaskBuilder.html">TaskBuilder</a>;</div>
-<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classTask_1_1TaskBuilder.html">   61</a></span>    <span class="keyword">class </span>TaskBuilder {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        TaskBuilder() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        DISABLE_COPY(TaskBuilder);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="comment">/* when building is finished, call this */</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        std::shared_ptr&lt;Task&gt; build_finish();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="comment">/* At any level, only this is expected */</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        TaskBuilder&amp; set_ddl(deadline_raw_t ddl) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        TaskBuilder&amp; set_description(<span class="keyword">const</span> std::string&amp; desp) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        TaskBuilder&amp; set_name(<span class="keyword">const</span> std::string&amp; desp) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        TaskBuilder&amp; set_property(<span class="keyword">const</span> TaskPriority p) <span class="keyword">noexcept</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        std::shared_ptr&lt;Task&gt; _tmp = std::shared_ptr&lt;Task&gt;(<span class="keyword">new</span> Task());</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    };</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classTask.html#a2fa4ddac6abeb85cb72dbf7a2124205d">   52</a></span>    <span class="keyword">const</span> TaskUUID <a class="code hl_function" href="classTask.html#a2fa4ddac6abeb85cb72dbf7a2124205d">get_uuid</a>() const noexcept { <span class="keywordflow">return</span> uuid; }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::string <a class="code hl_function" href="classTask.html#a9b0aea6073aeec0b11056f12ee36e3f8">toStdString</a>() const noexcept;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">/* this is the function that helps to check if the task is</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">     * equal */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    friend inline <span class="keywordtype">bool</span> operator==(const <a class="code hl_class" href="classTask.html">Task</a>&amp; lhs, const <a class="code hl_class" href="classTask.html">Task</a>&amp; rhs) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> lhs.get_uuid() == rhs.get_uuid();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classTask_1_1TaskBuilder.html">TaskBuilder</a>;</div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classTask_1_1TaskBuilder.html">   71</a></span>    <span class="keyword">class </span>TaskBuilder {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        TaskBuilder() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        DISABLE_COPY(TaskBuilder);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        std::shared_ptr&lt;Task&gt; <a class="code hl_function" href="classTask_1_1TaskBuilder.html#ac0d78d6e6a8474c4facd41fb8ffd8e84">build_finish</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        TaskBuilder&amp; <a class="code hl_function" href="classTask_1_1TaskBuilder.html#a7c9a73301e13a39e8bc0e84dc55c53e5">set_ddl</a>(deadline_raw_t ddl) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        TaskBuilder&amp; <a class="code hl_function" href="classTask_1_1TaskBuilder.html#a994bf3279a9b957191bd285cab2d2dc6">set_description</a>(<span class="keyword">const</span> std::string&amp; desp) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        TaskBuilder&amp; <a class="code hl_function" href="classTask_1_1TaskBuilder.html#a23c19898766d795d63144783364ada18">set_name</a>(<span class="keyword">const</span> std::string&amp; desp) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        TaskBuilder&amp; <a class="code hl_function" href="classTask_1_1TaskBuilder.html#ac9c201f0e6a6c6b0010fa123e635c454">set_property</a>(<span class="keyword">const</span> TaskPriority p) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        std::shared_ptr&lt;Task&gt; _tmp = std::shared_ptr&lt;Task&gt;(<span class="keyword">new</span> Task());</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    };</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="};">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structTask_1_1TaskPack.html">   82</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structTask_1_1TaskPack.html">TaskPack</a> {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        std::string task_name {};</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        std::string discriptions {};</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        deadline_raw_t deadline {};</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        TaskPriority priority {};</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    };</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="};">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structTask_1_1TaskPack.html">  119</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structTask_1_1TaskPack.html">TaskPack</a> {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        std::string task_name {};</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        std::string description {};</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        deadline_raw_t deadline {};</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        TaskPriority priority {};</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    };</div>
 </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
 </div>
-<div class="ttc" id="aclassTask_1_1TaskBuilder_html"><div class="ttname"><a href="classTask_1_1TaskBuilder.html">Task::TaskBuilder</a></div><div class="ttdoc">TaskBuilder is the class expected to build the Task, as a factory.</div><div class="ttdef"><b>Definition</b> Task.h:61</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html"><div class="ttname"><a href="classTask_1_1TaskBuilder.html">Task::TaskBuilder</a></div><div class="ttdoc">TaskBuilder is the class expected to build the Task, as a factory.</div><div class="ttdef"><b>Definition</b> Task.h:71</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_a23c19898766d795d63144783364ada18"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#a23c19898766d795d63144783364ada18">Task::TaskBuilder::set_name</a></div><div class="ttdeci">TaskBuilder &amp; set_name(const std::string &amp;desp) noexcept</div><div class="ttdoc">Set the name object.</div><div class="ttdef"><b>Definition</b> Task.cpp:37</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_a7c9a73301e13a39e8bc0e84dc55c53e5"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#a7c9a73301e13a39e8bc0e84dc55c53e5">Task::TaskBuilder::set_ddl</a></div><div class="ttdeci">TaskBuilder &amp; set_ddl(deadline_raw_t ddl) noexcept</div><div class="ttdoc">Set the ddl object.</div><div class="ttdef"><b>Definition</b> Task.cpp:26</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_a994bf3279a9b957191bd285cab2d2dc6"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#a994bf3279a9b957191bd285cab2d2dc6">Task::TaskBuilder::set_description</a></div><div class="ttdeci">TaskBuilder &amp; set_description(const std::string &amp;desp) noexcept</div><div class="ttdoc">Set the description object.</div><div class="ttdef"><b>Definition</b> Task.cpp:31</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_ac0d78d6e6a8474c4facd41fb8ffd8e84"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#ac0d78d6e6a8474c4facd41fb8ffd8e84">Task::TaskBuilder::build_finish</a></div><div class="ttdeci">std::shared_ptr&lt; Task &gt; build_finish()</div><div class="ttdoc">finish build and get the task, invoke this</div><div class="ttdef"><b>Definition</b> Task.cpp:20</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_ac9c201f0e6a6c6b0010fa123e635c454"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#ac9c201f0e6a6c6b0010fa123e635c454">Task::TaskBuilder::set_property</a></div><div class="ttdeci">TaskBuilder &amp; set_property(const TaskPriority p) noexcept</div><div class="ttdoc">Set the property object.</div><div class="ttdef"><b>Definition</b> Task.cpp:43</div></div>
 <div class="ttc" id="aclassTask_html"><div class="ttname"><a href="classTask.html">Task</a></div><div class="ttdoc">Task is the class that represents a task, which contains the task name, description,...</div><div class="ttdef"><b>Definition</b> Task.h:25</div></div>
-<div class="ttc" id="astructTask_1_1TaskPack_html"><div class="ttname"><a href="structTask_1_1TaskPack.html">Task::TaskPack</a></div><div class="ttdoc">TaskPack provides a easy interfaces for one session build, This is using for the bunch level create f...</div><div class="ttdef"><b>Definition</b> Task.h:82</div></div>
+<div class="ttc" id="aclassTask_html_a2fa4ddac6abeb85cb72dbf7a2124205d"><div class="ttname"><a href="classTask.html#a2fa4ddac6abeb85cb72dbf7a2124205d">Task::get_uuid</a></div><div class="ttdeci">const TaskUUID get_uuid() const noexcept</div><div class="ttdoc">Get the uuid object.</div><div class="ttdef"><b>Definition</b> Task.h:52</div></div>
+<div class="ttc" id="aclassTask_html_a9b0aea6073aeec0b11056f12ee36e3f8"><div class="ttname"><a href="classTask.html#a9b0aea6073aeec0b11056f12ee36e3f8">Task::toStdString</a></div><div class="ttdeci">std::string toStdString() const noexcept</div><div class="ttdoc">to the printable and displayable format</div><div class="ttdef"><b>Definition</b> Task.cpp:59</div></div>
+<div class="ttc" id="astructTask_1_1TaskPack_html"><div class="ttname"><a href="structTask_1_1TaskPack.html">Task::TaskPack</a></div><div class="ttdoc">TaskPack provides a easy interfaces for one session build, This is using for the bunch level create f...</div><div class="ttdef"><b>Definition</b> Task.h:119</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

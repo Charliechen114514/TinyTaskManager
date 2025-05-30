@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['shell_5fio_5finstance_0',['shell_io_instance',['../classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1',1,'TinyTaskManagerApplication']]]
+  ['remove_5ffilters_0',['remove_filters',['../structTaskFilterDrive.html#ab8fc5f28328961c8bb1ec8dcd8f85e5e',1,'TaskFilterDrive']]]
 ];

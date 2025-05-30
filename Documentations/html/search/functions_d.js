@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['write_5fraw_5fbuffer_5fto_5fio_0',['write_raw_buffer_to_io',['../structStandardShellIO.html#ac3047bf397a18c8cb68100c7baf8a409',1,'StandardShellIO::write_raw_buffer_to_io()'],['../structIOBase.html#a35fb5839303dd16c1bcdab33bb921bfd',1,'IOBase::write_raw_buffer_to_io()']]]
+  ['tasklists_5finstance_0',['taskLists_instance',['../classTinyTaskManagerApplication.html#a466a5fcbd798ef26f1b40d1b41f279a3',1,'TinyTaskManagerApplication']]],
+  ['tostdstring_1',['toStdString',['../classTask.html#a9b0aea6073aeec0b11056f12ee36e3f8',1,'Task']]],
+  ['total_5fsize_2',['total_size',['../classTaskLists.html#a600fea36af6ce3cd2b351386b76d1aff',1,'TaskLists']]]
 ];

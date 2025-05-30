@@ -9,34 +9,52 @@
 \DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structUiMenu}{UiMenu}};}
 \DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structCommandParser}{CommandParser}};}
 \DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structStandardShellIO}{StandardShellIO}};}
-\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }TinyTaskManagerApplication\ \{}
-\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023\ \ \ \ \ DISABLE\_COPY\_MOVE(TinyTaskManagerApplication);}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTinyTaskManagerApplication_a78b9cd3a921c3dce3301e9b4796c8373}{app\_loop}}();}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{structUiMenu}{UiMenu}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_aba9bc673b0b2d004de797ea1a63541ab}{menu\_instance}}()\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *menu;}
-\DoxyCodeLine{00037\ \ \ \ \ \}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structCommandParser}{CommandParser}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a13efef42a78b7a134376e3a8e9a5c7e1}{parser\_instance}}()\ \{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *parser;}
-\DoxyCodeLine{00046\ \ \ \ \ \}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{structStandardShellIO}{StandardShellIO}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a10f9e8cfdd45aa8110d31b9fa3920dd1}{shell\_io\_instance}}()\ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *shell\_io;}
-\DoxyCodeLine{00055\ \ \ \ \ \}}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ TinyTaskManagerApplication\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a0e7e732d98ea459bd69fe60b42208dfc}{application\_instance}}()\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TinyTaskManagerApplication\ app;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ app;}
-\DoxyCodeLine{00065\ \ \ \ \ \}}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classTinyTaskManagerApplication}{TinyTaskManagerApplication}}();}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ app\_init();}
-\DoxyCodeLine{00078\ \ \ \ \ std::shared\_ptr<UiMenu>\ menu;\ }
-\DoxyCodeLine{00079\ \ \ \ \ std::shared\_ptr<CommandParser>\ parser;\ }
-\DoxyCodeLine{00080\ \ \ \ \ std::shared\_ptr<StandardShellIO>\ shell\_io;\ }
-\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTaskLists}{TaskLists}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structTaskListsSelector}{TaskListsSelector}};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }TinyTaskManagerApplication\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ CONSOLE\_STYLE\ =\ \textcolor{stringliteral}{"{}>\ "{}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ DISABLE\_COPY\_MOVE(TinyTaskManagerApplication);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTinyTaskManagerApplication_a78b9cd3a921c3dce3301e9b4796c8373}{app\_loop}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{structUiMenu}{UiMenu}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_aba9bc673b0b2d004de797ea1a63541ab}{menu\_instance}}()\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *menu;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{structCommandParser}{CommandParser}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a13efef42a78b7a134376e3a8e9a5c7e1}{parser\_instance}}()\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *parser;}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{structStandardShellIO}{StandardShellIO}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a10f9e8cfdd45aa8110d31b9fa3920dd1}{shell\_io\_instance}}()\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *shell\_io;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{classTaskLists}{TaskLists}}\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a466a5fcbd798ef26f1b40d1b41f279a3}{taskLists\_instance}}()\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *operating\_list;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ TinyTaskManagerApplication\&\ \mbox{\hyperlink{classTinyTaskManagerApplication_a0e7e732d98ea459bd69fe60b42208dfc}{application\_instance}}()\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TinyTaskManagerApplication\ app;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ app;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ mark\_as\_quit()\ \{\ set\_as\_quit\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ display\_shell\_format(\textcolor{keywordtype}{bool}\ req\_new\_line\_before\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ TinyTaskManagerApplication();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ app\_init();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ load\_tasks();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ std::shared\_ptr<UiMenu>\ menu;\ }
+\DoxyCodeLine{00104\ \ \ \ \ std::shared\_ptr<CommandParser>\ parser;\ }
+\DoxyCodeLine{00105\ \ \ \ \ std::shared\_ptr<StandardShellIO>\ shell\_io;\ }
+\DoxyCodeLine{00106\ \ \ \ \ std::shared\_ptr<TaskLists>\ operating\_list;\ }
+\DoxyCodeLine{00107\ \ \ \ \ std::shared\_ptr<TaskListsSelector>\ selector;\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ set\_as\_quit\ \{\ \textcolor{keyword}{false}\ \};\ }
+\DoxyCodeLine{00109\ \};}
 
 \end{DoxyCode}

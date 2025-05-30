@@ -1,0 +1,21 @@
+\doxysection{help\+\_\+helper.\+h}
+\hypertarget{help__helper_8h_source}{}\label{help__helper_8h_source}\index{Application/help\_helper.h@{Application/help\_helper.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00004\ \textcolor{keyword}{inline}\ std::unordered\_map<std::string,\ std::string>\&\ helper\_dict()\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{static}\ std::unordered\_map<std::string,\ std::string>\ maps\_help\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}help"{}},\ \textcolor{stringliteral}{"{}show\ the\ help\ main\ page"{}}\ \},}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}add"{}},\ \textcolor{stringliteral}{"{}add\ the\ task\ for\ details"{}}\ \},}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}delete"{}},\ \textcolor{stringliteral}{"{}delete\ the\ task\ with\ given\ names"{}}\ \},}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}list"{}},\ \textcolor{stringliteral}{"{}show\ the\ detailed\ lists"{}}\ \},}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}store"{}},\ \textcolor{stringliteral}{"{}given\ a\ path\ to\ store\ the\ current\ lists"{}}\ \},}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}load"{}},\ \textcolor{stringliteral}{"{}append\ the\ current\ lists\ with\ given\ path\ direct\ to\ a\ json\ file"{}}\ \},}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}filter"{}},\ \textcolor{stringliteral}{"{}filter\ the\ tasks\ with\ the\ given\ search\ expressions"{}}\ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordflow}{return}\ maps\_help;}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}

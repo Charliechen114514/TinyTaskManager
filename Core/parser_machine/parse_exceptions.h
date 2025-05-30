@@ -39,11 +39,19 @@ struct non_match_command : public parse_exceptions {
 	    : parse_exceptions("Can not find target command for processing!\n") { };
 };
 
+/**
+ * @brief when args count is mismatch during the parse, these will be thrown
+ *
+ */
 struct argument_count_mismatch : public parse_exceptions {
 	argument_count_mismatch()
 	    : parse_exceptions("Mismatching the argument size!\n") { };
 };
 
+/**
+ * @brief when args provided invalid during the parse, these will be thrown
+ *
+ */
 struct argument_invalid : public parse_exceptions {
 	argument_invalid()
 	    : parse_exceptions("Argument invalid!\n") { };

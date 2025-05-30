@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dequeue_5fmanaging_5ftask_0',['dequeue_managing_task',['../classTaskLists.html#a539cbc0d14292aea9b7540b1d79936d3',1,'TaskLists']]],
-  ['dequeue_5fmanaging_5ftasks_1',['dequeue_managing_tasks',['../classTaskLists.html#a74105b4286af90e3ec6d0b1b3fbc5792',1,'TaskLists']]]
+  ['build_5ffinish_0',['build_finish',['../classTask_1_1TaskBuilder.html#ac0d78d6e6a8474c4facd41fb8ffd8e84',1,'Task::TaskBuilder']]]
 ];

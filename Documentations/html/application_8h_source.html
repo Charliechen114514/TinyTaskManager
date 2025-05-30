@@ -113,53 +113,75 @@ $(function(){initNavTree('application_8h_source.html',''); initResizable(true); 
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_struct" href="structUiMenu.html">UiMenu</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_struct" href="structCommandParser.html">CommandParser</a>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_struct" href="structStandardShellIO.html">StandardShellIO</a>;</div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html">   21</a></span><span class="keyword">class </span>TinyTaskManagerApplication {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    DISABLE_COPY_MOVE(TinyTaskManagerApplication);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTinyTaskManagerApplication.html#a78b9cd3a921c3dce3301e9b4796c8373">app_loop</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span></div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab">   35</a></span>    <a class="code hl_struct" href="structUiMenu.html">UiMenu</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab">menu_instance</a>() {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> *menu;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="classTaskLists.html">TaskLists</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_struct" href="structTaskListsSelector.html">TaskListsSelector</a>;</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html">   23</a></span><span class="keyword">class </span>TinyTaskManagerApplication {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* CONSOLE_STYLE = <span class="stringliteral">&quot;&gt; &quot;</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    DISABLE_COPY_MOVE(TinyTaskManagerApplication);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTinyTaskManagerApplication.html#a78b9cd3a921c3dce3301e9b4796c8373">app_loop</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab">   39</a></span>    <a class="code hl_struct" href="structUiMenu.html">UiMenu</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab">menu_instance</a>() {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> *menu;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1">   44</a></span>    <a class="code hl_struct" href="structCommandParser.html">CommandParser</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1">parser_instance</a>() {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> *parser;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1">   48</a></span>    <a class="code hl_struct" href="structCommandParser.html">CommandParser</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1">parser_instance</a>() {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> *parser;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1">   53</a></span>    <a class="code hl_struct" href="structStandardShellIO.html">StandardShellIO</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1">shell_io_instance</a>() {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span> *shell_io;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1">   57</a></span>    <a class="code hl_struct" href="structStandardShellIO.html">StandardShellIO</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1">shell_io_instance</a>() {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> *shell_io;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc">   62</a></span>    <span class="keyword">static</span> TinyTaskManagerApplication&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc">application_instance</a>() {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">static</span> TinyTaskManagerApplication app;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">return</span> app;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span></div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a466a5fcbd798ef26f1b40d1b41f279a3">   65</a></span>    <a class="code hl_class" href="classTaskLists.html">TaskLists</a>&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a466a5fcbd798ef26f1b40d1b41f279a3">taskLists_instance</a>() {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> *operating_list;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_class" href="classTinyTaskManagerApplication.html">TinyTaskManagerApplication</a>();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> app_init();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    std::shared_ptr&lt;UiMenu&gt; menu; </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    std::shared_ptr&lt;CommandParser&gt; parser; </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    std::shared_ptr&lt;StandardShellIO&gt; shell_io; </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc">   74</a></span>    <span class="keyword">static</span> TinyTaskManagerApplication&amp; <a class="code hl_function" href="classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc">application_instance</a>() {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">static</span> TinyTaskManagerApplication app;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> app;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
 </div>
-<div class="ttc" id="aclassTinyTaskManagerApplication_html"><div class="ttname"><a href="classTinyTaskManagerApplication.html">TinyTaskManagerApplication</a></div><div class="ttdoc">Application Level class abstractions, make it simple in main.</div><div class="ttdef"><b>Definition</b> application.h:21</div></div>
-<div class="ttc" id="aclassTinyTaskManagerApplication_html_a0e7e732d98ea459bd69fe60b42208dfc"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc">TinyTaskManagerApplication::application_instance</a></div><div class="ttdeci">static TinyTaskManagerApplication &amp; application_instance()</div><div class="ttdoc">Get the application instance, this is a singleton.</div><div class="ttdef"><b>Definition</b> application.h:62</div></div>
-<div class="ttc" id="aclassTinyTaskManagerApplication_html_a10f9e8cfdd45aa8110d31b9fa3920dd1"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1">TinyTaskManagerApplication::shell_io_instance</a></div><div class="ttdeci">StandardShellIO &amp; shell_io_instance()</div><div class="ttdoc">Get the shell IO instance.</div><div class="ttdef"><b>Definition</b> application.h:53</div></div>
-<div class="ttc" id="aclassTinyTaskManagerApplication_html_a13efef42a78b7a134376e3a8e9a5c7e1"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1">TinyTaskManagerApplication::parser_instance</a></div><div class="ttdeci">CommandParser &amp; parser_instance()</div><div class="ttdoc">Get the parser instance.</div><div class="ttdef"><b>Definition</b> application.h:44</div></div>
-<div class="ttc" id="aclassTinyTaskManagerApplication_html_a78b9cd3a921c3dce3301e9b4796c8373"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a78b9cd3a921c3dce3301e9b4796c8373">TinyTaskManagerApplication::app_loop</a></div><div class="ttdeci">void app_loop()</div><div class="ttdoc">Application loop, this is the main loop of the application.</div><div class="ttdef"><b>Definition</b> application.cpp:17</div></div>
-<div class="ttc" id="aclassTinyTaskManagerApplication_html_aba9bc673b0b2d004de797ea1a63541ab"><div class="ttname"><a href="classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab">TinyTaskManagerApplication::menu_instance</a></div><div class="ttdeci">UiMenu &amp; menu_instance()</div><div class="ttdoc">Get the menu instance.</div><div class="ttdef"><b>Definition</b> application.h:35</div></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> mark_as_quit() { set_as_quit = <span class="keyword">true</span>; }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> display_shell_format(<span class="keywordtype">bool</span> req_new_line_before = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    TinyTaskManagerApplication();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> app_init();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> load_tasks();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    std::shared_ptr&lt;UiMenu&gt; menu; </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    std::shared_ptr&lt;CommandParser&gt; parser; </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    std::shared_ptr&lt;StandardShellIO&gt; shell_io; </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    std::shared_ptr&lt;TaskLists&gt; operating_list; </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    std::shared_ptr&lt;TaskListsSelector&gt; selector; </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">bool</span> set_as_quit { <span class="keyword">false</span> }; </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+</div>
+<div class="ttc" id="aclassTaskLists_html"><div class="ttname"><a href="classTaskLists.html">TaskLists</a></div><div class="ttdef"><b>Definition</b> TaskLists.h:37</div></div>
+<div class="ttc" id="aclassTinyTaskManagerApplication_html_a0e7e732d98ea459bd69fe60b42208dfc"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a0e7e732d98ea459bd69fe60b42208dfc">TinyTaskManagerApplication::application_instance</a></div><div class="ttdeci">static TinyTaskManagerApplication &amp; application_instance()</div><div class="ttdoc">Get the application instance, this is a singleton.</div><div class="ttdef"><b>Definition</b> application.h:74</div></div>
+<div class="ttc" id="aclassTinyTaskManagerApplication_html_a10f9e8cfdd45aa8110d31b9fa3920dd1"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a10f9e8cfdd45aa8110d31b9fa3920dd1">TinyTaskManagerApplication::shell_io_instance</a></div><div class="ttdeci">StandardShellIO &amp; shell_io_instance()</div><div class="ttdoc">Get the shell IO instance.</div><div class="ttdef"><b>Definition</b> application.h:57</div></div>
+<div class="ttc" id="aclassTinyTaskManagerApplication_html_a13efef42a78b7a134376e3a8e9a5c7e1"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1">TinyTaskManagerApplication::parser_instance</a></div><div class="ttdeci">CommandParser &amp; parser_instance()</div><div class="ttdoc">Get the parser instance.</div><div class="ttdef"><b>Definition</b> application.h:48</div></div>
+<div class="ttc" id="aclassTinyTaskManagerApplication_html_a466a5fcbd798ef26f1b40d1b41f279a3"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a466a5fcbd798ef26f1b40d1b41f279a3">TinyTaskManagerApplication::taskLists_instance</a></div><div class="ttdeci">TaskLists &amp; taskLists_instance()</div><div class="ttdoc">fetch the task lists instance</div><div class="ttdef"><b>Definition</b> application.h:65</div></div>
+<div class="ttc" id="aclassTinyTaskManagerApplication_html_a78b9cd3a921c3dce3301e9b4796c8373"><div class="ttname"><a href="classTinyTaskManagerApplication.html#a78b9cd3a921c3dce3301e9b4796c8373">TinyTaskManagerApplication::app_loop</a></div><div class="ttdeci">void app_loop()</div><div class="ttdoc">Application loop, this is the main loop of the application.</div><div class="ttdef"><b>Definition</b> application.cpp:35</div></div>
+<div class="ttc" id="aclassTinyTaskManagerApplication_html_aba9bc673b0b2d004de797ea1a63541ab"><div class="ttname"><a href="classTinyTaskManagerApplication.html#aba9bc673b0b2d004de797ea1a63541ab">TinyTaskManagerApplication::menu_instance</a></div><div class="ttdeci">UiMenu &amp; menu_instance()</div><div class="ttdoc">Get the menu instance.</div><div class="ttdef"><b>Definition</b> application.h:39</div></div>
 <div class="ttc" id="astructCommandParser_html"><div class="ttname"><a href="structCommandParser.html">CommandParser</a></div><div class="ttdoc">CommandParser parse the command from IO buffer.</div><div class="ttdef"><b>Definition</b> parse_command.h:26</div></div>
-<div class="ttc" id="astructStandardShellIO_html"><div class="ttname"><a href="structStandardShellIO.html">StandardShellIO</a></div><div class="ttdef"><b>Definition</b> IOFrontEnd.h:6</div></div>
+<div class="ttc" id="astructStandardShellIO_html"><div class="ttname"><a href="structStandardShellIO.html">StandardShellIO</a></div><div class="ttdoc">console io interfaces</div><div class="ttdef"><b>Definition</b> IOFrontEnd.h:10</div></div>
+<div class="ttc" id="astructTaskListsSelector_html"><div class="ttname"><a href="structTaskListsSelector.html">TaskListsSelector</a></div><div class="ttdef"><b>Definition</b> task_selector.h:4</div></div>
 <div class="ttc" id="astructUiMenu_html"><div class="ttname"><a href="structUiMenu.html">UiMenu</a></div><div class="ttdoc">Ui Menu decides which commands should be displayed and provide avaible commands to the parse machines...</div><div class="ttdef"><b>Definition</b> TaskMenu.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

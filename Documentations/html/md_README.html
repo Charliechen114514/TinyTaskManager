@@ -126,20 +126,20 @@ $(function(){initNavTree('md_README.html',''); initResizable(true); });
 <div class="fragment"><div class="line"><a class="code hl_class" href="classTaskLists.html">TaskLists</a> tasklists;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> task = <a class="code hl_class" href="classTask_1_1TaskBuilder.html">Task::TaskBuilder</a>()</div>
-<div class="line">                .set_name(<span class="stringliteral">&quot;Learn Modern C++20&quot;</span>)</div>
-<div class="line">                .set_description(<span class="stringliteral">&quot;My Formal Try in Modern C++&quot;</span>)</div>
-<div class="line">                .set_ddl(std::chrono::system_clock::now() + std::chrono::hours(72))</div>
-<div class="line">                .set_property(TaskPriority::HIGH)</div>
-<div class="line">                .build_finish();</div>
+<div class="line">                .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#a23c19898766d795d63144783364ada18">set_name</a>(<span class="stringliteral">&quot;Learn Modern C++20&quot;</span>)</div>
+<div class="line">                .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#a994bf3279a9b957191bd285cab2d2dc6">set_description</a>(<span class="stringliteral">&quot;My Formal Try in Modern C++&quot;</span>)</div>
+<div class="line">                .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#a7c9a73301e13a39e8bc0e84dc55c53e5">set_ddl</a>(std::chrono::system_clock::now() + std::chrono::hours(72))</div>
+<div class="line">                .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#ac9c201f0e6a6c6b0010fa123e635c454">set_property</a>(TaskPriority::HIGH)</div>
+<div class="line">                .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#ac0d78d6e6a8474c4facd41fb8ffd8e84">build_finish</a>();</div>
 <div class="line"> </div>
 <div class="line">tasklists.<a class="code hl_function" href="classTaskLists.html#a6cee74703de18a49a451c399532a60e1">enqueue_managing_task</a>(task);</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> task2 = <a class="code hl_class" href="classTask_1_1TaskBuilder.html">Task::TaskBuilder</a>()</div>
-<div class="line">                 .set_name(<span class="stringliteral">&quot;Learn CMake&quot;</span>)</div>
-<div class="line">                 .set_description(<span class="stringliteral">&quot;Attempt to make sense with CMake&quot;</span>)</div>
-<div class="line">                 .set_ddl(std::chrono::system_clock::now() + std::chrono::hours(72))</div>
-<div class="line">                 .set_property(TaskPriority::MEDIUM)</div>
-<div class="line">                 .build_finish();</div>
+<div class="line">                 .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#a23c19898766d795d63144783364ada18">set_name</a>(<span class="stringliteral">&quot;Learn CMake&quot;</span>)</div>
+<div class="line">                 .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#a994bf3279a9b957191bd285cab2d2dc6">set_description</a>(<span class="stringliteral">&quot;Attempt to make sense with CMake&quot;</span>)</div>
+<div class="line">                 .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#a7c9a73301e13a39e8bc0e84dc55c53e5">set_ddl</a>(std::chrono::system_clock::now() + std::chrono::hours(72))</div>
+<div class="line">                 .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#ac9c201f0e6a6c6b0010fa123e635c454">set_property</a>(TaskPriority::MEDIUM)</div>
+<div class="line">                 .<a class="code hl_function" href="classTask_1_1TaskBuilder.html#ac0d78d6e6a8474c4facd41fb8ffd8e84">build_finish</a>();</div>
 <div class="line"> </div>
 <div class="line">tasklists.<a class="code hl_function" href="classTaskLists.html#a6cee74703de18a49a451c399532a60e1">enqueue_managing_task</a>(task2);</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="classTasksListView.html#a37ed9af864a9cf96c8e1540cd7ee8c25">TasksListView::format_tasklists_view</a>(tasklists.<a class="code hl_function" href="classTaskLists.html#a5c15689a8749d17d6bedc2b6be8c6073">get_all_tasks</a>());</div>
@@ -147,7 +147,12 @@ $(function(){initNavTree('md_README.html',''); initResizable(true); });
 <div class="ttc" id="aclassTaskLists_html"><div class="ttname"><a href="classTaskLists.html">TaskLists</a></div><div class="ttdef"><b>Definition</b> TaskLists.h:37</div></div>
 <div class="ttc" id="aclassTaskLists_html_a5c15689a8749d17d6bedc2b6be8c6073"><div class="ttname"><a href="classTaskLists.html#a5c15689a8749d17d6bedc2b6be8c6073">TaskLists::get_all_tasks</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; get_all_tasks() const</div><div class="ttdoc">Get the all tasks object.</div><div class="ttdef"><b>Definition</b> TaskLists.cpp:36</div></div>
 <div class="ttc" id="aclassTaskLists_html_a6cee74703de18a49a451c399532a60e1"><div class="ttname"><a href="classTaskLists.html#a6cee74703de18a49a451c399532a60e1">TaskLists::enqueue_managing_task</a></div><div class="ttdeci">void enqueue_managing_task(const std::shared_ptr&lt; Task &gt; task_en_managed)</div><div class="ttdoc">: enqueue the managing task, makes it enter bunch of Holdings</div><div class="ttdef"><b>Definition</b> TaskLists.cpp:3</div></div>
-<div class="ttc" id="aclassTask_1_1TaskBuilder_html"><div class="ttname"><a href="classTask_1_1TaskBuilder.html">Task::TaskBuilder</a></div><div class="ttdoc">TaskBuilder is the class expected to build the Task, as a factory.</div><div class="ttdef"><b>Definition</b> Task.h:61</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html"><div class="ttname"><a href="classTask_1_1TaskBuilder.html">Task::TaskBuilder</a></div><div class="ttdoc">TaskBuilder is the class expected to build the Task, as a factory.</div><div class="ttdef"><b>Definition</b> Task.h:71</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_a23c19898766d795d63144783364ada18"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#a23c19898766d795d63144783364ada18">Task::TaskBuilder::set_name</a></div><div class="ttdeci">TaskBuilder &amp; set_name(const std::string &amp;desp) noexcept</div><div class="ttdoc">Set the name object.</div><div class="ttdef"><b>Definition</b> Task.cpp:37</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_a7c9a73301e13a39e8bc0e84dc55c53e5"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#a7c9a73301e13a39e8bc0e84dc55c53e5">Task::TaskBuilder::set_ddl</a></div><div class="ttdeci">TaskBuilder &amp; set_ddl(deadline_raw_t ddl) noexcept</div><div class="ttdoc">Set the ddl object.</div><div class="ttdef"><b>Definition</b> Task.cpp:26</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_a994bf3279a9b957191bd285cab2d2dc6"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#a994bf3279a9b957191bd285cab2d2dc6">Task::TaskBuilder::set_description</a></div><div class="ttdeci">TaskBuilder &amp; set_description(const std::string &amp;desp) noexcept</div><div class="ttdoc">Set the description object.</div><div class="ttdef"><b>Definition</b> Task.cpp:31</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_ac0d78d6e6a8474c4facd41fb8ffd8e84"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#ac0d78d6e6a8474c4facd41fb8ffd8e84">Task::TaskBuilder::build_finish</a></div><div class="ttdeci">std::shared_ptr&lt; Task &gt; build_finish()</div><div class="ttdoc">finish build and get the task, invoke this</div><div class="ttdef"><b>Definition</b> Task.cpp:20</div></div>
+<div class="ttc" id="aclassTask_1_1TaskBuilder_html_ac9c201f0e6a6c6b0010fa123e635c454"><div class="ttname"><a href="classTask_1_1TaskBuilder.html#ac9c201f0e6a6c6b0010fa123e635c454">Task::TaskBuilder::set_property</a></div><div class="ttdeci">TaskBuilder &amp; set_property(const TaskPriority p) noexcept</div><div class="ttdoc">Set the property object.</div><div class="ttdef"><b>Definition</b> Task.cpp:43</div></div>
 <div class="ttc" id="aclassTasksListView_html_a37ed9af864a9cf96c8e1540cd7ee8c25"><div class="ttname"><a href="classTasksListView.html#a37ed9af864a9cf96c8e1540cd7ee8c25">TasksListView::format_tasklists_view</a></div><div class="ttdeci">static std::string format_tasklists_view(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l)</div><div class="ttdoc">format_tasklists_view makes a default actions</div><div class="ttdef"><b>Definition</b> TaskViews.cpp:34</div></div>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="autotoc_md5"></a>

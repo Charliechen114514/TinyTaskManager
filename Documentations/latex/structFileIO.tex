@@ -1,0 +1,76 @@
+\doxysection{File\+IO Struct Reference}
+\hypertarget{structFileIO}{}\label{structFileIO}\index{FileIO@{FileIO}}
+
+
+File IO makes IO sessions with files.  
+
+
+
+
+{\ttfamily \#include $<$fileio.\+h$>$}
+
+Inheritance diagram for File\+IO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structFileIO}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structFileIO_a0f91aa356f42430cbcd180e84ef21853}\label{structFileIO_a0f91aa356f42430cbcd180e84ef21853} 
+{\bfseries File\+IO} (const std\+::filesystem\+::path \&path)
+\item 
+void \mbox{\hyperlink{structFileIO_a67896ca03e210389dc61e08d9895495c}{from\+\_\+io\+\_\+raw\+\_\+buffer}} (std\+::string \&raw\+\_\+buffer) override
+\begin{DoxyCompactList}\small\item\em read a line from file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structFileIO_ad8ab4e66a9ad81c7596431ba78c097dc}{write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io}} (const std\+::string \&raw\+\_\+buffer) override
+\begin{DoxyCompactList}\small\item\em write somethings to the file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File IO makes IO sessions with files. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structFileIO_a67896ca03e210389dc61e08d9895495c}\index{FileIO@{FileIO}!from\_io\_raw\_buffer@{from\_io\_raw\_buffer}}
+\index{from\_io\_raw\_buffer@{from\_io\_raw\_buffer}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{from\_io\_raw\_buffer()}{from\_io\_raw\_buffer()}}
+{\footnotesize\ttfamily \label{structFileIO_a67896ca03e210389dc61e08d9895495c} 
+void File\+IO\+::from\+\_\+io\+\_\+raw\+\_\+buffer (\begin{DoxyParamCaption}\item[{std\+::string \&}]{raw\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+read a line from file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffer} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{structIOBase_a55cf60339992a7a81367357cc4a77c70}{IOBase}}.
+
+\Hypertarget{structFileIO_ad8ab4e66a9ad81c7596431ba78c097dc}\index{FileIO@{FileIO}!write\_raw\_buffer\_to\_io@{write\_raw\_buffer\_to\_io}}
+\index{write\_raw\_buffer\_to\_io@{write\_raw\_buffer\_to\_io}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{write\_raw\_buffer\_to\_io()}{write\_raw\_buffer\_to\_io()}}
+{\footnotesize\ttfamily \label{structFileIO_ad8ab4e66a9ad81c7596431ba78c097dc} 
+void File\+IO\+::write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{raw\+\_\+buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+write somethings to the file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em raw\+\_\+buffer} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{structIOBase_a35fb5839303dd16c1bcdab33bb921bfd}{IOBase}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+IO/file\+\_\+io/fileio.\+h\end{DoxyCompactItemize}

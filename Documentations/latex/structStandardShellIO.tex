@@ -1,5 +1,14 @@
 \doxysection{Standard\+Shell\+IO Struct Reference}
 \hypertarget{structStandardShellIO}{}\label{structStandardShellIO}\index{StandardShellIO@{StandardShellIO}}
+
+
+console io interfaces  
+
+
+
+
+{\ttfamily \#include $<$IOFront\+End.\+h$>$}
+
 Inheritance diagram for Standard\+Shell\+IO\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,6 +23,9 @@ void \mbox{\hyperlink{structStandardShellIO_add00d884095c3761bbecf33f0e81b824}{f
 void \mbox{\hyperlink{structStandardShellIO_ac3047bf397a18c8cb68100c7baf8a409}{write\+\_\+raw\+\_\+buffer\+\_\+to\+\_\+io}} (const std\+::string \&raw\+\_\+buffer) override
 \begin{DoxyCompactList}\small\item\em write raw\+\_\+buffer\+\_\+to\+\_\+io write the buffer to IO, no matter what the IO actually is, thus, concreate IO Driver need to implement the how to write message to IO, buffer is provided by reference \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+console io interfaces 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{structStandardShellIO_add00d884095c3761bbecf33f0e81b824}\index{StandardShellIO@{StandardShellIO}!from\_io\_raw\_buffer@{from\_io\_raw\_buffer}}

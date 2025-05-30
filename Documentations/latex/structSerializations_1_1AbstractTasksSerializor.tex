@@ -1,0 +1,70 @@
+\doxysection{Serializations\+::Abstract\+Tasks\+Serializor Struct Reference}
+\hypertarget{structSerializations_1_1AbstractTasksSerializor}{}\label{structSerializations_1_1AbstractTasksSerializor}\index{Serializations::AbstractTasksSerializor@{Serializations::AbstractTasksSerializor}}
+
+
+\doxylink{structSerializations_1_1AbstractTasksSerializor}{Abstract\+Tasks\+Serializor} provides a interface level serializor.  
+
+
+
+
+{\ttfamily \#include $<$task\+\_\+serial.\+h$>$}
+
+Inheritance diagram for Serializations\+::Abstract\+Tasks\+Serializor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structSerializations_1_1AbstractTasksSerializor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{structSerializations_1_1AbstractTasksSerializor_a51f28a4ade9361e33f8b84a81230ab6b}{save\+\_\+to}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&saves)=0
+\begin{DoxyCompactList}\small\item\em save a bunch of tasks to the serialization mode, in which, these leads to a direct save \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \mbox{\hyperlink{structSerializations_1_1AbstractTasksSerializor_a8f0eea1b73237671eef194efcd68aec8}{load\+\_\+from}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structSerializations_1_1AbstractTasksSerializor}{Abstract\+Tasks\+Serializor} provides a interface level serializor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structSerializations_1_1AbstractTasksSerializor_a8f0eea1b73237671eef194efcd68aec8}\index{Serializations::AbstractTasksSerializor@{Serializations::AbstractTasksSerializor}!load\_from@{load\_from}}
+\index{load\_from@{load\_from}!Serializations::AbstractTasksSerializor@{Serializations::AbstractTasksSerializor}}
+\doxysubsubsection{\texorpdfstring{load\_from()}{load\_from()}}
+{\footnotesize\ttfamily \label{structSerializations_1_1AbstractTasksSerializor_a8f0eea1b73237671eef194efcd68aec8} 
+virtual std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ Serializations\+::\+Abstract\+Tasks\+Serializor\+::load\+\_\+from (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ the task deserailizations 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+this can make a exception if parse error occurs, for developers, you should use try catch to prevent the terminations of programs 
+\end{DoxyNote}
+
+
+Implemented in \mbox{\hyperlink{structSerializations_1_1JsonTasksSerializor_a50f471561710d469fd2eefa20c46bdb8}{Serializations\+::\+Json\+Tasks\+Serializor}}.
+
+\Hypertarget{structSerializations_1_1AbstractTasksSerializor_a51f28a4ade9361e33f8b84a81230ab6b}\index{Serializations::AbstractTasksSerializor@{Serializations::AbstractTasksSerializor}!save\_to@{save\_to}}
+\index{save\_to@{save\_to}!Serializations::AbstractTasksSerializor@{Serializations::AbstractTasksSerializor}}
+\doxysubsubsection{\texorpdfstring{save\_to()}{save\_to()}}
+{\footnotesize\ttfamily \label{structSerializations_1_1AbstractTasksSerializor_a51f28a4ade9361e33f8b84a81230ab6b} 
+virtual void Serializations\+::\+Abstract\+Tasks\+Serializor\+::save\+\_\+to (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&}]{saves}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+save a bunch of tasks to the serialization mode, in which, these leads to a direct save 
+
+
+\begin{DoxyParams}{Parameters}
+{\em saves} & the tasks waiting save, should be query from the tasklists \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{structSerializations_1_1JsonTasksSerializor_a463e6fe53e153177215473f8c0b93386}{Serializations\+::\+Json\+Tasks\+Serializor}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/serilazations/task\+\_\+serial.\+h\end{DoxyCompactItemize}

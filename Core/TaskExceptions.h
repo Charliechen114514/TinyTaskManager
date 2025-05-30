@@ -41,6 +41,10 @@ public:
 };
 
 #include <filesystem>
+/**
+ * @brief this is a common exceptions of the load and stores
+ *
+ */
 class LoadStoreException : public std::runtime_error {
 public:
 	LoadStoreException()
@@ -50,6 +54,10 @@ public:
 	}
 };
 
+/**
+ * @brief load exception happens when these is error occuring in the process
+ *
+ */
 class LoadException : public LoadStoreException {
 	const std::filesystem::path _p;
 	const std::string errorString;
@@ -64,6 +72,10 @@ public:
 	}
 };
 
+/**
+ * @brief store exception happens when these is error occuring in the process
+ *
+ */
 class StoreException : public LoadStoreException {
 	const std::filesystem::path _p;
 	const std::string errorString;
@@ -75,5 +87,17 @@ public:
 	    , errorString("Can not load file from path: " + _p.string() + ", for the reason: " + details) { }
 	virtual const char* what() const noexcept override {
 		return errorString.c_str();
+	}
+};
+
+class InvalidKeyException : public std::runtime_error {
+	const std::string error_string;
+
+public:
+	InvalidKeyException(const std::string& error_key)
+	    : std::runtime_error("LoadStore file exceptions")
+	    , error_string(error_key + "is invalid!") { }
+	virtual const char* what() const noexcept {
+		return error_string.c_str();
 	}
 };

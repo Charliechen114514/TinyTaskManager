@@ -15,7 +15,7 @@
 \DoxyCodeLine{00026\ \textcolor{keyword}{private}:}
 \DoxyCodeLine{00027\ \ \ \ \ Task();}
 \DoxyCodeLine{00028\ \ \ \ \ std::string\ task\_name\ \{\};}
-\DoxyCodeLine{00029\ \ \ \ \ std::string\ discriptions\ \{\};}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ description\ \{\};}
 \DoxyCodeLine{00030\ \ \ \ \ deadline\_raw\_t\ deadline\ \{\};}
 \DoxyCodeLine{00031\ \ \ \ \ TaskPriority\ priority\ \{\};}
 \DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{/*\ Task\ ID\ */}}
@@ -30,40 +30,38 @@
 \DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ Task\&\ operator=(\textcolor{keyword}{const}\ Task\&)\ =\ \textcolor{keyword}{delete};}
 \DoxyCodeLine{00042\ }
 \DoxyCodeLine{00043\ \ \ \ \ PROPERTY\_GET\_SET(task\_name);}
-\DoxyCodeLine{00044\ \ \ \ \ PROPERTY\_GET\_SET(discriptions);}
+\DoxyCodeLine{00044\ \ \ \ \ PROPERTY\_GET\_SET(description);}
 \DoxyCodeLine{00045\ \ \ \ \ PROPERTY\_GET\_SET(deadline);}
 \DoxyCodeLine{00046\ \ \ \ \ PROPERTY\_GET\_SET(priority);}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{const}\ TaskUUID\ get\_uuid()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ uuid;\ \}}
-\DoxyCodeLine{00048\ \ \ \ \ std::string\ toStdString()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{/*\ this\ is\ the\ function\ that\ helps\ to\ check\ if\ the\ task\ is}}
-\DoxyCodeLine{00050\ \textcolor{comment}{\ \ \ \ \ *\ equal\ */}}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ Task\&\ lhs,\ \textcolor{keyword}{const}\ Task\&\ rhs)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs.get\_uuid()\ ==\ rhs.get\_uuid();}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTask_1_1TaskBuilder}{TaskBuilder}};}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{class\ }TaskBuilder\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ TaskBuilder()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ DISABLE\_COPY(TaskBuilder);}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ when\ building\ is\ finished,\ call\ this\ */}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>\ build\_finish();}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ At\ any\ level,\ only\ this\ is\ expected\ */}}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_ddl(deadline\_raw\_t\ ddl)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_description(\textcolor{keyword}{const}\ std::string\&\ desp)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_name(\textcolor{keyword}{const}\ std::string\&\ desp)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ TaskBuilder\&\ set\_property(\textcolor{keyword}{const}\ TaskPriority\ p)\ \textcolor{keyword}{noexcept};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>\ \_tmp\ =\ std::shared\_ptr<Task>(\textcolor{keyword}{new}\ Task());}
-\DoxyCodeLine{00075\ \ \ \ \ \};}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTask_1_1TaskPack}{TaskPack}}\ \{}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::string\ task\_name\ \{\};}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::string\ discriptions\ \{\};}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ deadline\_raw\_t\ deadline\ \{\};}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ TaskPriority\ priority\ \{\};}
-\DoxyCodeLine{00087\ \ \ \ \ \};}
-\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ TaskUUID\ \mbox{\hyperlink{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d}{get\_uuid}}()\ const\ noexcept\ \{\ \textcolor{keywordflow}{return}\ uuid;\ \}}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ \mbox{\hyperlink{classTask_a9b0aea6073aeec0b11056f12ee36e3f8}{toStdString}}()\ const\ noexcept;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{/*\ this\ is\ the\ function\ that\ helps\ to\ check\ if\ the\ task\ is}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ \ *\ equal\ */}}
+\DoxyCodeLine{00061\ \ \ \ \ friend\ inline\ \textcolor{keywordtype}{bool}\ operator==(const\ \mbox{\hyperlink{classTask}{Task}}\&\ lhs,\ const\ \mbox{\hyperlink{classTask}{Task}}\&\ rhs)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lhs.get\_uuid()\ ==\ rhs.get\_uuid();}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTask_1_1TaskBuilder}{TaskBuilder}};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{class\ }TaskBuilder\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ TaskBuilder()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ DISABLE\_COPY(TaskBuilder);}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>\ \mbox{\hyperlink{classTask_1_1TaskBuilder_ac0d78d6e6a8474c4facd41fb8ffd8e84}{build\_finish}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ TaskBuilder\&\ \mbox{\hyperlink{classTask_1_1TaskBuilder_a7c9a73301e13a39e8bc0e84dc55c53e5}{set\_ddl}}(deadline\_raw\_t\ ddl)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ TaskBuilder\&\ \mbox{\hyperlink{classTask_1_1TaskBuilder_a994bf3279a9b957191bd285cab2d2dc6}{set\_description}}(\textcolor{keyword}{const}\ std::string\&\ desp)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ TaskBuilder\&\ \mbox{\hyperlink{classTask_1_1TaskBuilder_a23c19898766d795d63144783364ada18}{set\_name}}(\textcolor{keyword}{const}\ std::string\&\ desp)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ TaskBuilder\&\ \mbox{\hyperlink{classTask_1_1TaskBuilder_ac9c201f0e6a6c6b0010fa123e635c454}{set\_property}}(\textcolor{keyword}{const}\ TaskPriority\ p)\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ std::shared\_ptr<Task>\ \_tmp\ =\ std::shared\_ptr<Task>(\textcolor{keyword}{new}\ Task());}
+\DoxyCodeLine{00112\ \ \ \ \ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTask_1_1TaskPack}{TaskPack}}\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ std::string\ task\_name\ \{\};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ std::string\ description\ \{\};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ deadline\_raw\_t\ deadline\ \{\};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ TaskPriority\ priority\ \{\};}
+\DoxyCodeLine{00124\ \ \ \ \ \};}
+\DoxyCodeLine{00125\ \};}
 
 \end{DoxyCode}

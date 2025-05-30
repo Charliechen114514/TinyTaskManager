@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['filter_5ftasks_0',['filter_tasks',['../structTaskFilterDrive.html#a6527ff9ad665cdb531207401322b9ccf',1,'TaskFilterDrive']]],
-  ['format_5ftasklists_5fview_1',['format_tasklists_view',['../classTasksListView.html#a37ed9af864a9cf96c8e1540cd7ee8c25',1,'TasksListView::format_tasklists_view(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l)'],['../classTasksListView.html#ab09d76705145d10e1583576ecbbb2d36',1,'TasksListView::format_tasklists_view(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l, std::function&lt; std::string(const std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; &amp;l)&gt; f)']]],
-  ['from_5fio_5fraw_5fbuffer_2',['from_io_raw_buffer',['../structStandardShellIO.html#add00d884095c3761bbecf33f0e81b824',1,'StandardShellIO::from_io_raw_buffer()'],['../structIOBase.html#a55cf60339992a7a81367357cc4a77c70',1,'IOBase::from_io_raw_buffer()']]],
-  ['fromddltimetoreadablestring_3',['fromDdlTimeToReadableString',['../format__time_8h.html#a7b877dbca019e78deea4a37166a1f386',1,'ChronoTools']]]
+  ['enqueue_5fmanaging_5ftask_0',['enqueue_managing_task',['../classTaskLists.html#a6cee74703de18a49a451c399532a60e1',1,'TaskLists']]],
+  ['enqueue_5fmanaging_5ftasks_1',['enqueue_managing_tasks',['../classTaskLists.html#a30f63e4c3df3c9818bd2fd767f14106d',1,'TaskLists::enqueue_managing_tasks(const std::vector&lt; Task::TaskPack &gt; &amp;packs)'],['../classTaskLists.html#aa8f2c2b832dd2ff6033a28907f09d761',1,'TaskLists::enqueue_managing_tasks(std::vector&lt; std::shared_ptr&lt; Task &gt; &gt; tasks)']]]
 ];

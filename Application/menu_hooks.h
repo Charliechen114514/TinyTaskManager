@@ -17,6 +17,7 @@ void process_add(const Command& t);
 void process_delete(const Command& t);
 void process_exit(const Command& t);
 void process_list(const Command& t);
+void process_filters(const Command& t);
 
 void process_load(const Command& t);
 void process_store(const Command& t);

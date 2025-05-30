@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['query_0',['query',['../classTaskLists.html#adc32d127e2da24d5ae4b7b115cd199c7',1,'TaskLists']]],
-  ['query_5fwith_5fname_1',['query_with_name',['../classTaskLists.html#a9b2f0dd98ea0a52030055a57fbb73471',1,'TaskLists']]]
+  ['parse_5fbuffer_5fonly_0',['parse_buffer_only',['../structCommandParser.html#a7a0975c88a958950523967616053f241',1,'CommandParser']]],
+  ['parse_5fbuffer_5fwith_5ferrorhooks_1',['parse_buffer_with_errorHooks',['../structCommandParser.html#a57a0a39228752cefcf436946d4d2146b',1,'CommandParser']]],
+  ['parser_5finstance_2',['parser_instance',['../classTinyTaskManagerApplication.html#a13efef42a78b7a134376e3a8e9a5c7e1',1,'TinyTaskManagerApplication']]]
 ];

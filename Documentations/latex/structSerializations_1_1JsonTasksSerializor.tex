@@ -1,0 +1,62 @@
+\doxysection{Serializations\+::Json\+Tasks\+Serializor Struct Reference}
+\hypertarget{structSerializations_1_1JsonTasksSerializor}{}\label{structSerializations_1_1JsonTasksSerializor}\index{Serializations::JsonTasksSerializor@{Serializations::JsonTasksSerializor}}
+Inheritance diagram for Serializations\+::Json\+Tasks\+Serializor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structSerializations_1_1JsonTasksSerializor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structSerializations_1_1JsonTasksSerializor_a3859874b15138e8c44d7c9644d3720db}\label{structSerializations_1_1JsonTasksSerializor_a3859874b15138e8c44d7c9644d3720db} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (json\+\_\+path)
+\item 
+void \mbox{\hyperlink{structSerializations_1_1JsonTasksSerializor_a463e6fe53e153177215473f8c0b93386}{save\+\_\+to}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&saves) override
+\begin{DoxyCompactList}\small\item\em save a bunch of tasks to the serialization mode, in which, these leads to a direct save \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \mbox{\hyperlink{structSerializations_1_1JsonTasksSerializor_a50f471561710d469fd2eefa20c46bdb8}{load\+\_\+from}} () override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structSerializations_1_1JsonTasksSerializor_a50f471561710d469fd2eefa20c46bdb8}\index{Serializations::JsonTasksSerializor@{Serializations::JsonTasksSerializor}!load\_from@{load\_from}}
+\index{load\_from@{load\_from}!Serializations::JsonTasksSerializor@{Serializations::JsonTasksSerializor}}
+\doxysubsubsection{\texorpdfstring{load\_from()}{load\_from()}}
+{\footnotesize\ttfamily \label{structSerializations_1_1JsonTasksSerializor_a50f471561710d469fd2eefa20c46bdb8} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ Serializations\+::\+Json\+Tasks\+Serializor\+::load\+\_\+from (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Task$>$$>$ the task deserailizations 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+this can make a exception if parse error occurs, for developers, you should use try catch to prevent the terminations of programs 
+\end{DoxyNote}
+
+
+Implements \mbox{\hyperlink{structSerializations_1_1AbstractTasksSerializor_a8f0eea1b73237671eef194efcd68aec8}{Serializations\+::\+Abstract\+Tasks\+Serializor}}.
+
+\Hypertarget{structSerializations_1_1JsonTasksSerializor_a463e6fe53e153177215473f8c0b93386}\index{Serializations::JsonTasksSerializor@{Serializations::JsonTasksSerializor}!save\_to@{save\_to}}
+\index{save\_to@{save\_to}!Serializations::JsonTasksSerializor@{Serializations::JsonTasksSerializor}}
+\doxysubsubsection{\texorpdfstring{save\_to()}{save\_to()}}
+{\footnotesize\ttfamily \label{structSerializations_1_1JsonTasksSerializor_a463e6fe53e153177215473f8c0b93386} 
+void Serializations\+::\+Json\+Tasks\+Serializor\+::save\+\_\+to (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classTask}{Task}} $>$ $>$ \&}]{saves}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+save a bunch of tasks to the serialization mode, in which, these leads to a direct save 
+
+
+\begin{DoxyParams}{Parameters}
+{\em saves} & the tasks waiting save, should be query from the tasklists \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{structSerializations_1_1AbstractTasksSerializor_a51f28a4ade9361e33f8b84a81230ab6b}{Serializations\+::\+Abstract\+Tasks\+Serializor}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Core/serilazations/task\+\_\+serial.\+h\item 
+Core/serilazations/task\+\_\+serial.\+cpp\end{DoxyCompactItemize}

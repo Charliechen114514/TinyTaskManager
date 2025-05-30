@@ -33,6 +33,9 @@ var NAVTREE =
       [ "🛠️ 功能模块（目前）", "md_README.html#autotoc_md7", null ],
       [ "🎯 未来规划", "md_README.html#autotoc_md9", null ]
     ] ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Concepts", "concepts.html", "concepts" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

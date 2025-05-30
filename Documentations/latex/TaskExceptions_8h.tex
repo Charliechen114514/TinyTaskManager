@@ -6,13 +6,22 @@
 
 
 {\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classBuildException}{Build\+Exception}}
 \begin{DoxyCompactList}\small\item\em \doxylink{classBuildException}{Build\+Exception} is the exception happens in runtime \doxylink{classTask}{Task} Build! So, when anycast build exception happens, We must catch this. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classBuildTaskNameEmpty}{Build\+Task\+Name\+Empty}}
-\begin{DoxyCompactList}\small\item\em \doxylink{classBuildTaskNameEmpty}{Build\+Task\+Name\+Empty} is the exception happens when The task name is empty, which should never be empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{classBuildTaskNameEmpty}{Build\+Task\+Name\+Empty} is the exception happens when The task name is empty, which should never be empty. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLoadStoreException}{Load\+Store\+Exception}}
+\begin{DoxyCompactList}\small\item\em this is a common exceptions of the load and stores \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLoadException}{Load\+Exception}}
+\begin{DoxyCompactList}\small\item\em load exception happens when these is error occuring in the process \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classStoreException}{Store\+Exception}}
+\begin{DoxyCompactList}\small\item\em store exception happens when these is error occuring in the process \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classInvalidKeyException}{Invalid\+Key\+Exception}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

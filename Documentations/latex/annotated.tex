@@ -1,24 +1,37 @@
 \doxysection{Class List}
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{structAbstractTaskFilters}{Abstract\+Task\+Filters}} \\*\doxylink{structAbstractTaskFilters}{Abstract\+Task\+Filters} defines }{\pageref{structAbstractTaskFilters}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSerializations_1_1AbstractTasksSerializor}{Serializations\+::\+Abstract\+Tasks\+Serializor}} \\*\doxylink{structSerializations_1_1AbstractTasksSerializor}{Abstract\+Tasks\+Serializor} provides a interface level serializor }{\pageref{structSerializations_1_1AbstractTasksSerializor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structnlohmann_1_1adl__serializer_3_01deadline__raw__t_01_4}{nlohmann\+::adl\+\_\+serializer$<$ deadline\+\_\+raw\+\_\+t $>$}} }{\pageref{structnlohmann_1_1adl__serializer_3_01deadline__raw__t_01_4}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structnlohmann_1_1adl__serializer_3_01std_1_1shared__ptr_3_01Task_01_4_01_4}{nlohmann\+::adl\+\_\+serializer$<$ std\+::shared\+\_\+ptr$<$ Task $>$ $>$}} }{\pageref{structnlohmann_1_1adl__serializer_3_01std_1_1shared__ptr_3_01Task_01_4_01_4}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structargument__count__mismatch}{argument\+\_\+count\+\_\+mismatch}} \\*When args count is mismatch during the parse, these will be thrown }{\pageref{structargument__count__mismatch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structargument__invalid}{argument\+\_\+invalid}} \\*When args provided invalid during the parse, these will be thrown }{\pageref{structargument__invalid}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classBuildException}{Build\+Exception}} \\*\doxylink{classBuildException}{Build\+Exception} is the exception happens in runtime \doxylink{classTask}{Task} Build! So, when anycast build exception happens, We must catch this }{\pageref{classBuildException}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classBuildTaskNameEmpty}{Build\+Task\+Name\+Empty}} \\*\doxylink{classBuildTaskNameEmpty}{Build\+Task\+Name\+Empty} is the exception happens when The task name is empty, which should never be empty }{\pageref{classBuildTaskNameEmpty}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structCommand}{Command}} \\*\doxylink{structCommand}{Command} abstractions }{\pageref{structCommand}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structCommandParser}{Command\+Parser}} \\*\doxylink{structCommandParser}{Command\+Parser} parse the command from IO buffer }{\pageref{structCommandParser}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structFileIO}{File\+IO}} \\*File IO makes IO sessions with files }{\pageref{structFileIO}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInvalidKeyException}{Invalid\+Key\+Exception}} }{\pageref{classInvalidKeyException}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structIOBase}{IOBase}} }{\pageref{structIOBase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSerializations_1_1JsonTasksSerializor}{Serializations\+::\+Json\+Tasks\+Serializor}} }{\pageref{structSerializations_1_1JsonTasksSerializor}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structLeavingTimeFilters}{Leaving\+Time\+Filters}} }{\pageref{structLeavingTimeFilters}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadException}{Load\+Exception}} \\*Load exception happens when these is error occuring in the process }{\pageref{classLoadException}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadStoreException}{Load\+Store\+Exception}} \\*This is a common exceptions of the load and stores }{\pageref{classLoadStoreException}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structNameContainsFilter}{Name\+Contains\+Filter}} \\*\doxylink{structNameContainsFilter}{Name\+Contains\+Filter} provides the common name filters }{\pageref{structNameContainsFilter}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structnon__command__found}{non\+\_\+command\+\_\+found}} \\*When exceptions happens, it means non command is found, which means cmd empty in \doxylink{structCommand}{Command} class }{\pageref{structnon__command__found}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structnon__match__command}{non\+\_\+match\+\_\+command}} \\*When the command is not match any of the installed hooks, this exceptions will be thrown, which means the command is not match in any things in menu sessions }{\pageref{structnon__match__command}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structCommandOption_1_1OptionHelper}{Command\+Option\+::\+Option\+Helper}} }{\pageref{structCommandOption_1_1OptionHelper}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structparse__exceptions}{parse\+\_\+exceptions}} \\*Parse excetions happens when parsing from IO }{\pageref{structparse__exceptions}}{}
-\item\contentsline{section}{\mbox{\hyperlink{structPriorityFilters}{Priority\+Filters}} }{\pageref{structPriorityFilters}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPriorityFilters}{Priority\+Filters}} \\*Priority Filters checks here, these will decide which tasks can pass the filters }{\pageref{structPriorityFilters}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structSharedTaskEqual}{Shared\+Task\+Equal}} }{\pageref{structSharedTaskEqual}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structSharedTaskHash}{Shared\+Task\+Hash}} }{\pageref{structSharedTaskHash}}{}
-\item\contentsline{section}{\mbox{\hyperlink{structStandardShellIO}{Standard\+Shell\+IO}} }{\pageref{structStandardShellIO}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structStandardShellIO}{Standard\+Shell\+IO}} \\*Console io interfaces }{\pageref{structStandardShellIO}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStoreException}{Store\+Exception}} \\*Store exception happens when these is error occuring in the process }{\pageref{classStoreException}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classTask}{Task}} \\*\doxylink{classTask}{Task} is the class that represents a task, which contains the task name, description, deadline, and a unique identifier (UUID) }{\pageref{classTask}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classTask_1_1TaskBuilder}{Task\+::\+Task\+Builder}} \\*\doxylink{classTask_1_1TaskBuilder}{Task\+Builder} is the class expected to build the \doxylink{classTask}{Task}, as a factory }{\pageref{classTask_1_1TaskBuilder}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structTaskFilterDrive}{Task\+Filter\+Drive}} \\*\doxylink{structTaskFilterDrive}{Task\+Filter\+Drive} collects the filters and make drive }{\pageref{structTaskFilterDrive}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classTaskLists}{Task\+Lists}} }{\pageref{classTaskLists}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTaskListsSelector}{Task\+Lists\+Selector}} }{\pageref{structTaskListsSelector}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structTask_1_1TaskPack}{Task\+::\+Task\+Pack}} \\*\doxylink{structTask_1_1TaskPack}{Task\+Pack} provides a easy interfaces for one session build, This is using for the bunch level create for \doxylink{classTaskLists}{Task\+Lists} }{\pageref{structTask_1_1TaskPack}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classTasksListView}{Tasks\+List\+View}} \\*Task\+Views Only make a simple jobs on how to display a \doxylink{classTaskLists}{Task\+Lists} with given Views, required only }{\pageref{classTasksListView}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classTinyTaskManagerApplication}{Tiny\+Task\+Manager\+Application}} \\*Application Level class abstractions, make it simple in main }{\pageref{classTinyTaskManagerApplication}}{}

@@ -26,5 +26,20 @@
 \DoxyCodeLine{00022\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}\ std::string\ taskPrioirtyString(\textcolor{keyword}{const}\ TaskPriority\ p)\ \{}
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{return}\ TaskPriorityValues.at(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(p));}
 \DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ IS\_MATCH(PRIO)\ \(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ (str\ ==\ TaskPriorityValues[static\_cast<size\_t>(PRIO)])}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{inline}\ TaskPriority\ fromTaskPriorityString(\textcolor{keyword}{const}\ std::string\&\ str)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (IS\_MATCH(TaskPriority::LOW))}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TaskPriority::LOW;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (IS\_MATCH(TaskPriority::MEDIUM))}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TaskPriority::MEDIUM;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (IS\_MATCH(TaskPriority::HIGH))}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TaskPriority::HIGH;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (IS\_MATCH(TaskPriority::URGENT))}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TaskPriority::URGENT;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ TaskPriority::LOW;}
+\DoxyCodeLine{00039\ \}}
 
 \end{DoxyCode}

@@ -28,8 +28,8 @@ const \mbox{\hyperlink{classTask}{Task}} \& {\bfseries operator=} (const \mbox{\
 \Hypertarget{classTask_abdf46e199a63a7596ee87ade57d13acc}\label{classTask_abdf46e199a63a7596ee87ade57d13acc} 
 {\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (task\+\_\+name)
 \item 
-\Hypertarget{classTask_a2975965bb107562c0fd853a222fc76fa}\label{classTask_a2975965bb107562c0fd853a222fc76fa} 
-{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (discriptions)
+\Hypertarget{classTask_a68f17106b1d3af95322ed27568c9b2c2}\label{classTask_a68f17106b1d3af95322ed27568c9b2c2} 
+{\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (description)
 \item 
 \Hypertarget{classTask_a9409ad34b4b003f5a79e9034e6a5d79c}\label{classTask_a9409ad34b4b003f5a79e9034e6a5d79c} 
 {\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (deadline)
@@ -37,12 +37,10 @@ const \mbox{\hyperlink{classTask}{Task}} \& {\bfseries operator=} (const \mbox{\
 \Hypertarget{classTask_ac34e9f83d79f2bc9fa191e58e8abd68e}\label{classTask_ac34e9f83d79f2bc9fa191e58e8abd68e} 
 {\bfseries PROPERTY\+\_\+\+GET\+\_\+\+SET} (priority)
 \item 
-\Hypertarget{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d}\label{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d} 
-const Task\+UUID {\bfseries get\+\_\+uuid} () const noexcept
-\item 
-\Hypertarget{classTask_a9b0aea6073aeec0b11056f12ee36e3f8}\label{classTask_a9b0aea6073aeec0b11056f12ee36e3f8} 
-std\+::string {\bfseries to\+Std\+String} () const noexcept
-\end{DoxyCompactItemize}
+const Task\+UUID \mbox{\hyperlink{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d}{get\+\_\+uuid}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the uuid object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTask_a9b0aea6073aeec0b11056f12ee36e3f8}{to\+Std\+String}} () const noexcept
+\begin{DoxyCompactList}\small\item\em to the printable and displayable format \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,6 +54,35 @@ bool {\bfseries operator==} (const \mbox{\hyperlink{classTask}{Task}} \&lhs, con
 
 \doxysubsection{Detailed Description}
 \doxylink{classTask}{Task} is the class that represents a task, which contains the task name, description, deadline, and a unique identifier (UUID). 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d}\index{Task@{Task}!get\_uuid@{get\_uuid}}
+\index{get\_uuid@{get\_uuid}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_uuid()}{get\_uuid()}}
+{\footnotesize\ttfamily \label{classTask_a2fa4ddac6abeb85cb72dbf7a2124205d} 
+const Task\+UUID Task\+::get\+\_\+uuid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Get the uuid object. 
+
+\begin{DoxyReturn}{Returns}
+const Task\+UUID 
+\end{DoxyReturn}
+\Hypertarget{classTask_a9b0aea6073aeec0b11056f12ee36e3f8}\index{Task@{Task}!toStdString@{toStdString}}
+\index{toStdString@{toStdString}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{toStdString()}{toStdString()}}
+{\footnotesize\ttfamily \label{classTask_a9b0aea6073aeec0b11056f12ee36e3f8} 
+std\+::string Task\+::to\+Std\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+to the printable and displayable format 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

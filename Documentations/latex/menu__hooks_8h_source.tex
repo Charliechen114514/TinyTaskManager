@@ -12,10 +12,18 @@
 \DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ process\_delete(\textcolor{keyword}{const}\ Command\&\ t);}
 \DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ process\_exit(\textcolor{keyword}{const}\ Command\&\ t);}
 \DoxyCodeLine{00019\ \textcolor{keywordtype}{void}\ process\_list(\textcolor{keyword}{const}\ Command\&\ t);}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{comment}{/*\ error\ hooks\ */}}
-\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ handle\_non\_match(\textcolor{keyword}{const}\ parse\_exceptions*\ command,\ \textcolor{keyword}{const}\ std::string\ c);}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{void}\ process\_filters(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ process\_load(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ process\_store(\textcolor{keyword}{const}\ Command\&\ t);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ error\ hooks\ */}}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ handle\_non\_match(\textcolor{keyword}{const}\ parse\_exceptions*\ command,\ \textcolor{keyword}{const}\ std::string\ c);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ handle\_arg\_count\_error(\textcolor{keyword}{const}\ parse\_exceptions*\ command,\ \textcolor{keyword}{const}\ std::string\ c);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ handle\_arg\_invalid\_error(\textcolor{keyword}{const}\ parse\_exceptions*\ command,\ \textcolor{keyword}{const}\ std::string\ c);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \};}
 
 \end{DoxyCode}

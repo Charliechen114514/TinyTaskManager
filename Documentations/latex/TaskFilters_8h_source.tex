@@ -47,35 +47,35 @@
 \DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structNameContainsFilter_a75037c2436ba2899fe3b0fb145433794}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{00102\ \};}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \textcolor{keyword}{struct\ }PriorityFilters\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{enum\ class}\ FilterWay\ \{}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ ACCEPT\_HIGH,}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ ACCEPT\_LOW,}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ ACCEPT\_SAME,}
-\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ ACCEPT\_SAME\_HIGH,}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ ACCEPT\_SAME\_LOW}
-\DoxyCodeLine{00111\ \ \ \ \ \};}
-\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ TaskPriority\ baseline\_priority;}
-\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ FilterWay\ way;}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \ \ \ \ PriorityFilters()\ =\ \textcolor{keyword}{delete};}
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00117\ \ \ \ \ PriorityFilters(\textcolor{keyword}{const}\ TaskPriority\ base,\ \textcolor{keyword}{const}\ FilterWay\ way)}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ :\ baseline\_priority(base)}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ ,\ way(way)\ \{\ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00122\ \};}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \textcolor{keyword}{struct\ }LeavingTimeFilters\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{/*\ this\ is\ the\ time\ we\ leave\ */}}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ std::chrono::seconds\ leaving\_time;}
-\DoxyCodeLine{00127\ \ \ \ \ LeavingTimeFilters()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00109\ \textcolor{keyword}{struct\ }PriorityFilters\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{enum\ class}\ FilterWay\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ ACCEPT\_HIGH,}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ ACCEPT\_LOW,}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ ACCEPT\_SAME,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ ACCEPT\_SAME\_HIGH,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ ACCEPT\_SAME\_LOW}
+\DoxyCodeLine{00116\ \ \ \ \ \};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ TaskPriority\ baseline\_priority;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ FilterWay\ way;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ PriorityFilters()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ PriorityFilters(\textcolor{keyword}{const}\ TaskPriority\ base,\ \textcolor{keyword}{const}\ FilterWay\ way)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ :\ baseline\_priority(base)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ ,\ way(way)\ \{\ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structPriorityFilters_a3c3dfc817e05cd694278be807242ab2f}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00127\ \};}
 \DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ LeavingTimeFilters(\textcolor{keyword}{const}\ std::chrono::seconds\ leaving\_time)}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ :\ leaving\_time(leaving\_time)\ \{\ \}}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00129\ \textcolor{keyword}{struct\ }LeavingTimeFilters\ :\ \textcolor{keyword}{public}\ AbstractTaskFilters\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{comment}{/*\ this\ is\ the\ time\ we\ leave\ */}}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ std::chrono::seconds\ leaving\_time;}
+\DoxyCodeLine{00132\ \ \ \ \ LeavingTimeFilters()\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ LeavingTimeFilters(\textcolor{keyword}{const}\ std::chrono::seconds\ leaving\_time)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ :\ leaving\_time(leaving\_time)\ \{\ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structLeavingTimeFilters_ae7c3c902cf1a28a060b0105c95cefc20}{is\_current\_satified}}(\textcolor{keyword}{const}\ std::shared\_ptr<Task>\&\ task\_handle)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00138\ \};}
 
 \end{DoxyCode}

@@ -131,6 +131,64 @@ $(function(){initNavTree('TaskExceptions_8h_source.html',''); initResizable(true
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classLoadStoreException.html">   48</a></span><span class="keyword">class </span>LoadStoreException : <span class="keyword">public</span> std::runtime_error {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    LoadStoreException()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        : std::runtime_error(<span class="stringliteral">&quot;LoadStore file exceptions&quot;</span>) { }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* what() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;LoadStore file Exception for some cases...&quot;</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classLoadException.html">   61</a></span><span class="keyword">class </span>LoadException : <span class="keyword">public</span> LoadStoreException {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">const</span> std::filesystem::path _p;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> std::string errorString;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    LoadException(<span class="keyword">const</span> std::filesystem::path&amp; p, <span class="keyword">const</span> std::string&amp; details)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        : LoadStoreException()</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        , _p(p)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        , errorString(<span class="stringliteral">&quot;Can not load file from path: &quot;</span> + _p.string() + <span class="stringliteral">&quot;, for the reason: &quot;</span> + details) { }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* what() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> errorString.c_str();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classStoreException.html">   79</a></span><span class="keyword">class </span>StoreException : <span class="keyword">public</span> LoadStoreException {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">const</span> std::filesystem::path _p;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">const</span> std::string errorString;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    StoreException(<span class="keyword">const</span> std::filesystem::path&amp; p, <span class="keyword">const</span> std::string&amp; details)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        : LoadStoreException()</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        , _p(p)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        , errorString(<span class="stringliteral">&quot;Can not load file from path: &quot;</span> + _p.string() + <span class="stringliteral">&quot;, for the reason: &quot;</span> + details) { }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* what() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> errorString.c_str();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="};">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classInvalidKeyException.html">   93</a></span><span class="keyword">class </span>InvalidKeyException : <span class="keyword">public</span> std::runtime_error {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">const</span> std::string error_string;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    InvalidKeyException(<span class="keyword">const</span> std::string&amp; error_key)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        : std::runtime_error(<span class="stringliteral">&quot;LoadStore file exceptions&quot;</span>)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        , error_string(error_key + <span class="stringliteral">&quot;is invalid!&quot;</span>) { }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* what() <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> error_string.c_str();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keywords_0',['keywords',['../structNameContainsFilter.html#ab0ec66e6f92b4f16665b79189c898ed9',1,'NameContainsFilter']]]
+  ['jsontasksserializor_0',['JsonTasksSerializor',['../structSerializations_1_1JsonTasksSerializor.html',1,'Serializations']]]
 ];

@@ -8,7 +8,8 @@ inline std::unordered_map<std::string, std::string>& helper_dict() {
 		{ "delete", "delete the task with given names" },
 		{ "list", "show the detailed lists" },
 		{ "store", "given a path to store the current lists" },
-		{ "load", "append the current lists with given path direct to a json file" }
+		{ "load", "append the current lists with given path direct to a json file" },
+		{ "filter", "filter the tasks with the given search expressions" }
 	};
 	return maps_help;
 }

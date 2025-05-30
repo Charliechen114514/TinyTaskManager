@@ -44,7 +44,17 @@ public:
 	PROPERTY_GET_SET(description);
 	PROPERTY_GET_SET(deadline);
 	PROPERTY_GET_SET(priority);
+	/**
+	 * @brief Get the uuid object
+	 *
+	 * @return const TaskUUID
+	 */
 	const TaskUUID get_uuid() const noexcept { return uuid; }
+	/**
+	 * @brief to the printable and displayable format
+	 *
+	 * @return std::string
+	 */
 	std::string toStdString() const noexcept;
 	/* this is the function that helps to check if the task is
 	 * equal */
@@ -62,12 +72,39 @@ public:
 	public:
 		TaskBuilder() = default;
 		DISABLE_COPY(TaskBuilder);
-		/* when building is finished, call this */
+		/**
+		 * @brief finish build and get the task, invoke this
+		 *
+		 * @return std::shared_ptr<Task>
+		 */
 		std::shared_ptr<Task> build_finish();
-		/* At any level, only this is expected */
+		/**
+		 * @brief Set the ddl object
+		 *
+		 * @param ddl ddl sets
+		 * @return TaskBuilder&
+		 */
 		TaskBuilder& set_ddl(deadline_raw_t ddl) noexcept;
+		/**
+		 * @brief Set the description object
+		 *
+		 * @param desp
+		 * @return TaskBuilder&
+		 */
 		TaskBuilder& set_description(const std::string& desp) noexcept;
+		/**
+		 * @brief Set the name object
+		 *
+		 * @param desp
+		 * @return TaskBuilder&
+		 */
 		TaskBuilder& set_name(const std::string& desp) noexcept;
+		/**
+		 * @brief Set the property object
+		 *
+		 * @param p
+		 * @return TaskBuilder&
+		 */
 		TaskBuilder& set_property(const TaskPriority p) noexcept;
 
 	private:
